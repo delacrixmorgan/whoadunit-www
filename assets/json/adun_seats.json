@@ -1,0 +1,450 @@
+[
+  {
+    "stateseatcode": "N1",
+    "federalseatcode": "P92",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sungai Air Tawar",
+    "address": "Pejabat Adun Kawasan Sungai Air Tawar, Lot 2854 (A) Jalan Sungai Air Tawar, Kampung Simpang 4, Bagan Nakhoda Omar, 45200 Sabak Bernam, Selangor"
+  },
+  {
+    "stateseatcode": "N2",
+    "federalseatcode": "P92",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sabak",
+    "address": "Pejabat Adun Kawasan Sabak, Balai Rakyat Taman Berjaya, Jalan Rajawali, 45200 Sabak Bernam, Selangor."
+  },
+  {
+    "stateseatcode": "N3",
+    "federalseatcode": "P93",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sungai Panjang",
+    "address": "Pejabat UMNO Sungai Besar, No. 720 Jalan Besar, Pekan Sg Haji Dorani, 45300 Sg Besar, Selangor"
+  },
+  {
+    "stateseatcode": "N4",
+    "federalseatcode": "P93",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sekinchan",
+    "address": "Pusat Khidmat Dun Sekinchan No. 6A, Jalan Menteri 45400 Sekinchan, Selangor"
+  },
+  {
+    "stateseatcode": "N5",
+    "federalseatcode": "P94",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Hulu Bernam",
+    "address": "Pusat Khidmat Wakil Rakyat, Kawasan Dun Hulu Bernam, Kg. Titiwangsa, 44100 Kalumpang Hulu Selangor, Selangor."
+  },
+  {
+    "stateseatcode": "N6",
+    "federalseatcode": "P94",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Kuala Kubu Baharu",
+    "address": "Pusat Khidmat Adun Kuala Kubu Bharu, No.15, Jalan Gamelan 1, Off Jalan Hamzah, Taman Gamelan, 44000 Kuala Kubu Bharu, Selangor."
+  },
+  {
+    "stateseatcode": "N7",
+    "federalseatcode": "P94",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Batang Kali",
+    "address": "Pusat Khidmat Dun Batang Kali No. 25-1 Jalan Adenium 2g/7, Pusat Perniagaan Adenium, Seksyen Bb5, 48300 Bukit Beruntung, Rawang Selangor"
+  },
+  {
+    "stateseatcode": "N8",
+    "federalseatcode": "P95",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sungai Burong",
+    "address": "Pusat Khidmat Dun Sungai Burong, Jalan Raden Puteh, Kampung Kunci Air Buang, 45500 Tanjung Karang, Selangor."
+  },
+  {
+    "stateseatcode": "N9",
+    "federalseatcode": "P95",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Permatang",
+    "address": "Pusat Khidmat Dun Permatang No.25, Jalan Nilam 1 Taman Nilam 45500 Tanjung Karang, Selangor"
+  },
+  {
+    "stateseatcode": "N10",
+    "federalseatcode": "P96",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Bukit Melawati",
+    "address": "Pusat Khidmat Dun Bukit Melawati, No. 2-1, Jalan Bendahara 1/2a, Taman Bendahara, 45000 Kuala Selangor, Selangor."
+  },
+  {
+    "stateseatcode": "N11",
+    "federalseatcode": "P96",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Ijok",
+    "address": "Pusat Khidmat Dun Ijok, No.6, Taman Ijok Utama 1, Taman Ijok Bestari Jaya, 45600 Kuala Selangor, Selangor."
+  },
+  {
+    "stateseatcode": "N12",
+    "federalseatcode": "P96",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Jeram",
+    "address": "Pusat Khidmat Masyarakat DUN Jeram, No 10, Jalan Niaga Bestari 8, Puncak Bestari, 42300 Bandar Puncak Alam, Selangor."
+  },
+  {
+    "stateseatcode": "N13",
+    "federalseatcode": "P97",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Kuang",
+    "address": "Pusat Khidmat Dun Kuang C4 Lot 23911 Kuang Square Batu 18 Kuang 48050 Rawang, Selangor"
+  },
+  {
+    "stateseatcode": "N14",
+    "federalseatcode": "P97",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Rawang",
+    "address": "Pusat Khidmat Rakyat DUN Rawang, E11, Jalan Mutiara 2, Rawang Mutiara Business Centre, 48000 Rawang, Selangor"
+  },
+  {
+    "stateseatcode": "N15",
+    "federalseatcode": "P97",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Taman Templer",
+    "address": "Pusat Khidmat Masyarakat Dun Taman Templer No. 14A Tingkat 1, Jalan 2/12, Dataran Taman Templer, Bandar Baru Selayang, 68100 Batu Caves, Selangor"
+  },
+  {
+    "stateseatcode": "N16",
+    "federalseatcode": "P98",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sungai Tua",
+    "address": "Pusat Khidmat Masyarakat Sungai Tua, Dewan Komuniti Taman Amaniah, Taman Amaniah, Batu Caves, 68100 Batu Caves, Selangor."
+  },
+  {
+    "stateseatcode": "N17",
+    "federalseatcode": "P98",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Gombak Setia",
+    "address": "Pusat Khidmat Rakyat Dun Gombak Setia, Jalan Berjaya 6, Taman Berjaya, 68100 Gombak, Selangor."
+  },
+  {
+    "stateseatcode": "N18",
+    "federalseatcode": "P98",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Hulu Kelang",
+    "address": "Pusat Khidmat Masyarakat ADUN Hulu Kelang, No 6A, Jalan AU 2A, Taman Sri Keramat, 54200 Kuala Lumpur"
+  },
+  {
+    "stateseatcode": "N19",
+    "federalseatcode": "P99",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Bukit Antarabangsa",
+    "address": "Pusat Khidmat Rakyat Dun Bukit Antarabangsa No.2, Lorong Perak, Pusat Bandar Taman Melawati, Hulu Kelang 53100 Kuala Lumpur"
+  },
+  {
+    "stateseatcode": "N20",
+    "federalseatcode": "P99",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Lembah Jaya",
+    "address": "Pusat Khidmat Rakyat Adun Lembah Jaya No. 3A Jalan AWF 2, Ampang Water Front 68000 Ampang Selangor"
+  },
+  {
+    "stateseatcode": "N21",
+    "federalseatcode": "P100",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Pandan Indah",
+    "address": "Pusat Khidmat Dun Pandan Indah No. 4A Jalan Pandan Indah 1/23A, Pandan Indah 55100 Ampang, Selangor"
+  },
+  {
+    "stateseatcode": "N22",
+    "federalseatcode": "P100",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Teratai",
+    "address": "Pusat Khidmat Dun Teratai, No.27, Jalan Bunga Tanjung 18, Taman Seraya, 56100 Cheras, Selangor."
+  },
+  {
+    "stateseatcode": "N23",
+    "federalseatcode": "P101",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Dusun Tua",
+    "address": "Pusat Khidmat Dun Dusun Tua No. 38-1, Jalan Sri Mas 1, Taman Sri Mas 43100 Hulu Langat Selangor"
+  },
+  {
+    "stateseatcode": "N24",
+    "federalseatcode": "P101",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Semenyih",
+    "address": "Lot 2275 Jalan KG Sesapan, Batu Rembau, 43700, Beranang, Selangor"
+  },
+  {
+    "stateseatcode": "N25",
+    "federalseatcode": "P102",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Kajang",
+    "address": "Pusat Khidmat Dun Kajang, Jalan Metro Avenue 1, Metro Avenue, 43000 Kajang, Selangor."
+  },
+  {
+    "stateseatcode": "N26",
+    "federalseatcode": "P102",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sungai Ramal",
+    "address": "Pusat Khidmat Dun Sungai Ramal 28-A, Jalan Medan Pusat 2c, Persiaran Bangi, Seksyen 9 43650 Bandar Baru Bangi Selangor"
+  },
+  {
+    "stateseatcode": "N27",
+    "federalseatcode": "P102",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Balakong",
+    "address": "Pusat Rakyat Bangi/Balakong 1-12a, Tingkat 1, Jalan Kasturi 1, Taman Kasturi Off Jalan Balakong, 43200 Batu 11, Cheras, Selangor."
+  },
+  {
+    "stateseatcode": "N28",
+    "federalseatcode": "P103",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Seri Kembangan",
+    "address": "Pusat Khidmat Dun Seri Kembangan , No.42-2, Jalan 4/1, Taman Bukit Serdang, Seksyen 4, 43300 Seri Kembangan, Selangor."
+  },
+  {
+    "stateseatcode": "N29",
+    "federalseatcode": "P103",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Seri Serdang",
+    "address": "Pusat Khidmat Dun N29 Seri Serdang No. 26, Jalan PU 7/2, Taman Puchong Utama, 47100 Puchong Selangor"
+  },
+  {
+    "stateseatcode": "N30",
+    "federalseatcode": "P104",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Kinrara",
+    "address": "Pusat Khidmat Dun Kinrara, 5-2, Jalan Cenuk 2, Off Batu 10 Jalan Puchong, 47100 Puchong, Selangor."
+  },
+  {
+    "stateseatcode": "N31",
+    "federalseatcode": "P104",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Subang Jaya",
+    "address": "Pusat Khidmat Dun Subang Jaya, No.113A (Tingkat 1), Jalan SS 14/1, 47500 Subang Jaya, Selangor."
+  },
+  {
+    "stateseatcode": "N32",
+    "federalseatcode": "P105",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Seri Setia",
+    "address": "Pusat Khidmat Dun Seri Ssetia No. 6 SS5b/3 Kelana Jaya 47301 Petaling Jaya Selangor"
+  },
+  {
+    "stateseatcode": "N33",
+    "federalseatcode": "P105",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Taman Medan",
+    "address": "Pusat Khidmat Rakyat DUN Taman Medan, 12-2, Jalan PJS 3/61, 46000, Petaling Jaya, Selangor."
+  },
+  {
+    "stateseatcode": "N34",
+    "federalseatcode": "P105",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Bukit Gasing",
+    "address": "Pejabat Adun Bukit Gasing, No. 7A, Jalan 52, 46200 Petaling Jaya, Selangor"
+  },
+  {
+    "stateseatcode": "N35",
+    "federalseatcode": "P106",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Kampung Tunku",
+    "address": "Pusat Khidmat Dun Kampung Tunku No.24, Jalan 20/9, Taman Paramount 46300 Petaling Jaya, Selangor"
+  },
+  {
+    "stateseatcode": "N36",
+    "federalseatcode": "P106",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Bandar Utama",
+    "address": "Pusat Khidmat Dun Bandar Utama, 55-M, Jalan SS21/1A Damansara Utama, 47400 Petaling Jaya, Selangor."
+  },
+  {
+    "stateseatcode": "N37",
+    "federalseatcode": "P106",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Bukit Lanjan",
+    "address": "Pusat Khidmat Dun Bukit Lanjan 6-2 Pusat Perdagangan Desa Jaya, Desa Jaya 16, Taman Desa Jaya 52100 Kepong Selangor"
+  },
+  {
+    "stateseatcode": "N38",
+    "federalseatcode": "P107",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Paya Jaras",
+    "address": "Pusat Khidmat Dun Paya Jaras Tingkat 1, No.19A, Jalan Liter Du 19/B, Fasa 3, Seksyen U19, Bandar Baru Sungai Buloh,47000 Sungai Buloh, Selangor"
+  },
+  {
+    "stateseatcode": "N39",
+    "federalseatcode": "P107",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Kota Damansara",
+    "address": "Pusat Khidmat Dun Kota Damansara B-19-1, Jalan Zuhal, U5/178, Star Avenue, Seksyen U5, 40150 Shah Alam Selangor"
+  },
+  {
+    "stateseatcode": "N40",
+    "federalseatcode": "P108",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Kota Anggerik",
+    "address": "Pusat Khidmat Masyarakat Kota Anggerik G-08, Blok 2, Ttdi Adina, No.11, Jalan Judo 13/45 , Seksyen 13, 40100 Shah Alam Selangor"
+  },
+  {
+    "stateseatcode": "N41",
+    "federalseatcode": "P108",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Batu Tiga",
+    "address": "Pusat Khidmat Dun Batu Tiga No.93A, Tingkat 1, Jalan Pelabur B 23/B, Seksyen 23, 40000 Shah Alam, Selangor"
+  },
+  {
+    "stateseatcode": "N42",
+    "federalseatcode": "P109",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Meru",
+    "address": "Pusat Khidmat Dun Meru No.1, Jalan Nenas Sarawak Ku/10 Taman Saujana, Off Persiaran Hamzah Alang, 41050 Klang Selangor"
+  },
+  {
+    "stateseatcode": "N43",
+    "federalseatcode": "P109",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sementa",
+    "address": "Pusat Khidmat Dun Sementa No.30, Tingkat 1, Jalan 14/Ku4, Taman Sementa Bestari, Batu 5, Jalan Kapar, 42100 Klang, Selangor"
+  },
+  {
+    "stateseatcode": "N44",
+    "federalseatcode": "P109",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Selat Klang",
+    "address": "Pusat Khidmat Dun Selat Klang, Lot 2537, No.2 Jalan Yadi, Kampung Telok Gadong, 41250 Klang, Selangor"
+  },
+  {
+    "stateseatcode": "N45",
+    "federalseatcode": "P110",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Bandar Baru Klang",
+    "address": "Pusat Khidmat Dun Bandar Baru Klang, LG-4, 1E Jalan Pekan Baru 34, 41010 Klang, Selangor"
+  },
+  {
+    "stateseatcode": "N46",
+    "federalseatcode": "P110",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Pelabuhan Klang",
+    "address": "Pusat Khidmat Dun Pelabuhan Klang, No 60, Jalan Permai 1B, Taman Pendamaran Permai, 42000 Pelabuhan Klang, Selangor."
+  },
+  {
+    "stateseatcode": "N47",
+    "federalseatcode": "P110",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Pandamaran",
+    "address": "Pusat Khidmat Dun Pandamaran No. 319 Jalan Telok Gadong KS01 Off Persiaran Raja Muda Musa 41200 Pelabuhan Klang Selangor"
+  },
+  {
+    "stateseatcode": "N48",
+    "federalseatcode": "P111",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sentosa",
+    "address": "Pusat Khidmat Dun Sentosa No. 15A Jalan Mohd Tahir 8, Taman Sri Mewah 4, Jalan SG Jati 41200 Klang Selangor"
+  },
+  {
+    "stateseatcode": "N49",
+    "federalseatcode": "P111",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sungai Kandis",
+    "address": "Pusat Khidmat Rakyat Dun Sungai Kandis No. 16, Jalan Kebun Nenas 3N/KS8, Bandar Putera 2, 41200 Klang, Selangor"
+  },
+  {
+    "stateseatcode": "N50",
+    "federalseatcode": "P111",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Kota Kemuning",
+    "address": "Pusat Khidmat Dun Kota Kemuning 7-G, Jalan Kemuning Prima B 33/B, Kemuning Utama, Seksyen 33, 40400 Shah Alam Selangor"
+  },
+  {
+    "stateseatcode": "N51",
+    "federalseatcode": "P112",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sijangkang",
+    "address": "Pusat Khidmat Dun Sijangkang No. 1 Tingkat Atas , Jalan Wira 2, Jalan Pewira 42500 Telok Panglima Garang Selangor"
+  },
+  {
+    "stateseatcode": "N52",
+    "federalseatcode": "P112",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Banting",
+    "address": "Pusat Khidmat Dun Banting (Sungai Sedu), Pejabat Dap Cawangan Sungai Sedu, No. 2077c, Lot 76, Batu 17, Jalan Klang-Banting, Kampung Sungai Sedu, 42700 Banting Selangor"
+  },
+  {
+    "stateseatcode": "N53",
+    "federalseatcode": "P112",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Morib",
+    "address": "Pusat Khidmat Dun Morib No.78A, Jalan Bunga Pekan, 42700 Banting, Selangor"
+  },
+  {
+    "stateseatcode": "N54",
+    "federalseatcode": "P113",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Tanjong Sepat",
+    "address": "Pusat Khidmat Dun Tanjung Sepat Kompleks Penghulu Batu Laut Jalan Besar, Kampung Batu Laut 42800 Tanjung Sepat, Selangor"
+  },
+  {
+    "stateseatcode": "N55",
+    "federalseatcode": "P113",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Dengkil",
+    "address": "Pusat Khidmat Masyarakat DUN Dengkil, No 1A-1, Jalan BM 7, Taman Bintang Mas, 43800 Dengkil, Selangor"
+  },
+  {
+    "stateseatcode": "N56",
+    "federalseatcode": "P113",
+    "level": "State",
+    "state": "Selangor",
+    "name": "Sungai Pelek",
+    "address": "Pusat Khidmat Dun Sungai Pelek No. 9, Tingkat 1 Jalan Damai 1, Taman Damai 43950 SG Pelek Selangor"
+  }
+]

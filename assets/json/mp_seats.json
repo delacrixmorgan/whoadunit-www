@@ -1,0 +1,1356 @@
+[
+  {
+    "federalseatcode": "P1",
+    "level": "Federal",
+    "state": "Perlis",
+    "name": "Padang Besar"
+  },
+  {
+    "federalseatcode": "P2",
+    "level": "Federal",
+    "state": "Perlis",
+    "name": "Kangar"
+  },
+  {
+    "federalseatcode": "P3",
+    "level": "Federal",
+    "state": "Perlis",
+    "name": "Arau"
+  },
+  {
+    "federalseatcode": "P4",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Langkawi"
+  },
+  {
+    "federalseatcode": "P5",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Jerlun"
+  },
+  {
+    "federalseatcode": "P6",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Kubang Pasu"
+  },
+  {
+    "federalseatcode": "P7",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Padang Terap"
+  },
+  {
+    "federalseatcode": "P8",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Pokok Sena"
+  },
+  {
+    "federalseatcode": "P9",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Alor Setar"
+  },
+  {
+    "federalseatcode": "P10",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Kuala Kedah"
+  },
+  {
+    "federalseatcode": "P11",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Pendang"
+  },
+  {
+    "federalseatcode": "P12",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Jerai"
+  },
+  {
+    "federalseatcode": "P13",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Sik"
+  },
+  {
+    "federalseatcode": "P14",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Merbok"
+  },
+  {
+    "federalseatcode": "P15",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Sungai Petani"
+  },
+  {
+    "federalseatcode": "P16",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Baling"
+  },
+  {
+    "federalseatcode": "P17",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Padang Serai"
+  },
+  {
+    "federalseatcode": "P18",
+    "level": "Federal",
+    "state": "Kedah",
+    "name": "Kulim-Bandar Baharu"
+  },
+  {
+    "federalseatcode": "P19",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Tumpat"
+  },
+  {
+    "federalseatcode": "P20",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Pengkalan Chepa"
+  },
+  {
+    "federalseatcode": "P21",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Kota Bharu"
+  },
+  {
+    "federalseatcode": "P22",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Pasir Mas"
+  },
+  {
+    "federalseatcode": "P23",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Rantau Panjang"
+  },
+  {
+    "federalseatcode": "P24",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Kubang Kerian"
+  },
+  {
+    "federalseatcode": "P25",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Bachok"
+  },
+  {
+    "federalseatcode": "P26",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Ketereh"
+  },
+  {
+    "federalseatcode": "P27",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Tanah Merah"
+  },
+  {
+    "federalseatcode": "P28",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Pasir Puteh"
+  },
+  {
+    "federalseatcode": "P29",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Machang"
+  },
+  {
+    "federalseatcode": "P30",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Jeli"
+  },
+  {
+    "federalseatcode": "P31",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Kuala Krai"
+  },
+  {
+    "federalseatcode": "P32",
+    "level": "Federal",
+    "state": "Kelantan",
+    "name": "Gua Musang"
+  },
+  {
+    "federalseatcode": "P33",
+    "level": "Federal",
+    "state": "Terrengganu",
+    "name": "Besut"
+  },
+  {
+    "federalseatcode": "P34",
+    "level": "Federal",
+    "state": "Terrengganu",
+    "name": "Setiu"
+  },
+  {
+    "federalseatcode": "P35",
+    "level": "Federal",
+    "state": "Terrengganu",
+    "name": "Kuala Nerus"
+  },
+  {
+    "federalseatcode": "P36",
+    "level": "Federal",
+    "state": "Terrengganu",
+    "name": "Kuala Terrengganu"
+  },
+  {
+    "federalseatcode": "P37",
+    "level": "Federal",
+    "state": "Terrengganu",
+    "name": "Marang"
+  },
+  {
+    "federalseatcode": "P38",
+    "level": "Federal",
+    "state": "Terrengganu",
+    "name": "Hulu Terrengganu"
+  },
+  {
+    "federalseatcode": "P39",
+    "level": "Federal",
+    "state": "Terrengganu",
+    "name": "Dungun"
+  },
+  {
+    "federalseatcode": "P40",
+    "level": "Federal",
+    "state": "Terrengganu",
+    "name": "Kemaman"
+  },
+  {
+    "federalseatcode": "P41",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Kepala Batas"
+  },
+  {
+    "federalseatcode": "P42",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Tasek Gelugor"
+  },
+  {
+    "federalseatcode": "P43",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Bagan"
+  },
+  {
+    "federalseatcode": "P44",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Permatang Pauh"
+  },
+  {
+    "federalseatcode": "P45",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Bukit Mertajam"
+  },
+  {
+    "federalseatcode": "P46",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Batu Kawan"
+  },
+  {
+    "federalseatcode": "P47",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Nibong Tebal"
+  },
+  {
+    "federalseatcode": "P48",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Bukit Bendera"
+  },
+  {
+    "federalseatcode": "P49",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Tanjong"
+  },
+  {
+    "federalseatcode": "P50",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Jelutong"
+  },
+  {
+    "federalseatcode": "P51",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Bukit Gelugor"
+  },
+  {
+    "federalseatcode": "P52",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Bayan Baru"
+  },
+  {
+    "federalseatcode": "P53",
+    "level": "Federal",
+    "state": "Penang",
+    "name": "Balik Pulau"
+  },
+  {
+    "federalseatcode": "P54",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Gerik"
+  },
+  {
+    "federalseatcode": "P55",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Lenggong"
+  },
+  {
+    "federalseatcode": "P56",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Larut"
+  },
+  {
+    "federalseatcode": "P57",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Parit Buntar"
+  },
+  {
+    "federalseatcode": "P58",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Bagan Serai"
+  },
+  {
+    "federalseatcode": "P59",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Bukt Gantang"
+  },
+  {
+    "federalseatcode": "P60",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Taiping"
+  },
+  {
+    "federalseatcode": "P61",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Pandang Rengas"
+  },
+  {
+    "federalseatcode": "P62",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Sungai Siput"
+  },
+  {
+    "federalseatcode": "P63",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Tambun"
+  },
+  {
+    "federalseatcode": "P64",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Ipoh Timor"
+  },
+  {
+    "federalseatcode": "P65",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Ipoh Barat"
+  },
+  {
+    "federalseatcode": "P66",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Batu Gajah"
+  },
+  {
+    "federalseatcode": "P67",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Kuala Kangsar"
+  },
+  {
+    "federalseatcode": "P68",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Beruas"
+  },
+  {
+    "federalseatcode": "P69",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Parit"
+  },
+  {
+    "federalseatcode": "P70",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Kampar"
+  },
+  {
+    "federalseatcode": "P71",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Gopeng"
+  },
+  {
+    "federalseatcode": "P72",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Tapah"
+  },
+  {
+    "federalseatcode": "P73",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Pasir Salak"
+  },
+  {
+    "federalseatcode": "P74",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Lumut"
+  },
+  {
+    "federalseatcode": "P75",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Bagan Datuk"
+  },
+  {
+    "federalseatcode": "P76",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Teluk Intan"
+  },
+  {
+    "federalseatcode": "P77",
+    "level": "Federal",
+    "state": "Perak",
+    "name": "Tanjong Malim"
+  },
+  {
+    "federalseatcode": "P78",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Cameron Highlands"
+  },
+  {
+    "federalseatcode": "P79",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Lipis"
+  },
+  {
+    "federalseatcode": "P80",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Raub"
+  },
+  {
+    "federalseatcode": "P81",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Jerantut"
+  },
+  {
+    "federalseatcode": "P82",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Indera Mahkota"
+  },
+  {
+    "federalseatcode": "P83",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Kuantan"
+  },
+  {
+    "federalseatcode": "P84",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Paya Besar"
+  },
+  {
+    "federalseatcode": "P85",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Pekan"
+  },
+  {
+    "federalseatcode": "P86",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Maran"
+  },
+  {
+    "federalseatcode": "P87",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Kuala Krau"
+  },
+  {
+    "federalseatcode": "P88",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Temerloh"
+  },
+  {
+    "federalseatcode": "P89",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Bentong"
+  },
+  {
+    "federalseatcode": "P90",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Bera"
+  },
+  {
+    "federalseatcode": "P91",
+    "level": "Federal",
+    "state": "Pahang",
+    "name": "Rompin"
+  },
+  {
+    "federalseatcode": "P92",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Sabak Bernam",
+    "address": "Lot 1785, Taman Raya, 45300 Sungai Besar, Selangor Darul Ehsan"
+  },
+  {
+    "federalseatcode": "P93",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Sungai Besar",
+    "address": "Pejabat Timbalan Menteri I, Kementerian Pendidikan Malaysia Aras 9, Blok E8, Kompleks E, Pusat Pentadbiran Kerajaan Persekutuan 62604 PUTRAJAYA."
+  },
+  {
+    "federalseatcode": "P94",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Hulu Selangor",
+    "address": "No.15, Jalan Helikonia, Pusat Perniagaan Helikonia,Sungai Choh, 48000 Rawang, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P95",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Tanjong Karang",
+    "address": "No. 131A, Aras Bawah, Bangunan UMNO Bahagian Tanjong Karang, 45500 Tanjong Karang, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P96",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Kuala Selangor",
+    "address": "12, Jalan Topaz 7/4,Seksyen 7, 40000, Shah Alam, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P97",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Selayang",
+    "address": "Pusat Khidmat Rakyat Parlimen Selayang, No.E-11-1,Jalan Mutiara 2, Mutiara Business Centre,48000 Rawang, SELANGOR DARUL EHSAN."
+  },
+  {
+    "federalseatcode": "P98",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Gombak",
+    "address": "Pejabat Menteri Kanan Kementerian Perdagangan Antarabangsa dan Industri, Aras 30, Menara MITI, No.7, Jalan Sultan Haji Ahmad Shah, 50480 KUALA LUMPUR."
+  },
+  {
+    "federalseatcode": "P99",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Ampang",
+    "address": "Pejabat Menteri Kementerian Perumahan dan Kerajaan Tempatan, Aras 18, No.51, Persiaran Perdana, Presint 4, Pusat Pentadbiran Kerajaan Persekutuan 62100 PUTRAJAYA."
+  },
+  {
+    "federalseatcode": "P100",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Pandan",
+    "address": "Ibu Pejabat Parti Keadilan Rakyat,A-1-09, Merchant Square, No. 1, Jalan Tropicana Selatan 1, 47410, Petaling Jaya, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P101",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Hulu Langat",
+    "address": "No. 29 Jalan TTDI Grove 7/1 Seksyen 9 Taman TTDI Grove 43000 Kajang Selangor"
+  },
+  {
+    "federalseatcode": "P102",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Bangi",
+    "address": "67A, Tingkat 1, Taman Sri Reko,Jalan Reko,43000 Kajang, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P103",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Puchong",
+    "address": "No.2A, Jalan 12/14, Seksyen 12, 46200 Petaling Jaya,Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P104",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Subang",
+    "address": "PUSAT KHIDMAT RAKYAT PARLIMEN SUBANG, No.2-12,Jalan Cenuk 1,Bandar Puchong Jaya,47100 Puchong,Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P105",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Petaling Jaya",
+    "address": "Pejabat Parlimen P105 Petaling Jaya, No.60-1(First Floor), Jalan PJS 1/50, Petaling Utama Avenue, 46150 Petaling Jaya, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P106",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Damansara",
+    "address": "55-M, Jalan SS 21/1A, Damansara Utama, 47400 Petaling Jaya, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P107",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Sungai Buloh",
+    "address": "No.3, Jalan 14/51, 46100 Petaling Jaya, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P108",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Shah Alam",
+    "address": "1B, Tingkat 2, Blok 1, World Wide Business Centre, Jalan Tinju 13/50,Seksyen 13, Shah Alam, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P109",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Kapar",
+    "address": "Pejabat Parlimen Kapar, 50-G (Ground) & 50-2 (2nd Floor) Jalan Sungai Agas 6A/KU3, Taman Sungai Pinang 42100 Klang Selangor"
+  },
+  {
+    "federalseatcode": "P110",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Klang",
+    "address": "No. 2A Jalan Bayu Tinggi 8/KS6, Batu Unjur, 41200 Klang, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P111",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Kota Raja",
+    "address": "Pusat Khidmat Rakyat Parlimen Kota Raja, No. 34 Jalan Temenggung SAtu, Taman Sentosa Perdana Dua 41200 Klang Selangor"
+  },
+  {
+    "federalseatcode": "P112",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Kuala Langat",
+    "address": "48, Jalan Pekan 2, Taman Seri,42700 Banting, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P113",
+    "level": "Federal",
+    "state": "Selangor",
+    "name": "Sepang",
+    "address": "No.23, Jalan SG 1/29, Taman Sri Gombak, 68100 Batu Caves, Selangor Darul Ehsan."
+  },
+  {
+    "federalseatcode": "P114",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Kepong"
+  },
+  {
+    "federalseatcode": "P115",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Batu"
+  },
+  {
+    "federalseatcode": "P116",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Wangsa Maju"
+  },
+  {
+    "federalseatcode": "P117",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Segambut"
+  },
+  {
+    "federalseatcode": "P118",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Setiawangsa"
+  },
+  {
+    "federalseatcode": "P119",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Titiwangsa"
+  },
+  {
+    "federalseatcode": "P120",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Bukit Bintang"
+  },
+  {
+    "federalseatcode": "P121",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Lembah Pantai"
+  },
+  {
+    "federalseatcode": "P122",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Seputeh"
+  },
+  {
+    "federalseatcode": "P123",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Cheras"
+  },
+  {
+    "federalseatcode": "P124",
+    "level": "Federal",
+    "state": "Kuala Lumpur",
+    "name": "Bandar Tun Razak"
+  },
+  {
+    "federalseatcode": "P125",
+    "level": "Federal",
+    "state": "Putrajaya",
+    "name": "Putrajaya"
+  },
+  {
+    "federalseatcode": "P126",
+    "level": "Federal",
+    "state": "Negeri Sembilan",
+    "name": "Jelebu"
+  },
+  {
+    "federalseatcode": "P127",
+    "level": "Federal",
+    "state": "Negeri Sembilan",
+    "name": "Jempol"
+  },
+  {
+    "federalseatcode": "P128",
+    "level": "Federal",
+    "state": "Negeri Sembilan",
+    "name": "Seremban"
+  },
+  {
+    "federalseatcode": "P129",
+    "level": "Federal",
+    "state": "Negeri Sembilan",
+    "name": "Kuala Pilah"
+  },
+  {
+    "federalseatcode": "P130",
+    "level": "Federal",
+    "state": "Negeri Sembilan",
+    "name": "Rasah"
+  },
+  {
+    "federalseatcode": "P131",
+    "level": "Federal",
+    "state": "Negeri Sembilan",
+    "name": "Rembau"
+  },
+  {
+    "federalseatcode": "P132",
+    "level": "Federal",
+    "state": "Negeri Sembilan",
+    "name": "Port Dickson"
+  },
+  {
+    "federalseatcode": "P133",
+    "level": "Federal",
+    "state": "Negeri Sembilan",
+    "name": "Tampin"
+  },
+  {
+    "federalseatcode": "P134",
+    "level": "Federal",
+    "state": "Malacca",
+    "name": "Masjid Tanah"
+  },
+  {
+    "federalseatcode": "P135",
+    "level": "Federal",
+    "state": "Malacca",
+    "name": "Alor Gajah"
+  },
+  {
+    "federalseatcode": "P136",
+    "level": "Federal",
+    "state": "Malacca",
+    "name": "Tangga Batu"
+  },
+  {
+    "federalseatcode": "P137",
+    "level": "Federal",
+    "state": "Malacca",
+    "name": "Hang Tuah Jaya"
+  },
+  {
+    "federalseatcode": "P138",
+    "level": "Federal",
+    "state": "Malacca",
+    "name": "Kota Melaka"
+  },
+  {
+    "federalseatcode": "P139",
+    "level": "Federal",
+    "state": "Malacca",
+    "name": "Jasin"
+  },
+  {
+    "federalseatcode": "P140",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Segamat"
+  },
+  {
+    "federalseatcode": "P141",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Sekijang"
+  },
+  {
+    "federalseatcode": "P142",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Labis"
+  },
+  {
+    "federalseatcode": "P143",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Pagoh"
+  },
+  {
+    "federalseatcode": "P144",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Ledang"
+  },
+  {
+    "federalseatcode": "P145",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Pakri"
+  },
+  {
+    "federalseatcode": "P146",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Muar"
+  },
+  {
+    "federalseatcode": "P147",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Parit Sulong"
+  },
+  {
+    "federalseatcode": "P148",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Ayer Hitam"
+  },
+  {
+    "federalseatcode": "P149",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Sri Gading"
+  },
+  {
+    "federalseatcode": "P150",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Batu Pahat"
+  },
+  {
+    "federalseatcode": "P151",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Simpang Renggam"
+  },
+  {
+    "federalseatcode": "P152",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Kluang"
+  },
+  {
+    "federalseatcode": "P153",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Sembrong"
+  },
+  {
+    "federalseatcode": "P154",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Mersing"
+  },
+  {
+    "federalseatcode": "P155",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Tenggara"
+  },
+  {
+    "federalseatcode": "P156",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Kota Tinggi"
+  },
+  {
+    "federalseatcode": "P157",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Pengerang"
+  },
+  {
+    "federalseatcode": "P158",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Tebrau"
+  },
+  {
+    "federalseatcode": "P159",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Psair Gudang"
+  },
+  {
+    "federalseatcode": "P160",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Johor Bahru"
+  },
+  {
+    "federalseatcode": "P161",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Pulai"
+  },
+  {
+    "federalseatcode": "P162",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Iskandar Puteri"
+  },
+  {
+    "federalseatcode": "P163",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Kulai"
+  },
+  {
+    "federalseatcode": "P164",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Pontian"
+  },
+  {
+    "federalseatcode": "P165",
+    "level": "Federal",
+    "state": "Johor",
+    "name": "Tanjung Piai"
+  },
+  {
+    "federalseatcode": "P166",
+    "level": "Federal",
+    "state": "Labuan",
+    "name": "Labuan"
+  },
+  {
+    "federalseatcode": "P167",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Kudat"
+  },
+  {
+    "federalseatcode": "P168",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Kota Marudu"
+  },
+  {
+    "federalseatcode": "P169",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Kota Belud"
+  },
+  {
+    "federalseatcode": "P170",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Tuaran"
+  },
+  {
+    "federalseatcode": "P171",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Sepanggar"
+  },
+  {
+    "federalseatcode": "P172",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Kota Kinabalu"
+  },
+  {
+    "federalseatcode": "P173",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Putatan"
+  },
+  {
+    "federalseatcode": "P174",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Penampang"
+  },
+  {
+    "federalseatcode": "P175",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Papar"
+  },
+  {
+    "federalseatcode": "P176",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Kimanis"
+  },
+  {
+    "federalseatcode": "P177",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Beaufort"
+  },
+  {
+    "federalseatcode": "P178",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Sipitang"
+  },
+  {
+    "federalseatcode": "P179",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Ranau"
+  },
+  {
+    "federalseatcode": "P180",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Keningau"
+  },
+  {
+    "federalseatcode": "P181",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Tenom"
+  },
+  {
+    "federalseatcode": "P182",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Pensiangan"
+  },
+  {
+    "federalseatcode": "P183",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Beluran"
+  },
+  {
+    "federalseatcode": "P184",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Libaran"
+  },
+  {
+    "federalseatcode": "P185",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Batu Sapi"
+  },
+  {
+    "federalseatcode": "P186",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Sandakan"
+  },
+  {
+    "federalseatcode": "P187",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Kinabatangan"
+  },
+  {
+    "federalseatcode": "P188",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Lahad Datu"
+  },
+  {
+    "federalseatcode": "P189",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Semporna"
+  },
+  {
+    "federalseatcode": "P190",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Tawau"
+  },
+  {
+    "federalseatcode": "P191",
+    "level": "Federal",
+    "state": "Sabah",
+    "name": "Kalabakan"
+  },
+  {
+    "federalseatcode": "P192",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Mas Gading"
+  },
+  {
+    "federalseatcode": "P193",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Santubong"
+  },
+  {
+    "federalseatcode": "P194",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Petra Jaya"
+  },
+  {
+    "federalseatcode": "P195",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Bandar Kuching"
+  },
+  {
+    "federalseatcode": "P196",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Stampin"
+  },
+  {
+    "federalseatcode": "P197",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Kota Samarahan"
+  },
+  {
+    "federalseatcode": "P198",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Puncak Borneo"
+  },
+  {
+    "federalseatcode": "P199",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Serian"
+  },
+  {
+    "federalseatcode": "P200",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Batang Sadong"
+  },
+  {
+    "federalseatcode": "P201",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Batang Lupar"
+  },
+  {
+    "federalseatcode": "P202",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Sri Aman"
+  },
+  {
+    "federalseatcode": "P203",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Lubok Antu"
+  },
+  {
+    "federalseatcode": "P204",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Betong"
+  },
+  {
+    "federalseatcode": "P205",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Saratok"
+  },
+  {
+    "federalseatcode": "P206",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Tanjong Manis"
+  },
+  {
+    "federalseatcode": "P207",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Igan"
+  },
+  {
+    "federalseatcode": "P208",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Sarikei"
+  },
+  {
+    "federalseatcode": "P209",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Julau"
+  },
+  {
+    "federalseatcode": "P210",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Kanowit"
+  },
+  {
+    "federalseatcode": "P211",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Lanang"
+  },
+  {
+    "federalseatcode": "P212",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Sibu"
+  },
+  {
+    "federalseatcode": "P213",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Mukah"
+  },
+  {
+    "federalseatcode": "P214",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Selangau"
+  },
+  {
+    "federalseatcode": "P215",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Kapit"
+  },
+  {
+    "federalseatcode": "P216",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Hulu Rajang"
+  },
+  {
+    "federalseatcode": "P217",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Bintulu"
+  },
+  {
+    "federalseatcode": "P218",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Sibuti"
+  },
+  {
+    "federalseatcode": "P219",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Miri"
+  },
+  {
+    "federalseatcode": "P220",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Baram"
+  },
+  {
+    "federalseatcode": "P221",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Limbang"
+  },
+  {
+    "federalseatcode": "P222",
+    "level": "Federal",
+    "state": "Sarawak",
+    "name": "Lawas"
+  }
+]
