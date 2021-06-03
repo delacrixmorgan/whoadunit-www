@@ -3,13 +3,18 @@
     class="
       container
       mx-auto
-      flex flex-wrap
       p-5
       flex-col
       md:flex-row md:flex-nowrap
       items-center
     "
   >
+    <seat-search-bar
+      class="mb-5"
+      @search-query="setQuery"
+      @filter-type="setFilter"
+    ></seat-search-bar>
+
     <table class="min-w-full divide-y divide-gray-200">
       <thead class="bg-gray-50">
         <tr>
@@ -69,14 +74,11 @@
           >
             Action
           </th>
-          <!-- <th scope="col" class="relative px-6 py-3">
-            <span class="sr-only">Edit</span>
-          </th> -->
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
         <tr
-          v-for="seat in seats"
+          v-for="seat in filteredSeats"
           :key="seat.name"
           class="hover:bg-gray-200"
           @click="gotToSeatDetails(seat)"
@@ -115,7 +117,10 @@
   </div>
 </template>
 <script>
+import SeatSearchBar from './SeatSearchBar.vue'
+
 export default {
+  components: { SeatSearchBar },
   props: {
     year: { type: String, require: true, default: '2018' },
   },
@@ -123,6 +128,8 @@ export default {
     return {
       search: '',
       seats: [],
+      filters: ['mp', 'adun'],
+      searchQuery: '',
     }
   },
   created() {
@@ -148,7 +155,61 @@ export default {
     }
     this.seats = this.seats.filter((seat) => seat.person != null)
   },
+  computed: {
+    filteredSeats() {
+      const filteredSeats = this.filter(this.searchQuery.toLowerCase())
+
+      if (this.sortType !== '') {
+        return filteredSeats.sort((a, b) => {
+          let modifier = 1
+          if (this.sortType === 'DESC') modifier = -1
+          if (
+            this.sortColumn === 'stateseatcode' ||
+            this.sortColumn === 'federalseatcode'
+          ) {
+            if (a[this.sortColumn].localeCompare(b[this.sortColumn])) {
+              return 1 * modifier
+            }
+          } else {
+            if (a[this.sortColumn] < b[this.sortColumn]) return -1 * modifier
+            if (a[this.sortColumn] > b[this.sortColumn]) return 1 * modifier
+          }
+          return 0
+        })
+      }
+      return filteredSeats
+    },
+  },
   methods: {
+    filter(query) {
+      let filteredSeats = this.seats.filter(
+        (seat) =>
+          seat.name.toLowerCase().includes(query) ||
+          seat.state.toLowerCase().includes(query) ||
+          seat.federalseatcode.toLowerCase().includes(query) ||
+          seat.person.name.toLowerCase().includes(query)
+      )
+
+      if (this.filters.length === 0) {
+        filteredSeats = []
+      }
+
+      if (this.filters.length === 1) {
+        if (this.filters.includes('mp')) {
+          filteredSeats = filteredSeats.filter(
+            (seat) => seat.level.toLowerCase() === 'federal'
+          )
+        }
+
+        if (this.filters.includes('adun')) {
+          filteredSeats = filteredSeats.filter(
+            (seat) => seat.level.toLowerCase() === 'state'
+          )
+        }
+      }
+
+      return filteredSeats
+    },
     getSeatCode(seat) {
       if (seat.level === 'Federal') {
         return seat.federalseatcode
@@ -159,6 +220,12 @@ export default {
     },
     gotToSeatDetails(row) {
       this.$router.push({ path: `person/${row.person.id}`, props: true })
+    },
+    setQuery(query) {
+      this.searchQuery = query
+    },
+    setFilter(filters) {
+      this.filters = filters
     },
   },
 }
