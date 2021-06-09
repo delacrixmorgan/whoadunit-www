@@ -16,7 +16,7 @@
       @filter-type="setFilter"
     ></seat-search-bar>
 
-    <table class="min-w-full divide-y divide-gray-200">
+    <table>
       <thead class="bg-gray-50">
         <tr>
           <th
@@ -118,10 +118,7 @@
   </div>
 </template>
 <script>
-import SeatSearchBar from './SeatSearchBar.vue'
-
 export default {
-  components: { SeatSearchBar },
   props: {
     year: { type: String, require: true, default: '2018' },
   },

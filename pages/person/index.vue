@@ -15,6 +15,8 @@
       @search-query="setQuery"
       @filter-type="setFilter"
     ></person-search-bar>
+
+    <person-grid />
   </div>
 </template>
 

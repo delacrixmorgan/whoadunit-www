@@ -10,8 +10,6 @@
         class="w-32 h-32 rounded-full ml-4 shadow -mt-28"
         src="https://cdn.i-scmp.com/sites/default/files/d8/images/author/pic/2019/05/09/santiago12.jpg"
         alt=""
-        width="384"
-        height="512"
       />
 
       <div class="p-4">

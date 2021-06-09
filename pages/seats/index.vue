@@ -1,13 +1,5 @@
 <template>
-  <div>
-    <SeatTable />
+  <div class="min-w-full divide-y divide-gray-200">
+    <seat-table />
   </div>
 </template>
-
-<script>
-import SeatTable from '@/components/Seat/SeatTable.vue'
-
-export default {
-  components: { SeatTable },
-}
-</script>
