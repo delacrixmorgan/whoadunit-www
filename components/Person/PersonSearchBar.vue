@@ -44,52 +44,17 @@
           ADUN
         </button>
       </div>
-      <div class="flex-none">
-        <dropdown-menu :dropdown="stateDropdown" />
-      </div>
-      <div class="flex-none">
-        <dropdown-menu :dropdown="yearDropdown" />
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import DropdownMenu from '@/components/Common/DropdownMenu.vue'
-
 export default {
-  components: { DropdownMenu },
   data() {
     return {
       searchQuery: '',
       isMpFilterActive: true,
       isAdunFilterActive: true,
-      isDropdownExpanded: false,
-      yearDropdown: {
-        placeholder: 'Year',
-        items: ['2021', '2018'],
-      },
-      stateDropdown: {
-        placeholder: 'States',
-        items: [
-          'Perlis',
-          'Kedah',
-          'Kelantan',
-          'Terrengganu',
-          'Penang',
-          'Perak',
-          'Pahang',
-          'Selangor',
-          'Kuala Lumpur',
-          'Putrajaya',
-          'Negeri Sembilan',
-          'Malacca',
-          'Johor',
-          'Labuan',
-          'Sabah',
-          'Sarawak',
-        ],
-      },
     }
   },
   emits: ['search-query', 'filter-type'],

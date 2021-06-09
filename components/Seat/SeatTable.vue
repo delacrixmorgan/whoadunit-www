@@ -3,7 +3,8 @@
     class="
       container
       mx-auto
-      p-5
+      px-5
+      py-2
       flex-col
       md:flex-row md:flex-nowrap
       items-center

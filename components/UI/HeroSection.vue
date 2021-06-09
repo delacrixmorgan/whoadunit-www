@@ -46,40 +46,58 @@
           Yes, there is a difference between ADUN and MP. Here's an article from
           Cilisos that explains it all, also inspired me to build this website.
         </p>
-        <div class="flex justify-center">
-          <button
-            class="
-              inline-flex
-              text-white
-              bg-indigo-500
-              border-0
-              py-2
-              px-6
-              focus:outline-none
-              hover:bg-indigo-600
-              rounded
-              text-lg
-            "
-          >
-            Get Started
-          </button>
-          <button
-            class="
-              ml-4
-              inline-flex
-              text-gray-700
-              bg-gray-100
-              border-0
-              py-2
-              px-6
-              focus:outline-none
-              hover:bg-gray-200
-              rounded
-              text-lg
-            "
-          >
-            Check PRU Registration
-          </button>
+        <div class="sm:flex sm:justify-center lg:justify-start">
+          <div class="rounded-md shadow">
+            <a
+              href="#"
+              class="
+                w-full
+                flex
+                items-center
+                justify-center
+                px-8
+                py-3
+                border border-transparent
+                text-base
+                font-medium
+                rounded-md
+                text-white
+                bg-indigo-600
+                hover:bg-indigo-700
+                md:text-lg
+                md:py-4
+                md:px-10
+              "
+            >
+              Get Started
+            </a>
+          </div>
+          <div class="mt-3 sm:mt-0 sm:ml-3">
+            <a
+              href="https://pengundi.spr.gov.my/"
+              target="_blank"
+              class="
+                w-full
+                flex
+                items-center
+                justify-center
+                px-8
+                py-3
+                border border-transparent
+                text-base
+                font-medium
+                rounded-md
+                text-indigo-700
+                bg-indigo-100
+                hover:bg-indigo-200
+                md:py-4
+                md:text-lg
+                md:px-10
+              "
+            >
+              Check PRU Registration
+            </a>
+          </div>
         </div>
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
