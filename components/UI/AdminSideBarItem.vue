@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link class="item-link" :to="item.action">
+    <nuxt-link class="sidebar-item-link" :to="item.action">
       <svg
         v-if="item.title !== 'Settings'"
         class="w-5 h-5"
@@ -61,10 +61,10 @@ export default {
 </script>
 
 <style scoped>
-.item-link {
+.sidebar-item-link {
   @apply flex items-center px-8 py-4 text-gray-600 transition-colors duration-200 transform rounded-md hover:bg-gray-200 hover:text-gray-700;
 }
-.nuxt-link-active.item-link {
+.nuxt-link-active.sidebar-item-link {
   @apply flex items-center px-8 py-4 text-gray-700 bg-gray-200 rounded-md;
 }
 </style>

@@ -53,21 +53,9 @@
           mr-5
         "
       >
-        <nuxt-link
-          class="menuItem-active-link hover:text-indigo-500"
-          to="/seats"
-          >Seats</nuxt-link
-        >
-        <nuxt-link
-          class="menuItem-active-link hover:text-indigo-500"
-          to="/person"
-          >Person</nuxt-link
-        >
-        <nuxt-link
-          class="menuItem-active-link hover:text-indigo-500"
-          to="/about"
-          >About</nuxt-link
-        >
+        <nuxt-link class="header-item-link" to="/seats">Seats</nuxt-link>
+        <nuxt-link class="header-item-link" to="/person">Person</nuxt-link>
+        <nuxt-link class="header-item-link" to="/about">About</nuxt-link>
       </nav>
       <nuxt-link to="/volunteer">
         <button
@@ -105,7 +93,10 @@
 </template>
 
 <style>
-.nuxt-link-active.menuItem-active-link {
-  color: #4f46e5;
+.header-item-link {
+  @apply hover:text-indigo-500;
+}
+.nuxt-link-active.header-item-link {
+  @apply text-indigo-500;
 }
 </style>

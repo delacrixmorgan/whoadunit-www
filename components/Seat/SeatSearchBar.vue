@@ -112,11 +112,10 @@ export default {
 </script>
 
 <style scoped>
-.active.filter-item-link {
-  @apply rounded-full px-6 py-2 bg-purple-700 hover:bg-purple-700 hover:text-white text-purple-50 text-sm;
-}
-
 .filter-item-link {
   @apply rounded-full px-6 py-2 bg-purple-50 hover:bg-purple-500 hover:text-white text-purple-700 text-sm;
+}
+.active.filter-item-link {
+  @apply rounded-full px-6 py-2 bg-purple-700 hover:bg-purple-700 hover:text-white text-purple-50 text-sm;
 }
 </style>
