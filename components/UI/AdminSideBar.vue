@@ -12,24 +12,26 @@
       dark:border-gray-600
     "
   >
-    <div class="flex flex-row">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-        ></path>
-      </svg>
+    <nuxt-link to="/admin">
+      <div class="flex flex-row">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+          ></path>
+        </svg>
 
-      <span class="ml-3 text-xl font-bold place-self-center">WHOADUNIT</span>
-    </div>
+        <span class="ml-3 text-xl font-bold place-self-center">WHOADUNIT</span>
+      </div>
+    </nuxt-link>
 
     <div class="relative mt-6">
       <span class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -68,7 +70,7 @@
     </div>
 
     <div class="flex flex-col justify-between flex-1 mt-6">
-      <nav>
+      <nav class="space-y-2">
         <admin-side-bar-item
           v-for="item in primaryItems"
           :key="item.title"
@@ -115,21 +117,21 @@ export default {
       primaryItems: [
         {
           title: 'Election',
-          action: {},
+          action: '/admin/election',
         },
         {
           title: 'Seats',
-          action: {},
+          action: '/admin/seats',
         },
         {
           title: 'Person',
-          action: {},
+          action: '/admin/person',
         },
       ],
       secondaryItems: [
         {
           title: 'Settings',
-          action: {},
+          action: '/admin/settings',
         },
       ],
     }
