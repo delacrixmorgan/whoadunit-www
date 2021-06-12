@@ -1,0 +1,38 @@
+[
+  {
+    "id": "5427f0af-0c1e-4535-b642-a75b517a7807",
+    "name": "Charles Santiago",
+    "status": "Incumbent",
+    "address": "",
+    "seatIds": ["8457430d-7d61-4a1d-a861-c4954dff3fa5"],
+    "profilePictures": [],
+    "contactDetails": []
+  },
+  {
+    "id": "5558ddee-e5ac-4685-be7e-39ce00fdf8e4",
+    "name": "William Leong Jee Keen",
+    "status": "Incumbent",
+    "address": "",
+    "seatIds": ["61abb174-ddf9-43de-bac1-21657671594d"],
+    "profilePictures": [],
+    "contactDetails": []
+  },
+  {
+    "id": "77ecbeb2-5d94-4f2c-94f5-1f52e42a3038",
+    "name": "Teng Chiam Kim",
+    "status": "Incumbent",
+    "address": "",
+    "seatIds": ["00d81eef-1ff0-45a3-af05-c6e308c56cce"],
+    "profilePictures": [],
+    "contactDetails": []
+  },
+  {
+    "id": "436efb82-1a87-422e-8b89-f7988fff782b",
+    "name": "Chua Wei Kiat",
+    "status": "Incumbent",
+    "address": "",
+    "seatIds": ["444ed29b-961f-48ef-8f3a-0067759d0586"],
+    "profilePictures": [],
+    "contactDetails": []
+  }
+]

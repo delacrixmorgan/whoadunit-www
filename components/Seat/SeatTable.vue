@@ -16,7 +16,7 @@
       @filter-type="setFilter"
     ></seat-search-bar>
 
-    <table>
+    <table class="table-auto w-full">
       <thead class="bg-gray-50">
         <tr>
           <th

@@ -116,8 +116,8 @@ export default {
     return {
       primaryItems: [
         {
-          title: 'Election',
-          action: '/admin/election',
+          title: 'Elections',
+          action: '/admin/elections',
         },
         {
           title: 'Seats',

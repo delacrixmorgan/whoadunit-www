@@ -1,0 +1,34 @@
+[
+  {
+    "id": "8457430d-7d61-4a1d-a861-c4954dff3fa5",
+    "type": "MP",
+    "code": "P110",
+    "state": "Selangor",
+    "name": "Klang",
+    "personId": ""
+  },
+  {
+    "id": "61abb174-ddf9-43de-bac1-21657671594d",
+    "type": "MP",
+    "code": "P97",
+    "state": "Selangor",
+    "name": "Selayang",
+    "personId": ""
+  },
+  {
+    "id": "00d81eef-1ff0-45a3-af05-c6e308c56cce",
+    "type": "ADUN",
+    "code": "N45",
+    "state": "Selangor",
+    "name": "Bandar Baru Klang",
+    "personId": ""
+  },
+  {
+    "id": "444ed29b-961f-48ef-8f3a-0067759d0586",
+    "type": "ADUN",
+    "code": "N14",
+    "state": "Selangor",
+    "name": "Rawang",
+    "personId": ""
+  }
+]
