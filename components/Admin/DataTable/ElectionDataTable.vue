@@ -28,7 +28,6 @@
           class="hover:bg-gray-200"
         >
           <td class="px-6 py-4">{{ election.year }}</td>
-          <td class="px-6 py-4">{{ election.seatIds.length }}</td>
           <td class="px-6 py-4">
             <div class="flex flex-row space-x-2">
               <button
@@ -86,7 +85,7 @@ export default {
   },
   data() {
     return {
-      headers: ['Year', 'Seats', 'Actions'],
+      headers: ['Year', 'Actions'],
     }
   },
   methods: {
