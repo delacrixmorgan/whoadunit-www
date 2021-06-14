@@ -1,4 +1,4 @@
-import ElectionJson from '@/assets/json/elections.json'
+import ElectionJson from 'assets/json/elections.json'
 
 const state = () => ({
   elections: [],
@@ -18,7 +18,10 @@ const mutations = {
 
 const actions = {
   nuxtServerInit(vuexContext, context) {
-    return vuexContext.commit('setElections', ElectionJson)
+    return new Promise((resolve, reject) => {
+      vuexContext.commit('elections/setElections', ElectionJson)
+      resolve()
+    })
   },
 }
 

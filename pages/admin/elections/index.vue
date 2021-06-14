@@ -24,7 +24,7 @@ export default {
   layout: 'admin',
   computed: {
     elections() {
-      return this.$store.getters.elections
+      return this.$store.getters['elections/elections']
     },
   },
 }

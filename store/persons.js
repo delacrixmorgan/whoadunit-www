@@ -1,5 +1,5 @@
-import ADUNJson from '@/assets/json/adun_persons.json'
-import MPJson from '@/assets/json/mp_persons.json'
+import ADUNJson from 'assets/json/adun_persons.json'
+import MPJson from 'assets/json/mp_persons.json'
 
 const state = () => ({
   persons: [],
@@ -35,7 +35,7 @@ const actions = {
       person.email = [person.email]
       person.phonenumber = [person.phonenumber]
     }
-    return vuexContext.commit('setPersons', persons)
+    return vuexContext.commit('persons/setPersons', persons)
   },
   setPersons(vuexContext, persons) {
     vuexContext.commit('setPersons', persons)

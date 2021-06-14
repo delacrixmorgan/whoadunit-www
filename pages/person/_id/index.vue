@@ -74,7 +74,7 @@ export default {
     findPersonById() {
       this.id = this.$route.params.id
       this.$store
-        .dispatch('findPersonById', {
+        .dispatch('persons/findPersonById', {
           id: this.id,
         })
         .then((response) => {
@@ -84,7 +84,7 @@ export default {
     },
     findSeat() {
       this.$store
-        .dispatch('findSeatByCode', {
+        .dispatch('seats/findSeatByCode', {
           federalSeatCode: this.person.federalseatcode,
           stateSeatCode: this.person.stateseatcode,
         })

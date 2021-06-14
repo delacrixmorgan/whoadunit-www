@@ -131,8 +131,8 @@ export default {
     }
   },
   created() {
-    this.seats = this.$store.getters.seats
-    const persons = this.$store.getters.persons
+    this.seats = this.$store.getters['seats/seats']
+    const persons = this.$store.getters['persons/persons']
 
     for (let index = 0; index < this.seats.length; index++) {
       const seat = this.seats[index]
