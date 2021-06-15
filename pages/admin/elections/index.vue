@@ -13,7 +13,7 @@
     >
       Elections
     </h1>
-    <election-data-table :elections="elections" />
+    <election-data-table :items="elections" />
   </div>
 </template>
 

@@ -9,10 +9,15 @@ const getters = {}
 const mutations = {}
 
 const actions = {
-  async nuxtServerInit(vuexContext, context) {
-    await elections.actions.nuxtServerInit(vuexContext, context)
-    await persons.actions.nuxtServerInit(vuexContext, context)
-    await seats.actions.nuxtServerInit(vuexContext, context)
+  nuxtServerInit(vuexContext, context) {
+    return Promise.resolve(
+      new Promise((resolve, reject) => {
+        elections.actions.nuxtServerInit(vuexContext, context)
+        persons.actions.nuxtServerInit(vuexContext, context)
+        seats.actions.nuxtServerInit(vuexContext, context)
+        resolve()
+      })
+    )
   },
 }
 

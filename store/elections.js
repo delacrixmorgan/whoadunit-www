@@ -8,6 +8,11 @@ const getters = {
   elections(state) {
     return state.elections
   },
+  getElectionById(state) {
+    return (electionId) => {
+      return state.elections.find((election) => election.id === electionId)
+    }
+  },
 }
 
 const mutations = {

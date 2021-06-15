@@ -22,13 +22,12 @@
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
-        <tr
-          v-for="election in items"
-          :key="election.id"
-          class="hover:bg-gray-200"
-        >
-          <td class="px-6 py-4">{{ election.id }}</td>
-          <td class="px-6 py-4">{{ election.year }}</td>
+        <tr v-for="seat in items" :key="seat.id" class="hover:bg-gray-200">
+          <td class="px-6 py-4">{{ seat.id }}</td>
+          <td class="px-6 py-4">{{ getElectionYear(seat) }}</td>
+          <td class="px-6 py-4">{{ seat.name }}</td>
+          <td class="px-6 py-4">{{ seat.type }}</td>
+          <td class="px-6 py-4">{{ seat.code }}</td>
           <td class="px-6 py-4">
             <div class="flex flex-row space-x-2">
               <button
@@ -47,7 +46,7 @@
                   sm:mt-0
                 "
               >
-                <a :href="getEditActionLink(election)">Edit</a>
+                <a :href="getEditActionLink(seat)">Edit</a>
               </button>
               <button
                 class="
@@ -86,12 +85,16 @@ export default {
   },
   data() {
     return {
-      headers: ['ID', 'Year', 'Actions'],
+      headers: ['ID', 'Election', 'Name', 'Type', 'Code', 'Actions'],
     }
   },
   methods: {
+    getElectionYear(seat) {
+      return this.$store.getters['elections/getElectionById'](seat.electionId)
+        .year
+    },
     getEditActionLink(item) {
-      return '/admin/elections/' + item.id
+      return '/admin/seats/' + item.id
     },
   },
 }
