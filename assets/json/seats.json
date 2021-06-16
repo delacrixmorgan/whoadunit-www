@@ -1,38 +1,40 @@
-[
-  {
-    "id": "42u2ZxApXsRtHKc1s2RE",
-    "code": "P110",
-    "name": "Klang",
-    "personId": "rfbdIolavw0Vtu7UlSeE",
-    "type": "MP",
-    "state": "Selangor",
-    "electionId": "BJK7xtfa2mPSTCcsM3jy"
-  },
-  {
-    "id": "wdjYSsZJjDlCWcJXZlXT",
-    "personId": "ZZwl6heMacQZ703YbGyg",
-    "name": "Selayang",
-    "code": "P97",
-    "type": "MP",
-    "state": "Selangor",
-    "electionId": "BJK7xtfa2mPSTCcsM3jy"
-  },
-  {
-    "id": "ijMfePQGCcMUblzHW4ge",
-    "code": "N45",
-    "name": "Bandar Baru Klang",
-    "electionId": "BJK7xtfa2mPSTCcsM3jy",
-    "state": "Selangor",
-    "personId": "JMnFMf6I03JkshWJyUfe",
-    "type": "ADUN"
-  },
-  {
-    "id": "Tl6hegEkB3MgEgPYVh0S",
-    "personId": "ZZwl6heMacQZ703YbGyg",
-    "state": "Selangor",
-    "code": "N14",
-    "electionId": "BJK7xtfa2mPSTCcsM3jy",
-    "type": "ADUN",
-    "name": "Rawang"
-  }
-]
+{
+  "data": [
+    {
+      "id": "42u2ZxApXsRtHKc1s2RE",
+      "personId": "rfbdIolavw0Vtu7UlSeE",
+      "code": "P110",
+      "state": "Selangor",
+      "electionId": "BJK7xtfa2mPSTCcsM3jy",
+      "type": "MP",
+      "name": "Klang"
+    },
+    {
+      "id": "Tl6hegEkB3MgEgPYVh0S",
+      "personId": "ZZwl6heMacQZ703YbGyg",
+      "code": "N14",
+      "state": "Selangor",
+      "name": "Rawang",
+      "type": "ADUN",
+      "electionId": "BJK7xtfa2mPSTCcsM3jy"
+    },
+    {
+      "id": "ijMfePQGCcMUblzHW4ge",
+      "personId": "JMnFMf6I03JkshWJyUfe",
+      "type": "ADUN",
+      "electionId": "BJK7xtfa2mPSTCcsM3jy",
+      "code": "N45",
+      "state": "Selangor",
+      "name": "Bandar Baru Klang"
+    },
+    {
+      "id": "wdjYSsZJjDlCWcJXZlXT",
+      "code": "P97",
+      "type": "MP",
+      "name": "Selayang",
+      "personId": "ZZwl6heMacQZ703YbGyg",
+      "state": "Selangor",
+      "electionId": "BJK7xtfa2mPSTCcsM3jy"
+    }
+  ]
+}

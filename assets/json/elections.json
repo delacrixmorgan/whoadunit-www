@@ -1,10 +1,12 @@
-[
-  {
-    "id": "BJK7xtfa2mPSTCcsM3jy",
-    "year": 2018
-  },
-  {
-    "id": "jmsx29Wkm2WoVbV4c8mf",
-    "year": 2014
-  }
-]
+{
+  "data": [
+    {
+      "id": "BJK7xtfa2mPSTCcsM3jy",
+      "year": 2018
+    },
+    {
+      "id": "jmsx29Wkm2WoVbV4c8mf",
+      "year": 2014
+    }
+  ]
+}

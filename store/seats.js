@@ -1,5 +1,3 @@
-import ADUNJson from 'assets/json/adun_seats.json'
-import MPJson from 'assets/json/mp_seats.json'
 import seatsJson from 'assets/json/seats.json'
 
 const state = () => ({
@@ -7,21 +5,13 @@ const state = () => ({
 })
 
 const getters = {
-  legacySeats(state) {
+  seats(state) {
     return state.seats
   },
-  mpSeats(state) {
-    return state.seats.filter(
-      (seat) =>
-        seat.federalseatcode != null &&
-        seat.stateseatcode == null &&
-        seat.state === 'Selangor'
-    )
-  },
-  adunSeats(state) {
-    return state.seats.filter(
-      (seat) => seat.federalseatcode != null && seat.stateseatcode != null
-    )
+  getSeatById(state) {
+    return (seatId) => {
+      return state.seats.find((seat) => seat.id === seatId)
+    }
   },
 }
 
@@ -29,17 +19,14 @@ const mutations = {
   setSeats(state, seats) {
     state.seats = seats
   },
-  setLegacySeats(state, seats) {
-    state.legacySeats = seats
-  },
 }
 
 const actions = {
   nuxtServerInit(vuexContext, context) {
-    const seats = MPJson.concat(ADUNJson)
-    vuexContext.commit('seats/setSeats', seatsJson)
-
-    return vuexContext.commit('seats/setLegacySeats', seats)
+    return new Promise((resolve, reject) => {
+      vuexContext.commit('seats/setSeats', seatsJson.data)
+      resolve()
+    })
   },
   setSeats(vuexContext, seats) {
     vuexContext.commit('setSeats', seats)
@@ -64,3 +51,70 @@ export default {
   mutations,
   actions,
 }
+//
+// import ADUNJson from 'assets/json/adun_seats.json'
+// import MPJson from 'assets/json/mp_seats.json'
+// import seatsJson from 'assets/json/seats.json'
+//
+// const state = () => ({
+//   seats: [],
+// })
+//
+// const getters = {
+//   legacySeats(state) {
+//     return state.seats
+//   },
+//   mpSeats(state) {
+//     return state.seats.filter(
+//       (seat) =>
+//         seat.federalseatcode != null &&
+//         seat.stateseatcode == null &&
+//         seat.state === 'Selangor'
+//     )
+//   },
+//   adunSeats(state) {
+//     return state.seats.filter(
+//       (seat) => seat.federalseatcode != null && seat.stateseatcode != null
+//     )
+//   },
+// }
+//
+// const mutations = {
+//   setSeats(state, seats) {
+//     state.seats = seats
+//   },
+//   setLegacySeats(state, seats) {
+//     state.legacySeats = seats
+//   },
+// }
+//
+// const actions = {
+//   nuxtServerInit(vuexContext, context) {
+//     const seats = MPJson.concat(ADUNJson)
+//     vuexContext.commit('seats/setSeats', seatsJson)
+//
+//     return vuexContext.commit('seats/setLegacySeats', seats)
+//   },
+//   setSeats(vuexContext, seats) {
+//     vuexContext.commit('setSeats', seats)
+//   },
+//   findSeatByCode(context, payload) {
+//     const federalSeatCode = payload.federalSeatCode
+//     const stateSeatCode = payload.stateSeatCode
+//
+//     const filteredSeat = context.state.seats.filter(
+//       (seat) =>
+//         seat.federalseatcode === federalSeatCode &&
+//         seat.stateseatcode === stateSeatCode
+//     )
+//
+//     return filteredSeat[0]
+//   },
+// }
+//
+// export default {
+//   state,
+//   getters,
+//   mutations,
+//   actions,
+// }

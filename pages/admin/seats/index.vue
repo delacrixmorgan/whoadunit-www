@@ -14,7 +14,7 @@ export default {
   layout: 'admin',
   computed: {
     seats() {
-      return this.$store.getters['seats/legacySeats']
+      return this.$store.getters['seats/seats']
     },
   },
 }
