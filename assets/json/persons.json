@@ -1,16 +1,47 @@
 {
   "data": [
     {
-      "id": "JMnFMf6I03JkshWJyUfe",
+      "id": "ZZwl6heMacQZ703YbGyg",
+      "name": "William Leong Jee Keen",
       "status": "Incumbent",
-      "name": "Teng Chiam Kim",
+      "contactDetails": [
+        {
+          "value": "william.jeekeen@gmail.com",
+          "type": "Email"
+        },
+        {
+          "value": "+603-6138 8088",
+          "type": "Phone Number"
+        },
+        {
+          "type": "Facebook",
+          "value": "https://www.facebook.com/William-Leong-%E6%A2%81%E8%87%AA%E5%9D%9A-105095057904484/"
+        },
+        {
+          "value": "https://twitter.com/LeongJeeKeen",
+          "type": "Twitter"
+        }
+      ],
+      "profilePictures": [
+        "https://www.parlimen.gov.my/images/webuser/ahli/2013/P.097-SELAYANG.png"
+      ],
+      "address": "Pusat Khidmat Rakyat Parlimen Selayang, No.E-11-1,Jalan Mutiara 2, Mutiara Business Centre,48000 Rawang, Selangor.",
+      "seatIds": [
+        "wdjYSsZJjDlCWcJXZlXT"
+      ]
+    },
+    {
+      "id": "JMnFMf6I03JkshWJyUfe",
       "profilePictures": [
         "http://dewan.selangor.gov.my/wp-content/uploads/2019/01/N45-YB-BANDAR-BARU-KLANG-200x300.jpg"
       ],
+      "address": "Pusat Khidmat Dun Bandar Baru Klang, LG-4, 1E Jalan Pekan Baru 34, 41010 Klang, Selangor.",
+      "status": "Incumbent",
+      "name": "Teng Chiam Kim",
       "contactDetails": [
         {
-          "type": "Email",
-          "value": "khim@selangor.gov.my"
+          "value": "khim@selangor.gov.my",
+          "type": "Email"
         },
         {
           "value": "+603-3341 4982",
@@ -25,46 +56,22 @@
           "type": "Twitter"
         }
       ],
-      "address": "Pusat Khidmat Dun Bandar Baru Klang, LG-4, 1E Jalan Pekan Baru 34, 41010 Klang, Selangor."
-    },
-    {
-      "id": "ZZwl6heMacQZ703YbGyg",
-      "status": "Incumbent",
-      "contactDetails": [
-        {
-          "value": "william.jeekeen@gmail.com",
-          "type": "Email"
-        },
-        {
-          "value": "+603-6138 8088",
-          "type": "Phone Number"
-        },
-        {
-          "value": "https://www.facebook.com/William-Leong-%E6%A2%81%E8%87%AA%E5%9D%9A-105095057904484/",
-          "type": "Facebook"
-        },
-        {
-          "value": "https://twitter.com/LeongJeeKeen",
-          "type": "Twitter"
-        }
-      ],
-      "name": "William Leong Jee Keen",
-      "profilePictures": [
-        "https://www.parlimen.gov.my/images/webuser/ahli/2013/P.097-SELAYANG.png"
-      ],
-      "address": "Pusat Khidmat Rakyat Parlimen Selayang, No.E-11-1,Jalan Mutiara 2, Mutiara Business Centre,48000 Rawang, Selangor."
+      "seatIds": [
+        "ijMfePQGCcMUblzHW4ge"
+      ]
     },
     {
       "id": "iLmFyDqPdMx1i3czhivx",
-      "name": "Chua Wei Kiat",
       "profilePictures": [
         "http://dewan.selangor.gov.my/wp-content/uploads/2019/01/N14-YB-RAWANG-200x300.jpg"
       ],
+      "name": "Chua Wei Kiat",
+      "address": "Pusat Khidmat Rakyat DUN Rawang, E11, Jalan Mutiara 2, Rawang Mutiara Business Centre, 48000 Rawang, Selangor.",
       "status": "Incumbent",
       "contactDetails": [
         {
-          "value": "khidmatrawang@gmail.com",
-          "type": "Email"
+          "type": "Email",
+          "value": "khidmatrawang@gmail.com"
         },
         {
           "value": "+603-6091 2118 ",
@@ -75,22 +82,16 @@
           "type": "Facebook"
         },
         {
-          "value": "https://twitter.com/chuaweikiat",
-          "type": "Twitter"
+          "type": "Twitter",
+          "value": "https://twitter.com/chuaweikiat"
         }
       ],
-      "address": "Pusat Khidmat Rakyat DUN Rawang, E11, Jalan Mutiara 2, Rawang Mutiara Business Centre, 48000 Rawang, Selangor."
+      "seatIds": [
+        "Tl6hegEkB3MgEgPYVh0S"
+      ]
     },
     {
       "id": "rfbdIolavw0Vtu7UlSeE",
-      "seatIds": [
-        "8457430d-7d61-4a1d-a861-c4954dff3fa5"
-      ],
-      "address": "No. 2A Jalan Bayu Tinggi 8/KS6, Batu Unjur, 41200 Klang, Selangor.",
-      "profilePictures": [
-        "https://cdn.i-scmp.com/sites/default/files/d8/images/author/pic/2019/05/09/santiago12.jpg"
-      ],
-      "status": "Incumbent",
       "contactDetails": [
         {
           "value": "pubmpklang@gmail.com",
@@ -105,10 +106,18 @@
           "type": "Facebook"
         },
         {
-          "type": "Twitter",
-          "value": "https://twitter.com/mpklang"
+          "value": "https://twitter.com/mpklang",
+          "type": "Twitter"
         }
       ],
+      "profilePictures": [
+        "https://cdn.i-scmp.com/sites/default/files/d8/images/author/pic/2019/05/09/santiago12.jpg"
+      ],
+      "seatIds": [
+        "42u2ZxApXsRtHKc1s2RE"
+      ],
+      "status": "Incumbent",
+      "address": "No. 2A Jalan Bayu Tinggi 8/KS6, Batu Unjur, 41200 Klang, Selangor.",
       "name": "Charles Santiago"
     }
   ]

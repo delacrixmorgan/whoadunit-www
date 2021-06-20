@@ -27,7 +27,7 @@
           <td class="px-6 py-4">{{ person.name }}</td>
           <td class="px-6 py-4">{{ person.status }}</td>
           <td class="px-6 py-4">{{ getFormattedSeat(person) }}</td>
-          <td class="px-6 py-4">{{ person.id }}</td>
+          <td class="px-6 py-4">{{ person.contactDetails }}</td>
           <!--          <td class="px-6 py-4">{{ getElectionYear(seat) }}</td>-->
           <!--          <td class="px-6 py-4">{{ seat.name }}</td>-->
           <!--          <td class="px-6 py-4">{{ seat.type }}</td>-->
@@ -95,8 +95,8 @@ export default {
   methods: {
     getFormattedSeat(person) {
       if (person.seatIds != null) {
-        return person.seatIds[0]
-        // return this.$store.getters['seats/getSeatById'](seatId)
+        // return person.seatIds[0]
+        return this.$store.getters['seats/filterSeatsByIds'](person.seatIds)
         // return person.seatIds[0]
       }
       // return this.$store.getters['seats/getSeatById'](person.seatIds)

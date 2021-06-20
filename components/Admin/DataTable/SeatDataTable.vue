@@ -26,6 +26,7 @@
           <td class="px-6 py-4">{{ seat.id }}</td>
           <td class="px-6 py-4">{{ getElectionYear(seat) }}</td>
           <td class="px-6 py-4">{{ seat.name }}</td>
+          <td class="px-6 py-4">{{ seat.state }}</td>
           <td class="px-6 py-4">{{ seat.type }}</td>
           <td class="px-6 py-4">{{ seat.code }}</td>
           <td class="px-6 py-4">
@@ -85,7 +86,7 @@ export default {
   },
   data() {
     return {
-      headers: ['ID', 'Election', 'Name', 'Type', 'Code', 'Actions'],
+      headers: ['ID', 'Election', 'Name', 'State', 'Type', 'Code', 'Actions'],
     }
   },
   methods: {
