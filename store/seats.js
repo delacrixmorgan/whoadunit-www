@@ -19,6 +19,12 @@ const getters = {
       return state.seats.filter((seat) => seatIds.includes(seat.id))
     }
   },
+
+  filterSeatsByElectionId(state) {
+    return (id) => {
+      return state.seats.filter((seat) => seat.electionId === id)
+    }
+  },
 }
 
 const mutations = {
