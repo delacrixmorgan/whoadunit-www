@@ -27,11 +27,20 @@
           <td class="px-6 py-4">{{ person.name }}</td>
           <td class="px-6 py-4">{{ person.status }}</td>
           <td class="px-6 py-4">{{ getFormattedSeat(person) }}</td>
-          <td class="px-6 py-4">{{ person.contactDetails }}</td>
-          <!--          <td class="px-6 py-4">{{ getElectionYear(seat) }}</td>-->
-          <!--          <td class="px-6 py-4">{{ seat.name }}</td>-->
-          <!--          <td class="px-6 py-4">{{ seat.type }}</td>-->
-          <!--          <td class="px-6 py-4">{{ seat.code }}</td>-->
+          <td class="px-6 py-4">
+            <div v-if="isContactDetailsAvailable(person, 'Email')">✅</div>
+          </td>
+          <td class="px-6 py-4">
+            <div v-if="isContactDetailsAvailable(person, 'Phone Number')">
+              ✅
+            </div>
+          </td>
+          <td class="px-6 py-4">
+            <div v-if="isContactDetailsAvailable(person, 'Facebook')">✅</div>
+          </td>
+          <td class="px-6 py-4">
+            <div v-if="isContactDetailsAvailable(person, 'Twitter')">✅</div>
+          </td>
           <td class="px-6 py-4">
             <div class="flex flex-row space-x-2">
               <button
@@ -89,22 +98,60 @@ export default {
   },
   data() {
     return {
-      headers: ['ID', 'Name', 'Status', 'Seat', 'Contact Details', 'Actions'],
+      headers: [
+        'ID',
+        'Name',
+        'Status',
+        'Seat',
+        'Email',
+        'Phone Number',
+        'Facebook',
+        'Twitter',
+        'Actions',
+      ],
     }
   },
   methods: {
     getFormattedSeat(person) {
       if (person.seatIds != null) {
-        // return person.seatIds[0]
-        return this.$store.getters['seats/filterSeatsByIds'](person.seatIds)
-        // return person.seatIds[0]
+        const seats = this.$store.getters['seats/filterSeatsByIds'](
+          person.seatIds
+        ).flatMap((seat) => seat.name)
+        return seats.slice(0, seats.length).join(', ')
       }
-      // return this.$store.getters['seats/getSeatById'](person.seatIds)
-      // return this.$store.getters['elections/getElectionById'](seat.electionId)
-      //   .year
+    },
+    isContactDetailsAvailable(person, type) {
+      if (type === 'Email') {
+        return (
+          person.contactDetails.find(
+            (contactDetail) => contactDetail.type === type
+          ) != null
+        )
+      }
+      if (type === 'Phone Number') {
+        return (
+          person.contactDetails.find(
+            (contactDetail) => contactDetail.type === type
+          ) != null
+        )
+      }
+      if (type === 'Facebook') {
+        return (
+          person.contactDetails.find(
+            (contactDetail) => contactDetail.type === type
+          ) != null
+        )
+      }
+      if (type === 'Twitter') {
+        return (
+          person.contactDetails.find(
+            (contactDetail) => contactDetail.type === type
+          ) != null
+        )
+      }
     },
     getEditActionLink(item) {
-      return '/admin/persons/' + item.id
+      return '/admin/person/' + item.id
     },
   },
 }
