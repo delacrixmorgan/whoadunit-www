@@ -15,7 +15,7 @@
         pl-5
       "
       type="text"
-      placeholder="Search by name or seat number"
+      placeholder="Name"
       @input="updateSearchQuery"
     />
     <p>Name</p>
@@ -48,8 +48,3 @@
     </button>
   </div>
 </template>
-<script>
-export default {
-  methods() {},
-}
-</script>
