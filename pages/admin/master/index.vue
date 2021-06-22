@@ -2,18 +2,7 @@
   <div class="p-5 space-y-4">
     <div class="grid grid-cols-2 gap-4">
       <div class="flex flex-col">
-        <label
-          class="
-            block
-            uppercase
-            tracking-wide
-            text-gray-700 text-xs
-            font-bold
-            mb-2
-          "
-        >
-          First Name
-        </label>
+        <label class="form-label"> First Name </label>
         <input
           class="
             w-full
@@ -32,18 +21,7 @@
         />
       </div>
       <div class="flex flex-col">
-        <label
-          class="
-            block
-            uppercase
-            tracking-wide
-            text-gray-700 text-xs
-            font-bold
-            mb-2
-          "
-        >
-          Last Name
-        </label>
+        <label class="form-label"> Last Name </label>
         <input
           class="
             w-full
@@ -63,18 +41,7 @@
       </div>
     </div>
     <div>
-      <label
-        class="
-          block
-          uppercase
-          tracking-wide
-          text-gray-700 text-xs
-          font-bold
-          mb-2
-        "
-      >
-        Password
-      </label>
+      <label class="form-label"> Password </label>
       <input
         class="
           w-full
@@ -95,18 +62,7 @@
 
     <div class="grid grid-cols-3 gap-4">
       <div class="relative">
-        <label
-          class="
-            block
-            uppercase
-            tracking-wide
-            text-gray-700 text-xs
-            font-bold
-            mb-2
-          "
-        >
-          Seat Type
-        </label>
+        <label class="form-label"> Seat Type </label>
         <div class="relative">
           <select
             class="
@@ -152,18 +108,7 @@
       </div>
 
       <div class="relative">
-        <label
-          class="
-            block
-            uppercase
-            tracking-wide
-            text-gray-700 text-xs
-            font-bold
-            mb-2
-          "
-        >
-          State
-        </label>
+        <label class="form-label"> State </label>
         <div class="relative">
           <select
             class="
@@ -179,7 +124,9 @@
               rounded
             "
           >
-            <option v-for="state in states" :key="state">{{ state }}</option>
+            <option v-for="state in states" :key="state">
+              {{ state }}
+            </option>
           </select>
           <div
             class="
@@ -208,19 +155,13 @@
     </div>
 
     <div>
-      <label
-        class="
-          block
-          uppercase
-          tracking-wide
-          text-gray-700 text-xs
-          font-bold
-          mb-2
-        "
-      >
-        Assign Person
-      </label>
-      <auto-complete-search :items="seats" />
+      <label class="form-label"> Assign Person </label>
+      <auto-complete-search :items="seats" @select-item="updateSelectedItem" />
+    </div>
+
+    <div>
+      <label class="form-label"> Search Person </label>
+      <search-bar @select-item="updateSelectedItem" />
     </div>
 
     <div class="grid grid-cols-4 gap-4">
@@ -266,9 +207,11 @@
 </template>
 
 <script>
-import autoCompleteSearch from '@/components/Common/AutoCompleteSearch'
+import AutoCompleteSearch from '@/components/Common/AutoCompleteSearch'
+import SearchBar from '@/components/Common/SearchBar'
+
 export default {
-  components: { autoCompleteSearch },
+  components: { AutoCompleteSearch, SearchBar },
   layout: 'blank',
   data() {
     return {
@@ -305,7 +248,21 @@ export default {
       ],
     }
   },
+  methods: {
+    updateSelectedItem(item) {
+      alert(item)
+    },
+  },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.form-label {
+  @apply block
+  uppercase
+  tracking-wide
+  text-gray-700 text-xs
+  font-bold
+  mb-2;
+}
+</style>

@@ -1,53 +1,67 @@
 <template>
-  <div>
-    <input
-      v-model.trim="searchQuery"
+  <div class="flex flex-row space-x-4">
+    <div class="w-full">
+      <input
+        v-model.trim="searchQuery"
+        class="
+          w-full
+          focus:outline-none
+          focus:ring
+          focus:border-blue-300
+          text-sm text-black
+          placeholder-gray-500
+          border border-gray-200
+          rounded-md
+          py-3
+          pl-5
+        "
+        type="text"
+        :placeholder="placeholder"
+        @keydown.esc="onEsc"
+        @keydown.down="onArrowDown"
+        @keydown.up="onArrowUp"
+        @keydown.tab="onEnter"
+        @keydown.enter="onChange"
+      />
+      <ul v-show="isOpen" class="autocomplete-results">
+        <li
+          v-for="(item, index) in results"
+          :key="index"
+          class="autocomplete-result"
+          :class="{ 'is-active': index === arrowCounter }"
+          @click="setResult(item)"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+    <button
       class="
-        w-full
+        col-start-3
+        max-h-11
+        bg-green-500
+        hover:bg-green-600
+        flex-shrink-0
+        text-white
+        border-0
+        py-2
+        px-8
         focus:outline-none
-        focus:ring
-        focus:border-blue-300
-        text-sm text-black
-        placeholder-gray-500
-        border border-gray-200
-        rounded-md
-        py-3
-        pl-5
+        rounded
+        text-lg
+        mt-10
+        sm:mt-0
       "
-      type="text"
-      :placeholder="placeholder"
       @click="onChange"
-      @input="onChange"
-      @keydown.esc="onEsc"
-      @keydown.down="onArrowDown"
-      @keydown.up="onArrowUp"
-      @keydown.tab="onEnter"
-      @keydown.enter="onEnter"
-    />
-    <ul v-show="isOpen" class="autocomplete-results">
-      <li
-        v-for="(item, index) in results"
-        :key="index"
-        class="autocomplete-result"
-        :class="{ 'is-active': index === arrowCounter }"
-        @click="setResult(item)"
-      >
-        {{ item }}
-      </li>
-    </ul>
+    >
+      Search
+    </button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AutoCompleteSearch',
-  props: {
-    items: {
-      type: Array,
-      require: false,
-      default: null,
-    },
-  },
+  name: 'SearchBar',
   emits: ['select-item'],
   data() {
     return {
@@ -63,9 +77,22 @@ export default {
     onChange() {
       this.isOpen = true
       const query = this.searchQuery.toLowerCase()
-      this.results = this.items.filter((item) =>
-        item.toLowerCase().includes(query)
-      )
+      this.results = this.searchItem(query)
+    },
+    searchItem(query) {
+      const seats = [
+        'Sungai Air Tawar',
+        'Sabak',
+        'Sungai Panjang',
+        'Sekinchan',
+        'Hulu Bernam',
+        'Kuala Kubu Baharu',
+        'Batang Kali',
+        'Sungai Burong',
+        'Permatang',
+        'Bukit Melawati',
+      ]
+      return seats.filter((item) => item.toLowerCase().includes(query))
     },
     onArrowDown() {
       if (this.arrowCounter < this.results.length - 1) {
