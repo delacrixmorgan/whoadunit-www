@@ -28,6 +28,7 @@ const actions = {
       resolve()
     })
   },
+  editElection(vuexContext, editedElection) {},
 }
 
 export default {

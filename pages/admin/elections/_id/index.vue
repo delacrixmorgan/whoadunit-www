@@ -12,7 +12,7 @@
           py-4
         "
       >
-        Election {{ election.year }}
+        Election {{ loadedElection.year }}
       </h1>
 
       <p>
@@ -38,6 +38,22 @@
           py-4
         "
       >
+        Edit Year
+      </h1>
+
+      <election-edit-form :election="loadedElection" />
+
+      <h1
+        class="
+          sm:text-3xl
+          text-2xl
+          font-medium
+          title-font
+          mb-2
+          text-gray-900
+          py-4
+        "
+      >
         Create Seats
       </h1>
       <seat-create class="mb-4" />
@@ -48,23 +64,24 @@
 
 <script>
 import SeatDataTable from '@/components/Admin/DataTable/SeatDataTable'
+import ElectionEditForm from '@/components/Election/ElectionEditForm'
 
 export default {
-  components: { SeatDataTable },
+  components: { SeatDataTable, ElectionEditForm },
   layout: 'admin',
+  asyncData(context) {
+    const election = context.store.getters['elections/getElectionById'](
+      context.params.id
+    )
+    if (election == null) {
+      return context.error({
+        statusCode: 404,
+        message: 'Election not found',
+      })
+    }
+    return { loadedElection: election }
+  },
   computed: {
-    election() {
-      const election = this.$store.getters['elections/getElectionById'](
-        this.$route.params.id
-      )
-      if (election == null) {
-        return this.$nuxt.error({
-          statusCode: 404,
-          message: 'Election not found',
-        })
-      }
-      return election
-    },
     seats() {
       return this.$store.getters['seats/filterSeatsByElectionId'](
         this.$route.params.id

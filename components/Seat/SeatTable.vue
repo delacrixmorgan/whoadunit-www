@@ -130,29 +130,6 @@ export default {
       searchQuery: '',
     }
   },
-  created() {
-    this.seats = this.$store.getters['seats/legacySeats']
-    const persons = this.$store.getters['persons/persons']
-
-    for (let index = 0; index < this.seats.length; index++) {
-      const seat = this.seats[index]
-      const federalSeatCode = seat.federalseatcode
-      const stateSeatCode = seat.stateseatcode
-      const filteredPerson = persons.filter(
-        (person) =>
-          person.federalseatcode === federalSeatCode &&
-          person.stateseatcode === stateSeatCode
-      )
-      if (filteredPerson.length > 0) {
-        seat.person = filteredPerson[0]
-      } else {
-        seat.person = null
-      }
-
-      seat.code = this.getSeatCode(seat)
-    }
-    this.seats = this.seats.filter((seat) => seat.person != null)
-  },
   computed: {
     filteredSeats() {
       const filteredSeats = this.filter(this.searchQuery.toLowerCase())
@@ -177,6 +154,29 @@ export default {
       }
       return filteredSeats
     },
+  },
+  created() {
+    this.seats = this.$store.getters['seats/legacySeats']
+    const persons = this.$store.getters['persons/persons']
+
+    for (let index = 0; index < this.seats.length; index++) {
+      const seat = this.seats[index]
+      const federalSeatCode = seat.federalseatcode
+      const stateSeatCode = seat.stateseatcode
+      const filteredPerson = persons.filter(
+        (person) =>
+          person.federalseatcode === federalSeatCode &&
+          person.stateseatcode === stateSeatCode
+      )
+      if (filteredPerson.length > 0) {
+        seat.person = filteredPerson[0]
+      } else {
+        seat.person = null
+      }
+
+      seat.code = this.getSeatCode(seat)
+    }
+    this.seats = this.seats.filter((seat) => seat.person != null)
   },
   methods: {
     filter(query) {
