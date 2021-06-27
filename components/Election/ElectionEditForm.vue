@@ -36,7 +36,7 @@
         mt-10
         sm:mt-0
       "
-      @click="onChange"
+      @click="onSubmit"
     >
       Update
     </button>
@@ -49,6 +49,7 @@ export default {
   props: {
     election: { type: Object, require: false, default: null },
   },
+  emits: ['submit'],
   data() {
     return {
       editedElection: this.election
@@ -59,7 +60,11 @@ export default {
     }
   },
   methods: {
-    onChange() {},
+    onSubmit() {
+      if (this.election.year !== this.editedElection.year) {
+        this.$emit('submit', this.editedElection)
+      }
+    },
   },
 }
 </script>

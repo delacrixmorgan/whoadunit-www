@@ -8,6 +8,11 @@ const getters = {
   persons(state) {
     return state.persons
   },
+  getPersonById(state) {
+    return (id) => {
+      return state.persons.find((item) => item.id === id)
+    }
+  },
 }
 
 const mutations = {
@@ -23,14 +28,26 @@ const actions = {
       resolve()
     })
   },
+  getPersons(vuexContext) {
+    return this.$axios.$get('/persons').then((response) => {
+      vuexContext.commit('persons/setPersons', response.data, {
+        root: true,
+      })
+    })
+  },
   setPersons(vuexContext, persons) {
     vuexContext.commit('setPersons', persons)
   },
   findPersonById(context, payload) {
-    const filteredPerson = context.state.persons.filter(
-      (person) => person.id === payload.id
-    )
-    return filteredPerson[0]
+    const person = getters['persons/getPersonById'](payload.id)
+    if (person == null) {
+      // Make API Call
+      return context.state.persons.filter(
+        (person) => person.id === payload.id
+      )[0]
+    } else {
+      return person
+    }
   },
   findPersonBySeat(context, payload) {
     const federalSeatCode = payload.federalSeatCode

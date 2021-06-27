@@ -9,8 +9,8 @@ const getters = {
     return state.seats
   },
   getSeatById(state) {
-    return (seatId) => {
-      return state.seats.find((seat) => seat.id === seatId)
+    return (id) => {
+      return state.seats.find((item) => item.id === id)
     }
   },
 
@@ -38,6 +38,13 @@ const actions = {
     return new Promise((resolve, reject) => {
       vuexContext.commit('seats/setSeats', seatsJson.data)
       resolve()
+    })
+  },
+  getSeats(vuexContext) {
+    return this.$axios.$get('/seats').then((response) => {
+      vuexContext.commit('seats/setSeats', response.data, {
+        root: true,
+      })
     })
   },
   setSeats(vuexContext, seats) {

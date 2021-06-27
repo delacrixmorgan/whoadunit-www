@@ -9,8 +9,8 @@ const getters = {
     return state.elections
   },
   getElectionById(state) {
-    return (electionId) => {
-      return state.elections.find((election) => election.id === electionId)
+    return (id) => {
+      return state.elections.find((item) => item.id === id)
     }
   },
 }
@@ -28,7 +28,17 @@ const actions = {
       resolve()
     })
   },
-  editElection(vuexContext, editedElection) {},
+  getElections(vuexContext) {
+    return this.$axios.$get('/elections').then((response) => {
+      vuexContext.commit('elections/setElections', response.data, {
+        root: true,
+      })
+    })
+  },
+  editElection(vuexContext, editedElection) {
+    // this.$axios.$put()
+    return null
+  },
 }
 
 export default {

@@ -36,7 +36,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://asia-southeast2-whoadunit-70652.cloudfunctions.net/api',
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
