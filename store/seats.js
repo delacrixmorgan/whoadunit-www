@@ -31,6 +31,9 @@ const mutations = {
   setSeats(state, seats) {
     state.seats = seats
   },
+  addSeat(state, seat) {
+    state.seats.push(seat)
+  },
 }
 
 const actions = {
@@ -45,6 +48,15 @@ const actions = {
       vuexContext.commit('seats/setSeats', response.data, {
         root: true,
       })
+    })
+  },
+  addSeat(vuexContext, payload) {
+    return this.$axios.$post('/seats', payload.seat).then((response) => {
+      vuexContext.commit(
+        'seats/addSeat',
+        { id: response.id, ...payload.seat },
+        { root: true }
+      )
     })
   },
   setSeats(vuexContext, seats) {

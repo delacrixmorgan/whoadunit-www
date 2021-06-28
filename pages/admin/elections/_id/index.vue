@@ -41,7 +41,10 @@
         Edit Year
       </h1>
 
-      <election-edit-form :election="loadedElection" @submit="onSubmitted" />
+      <election-edit-form
+        :election="loadedElection"
+        @submit="onElectionEdited"
+      />
 
       <h1
         class="
@@ -54,9 +57,9 @@
           py-4
         "
       >
-        Create Seats
+        Seats
       </h1>
-      <!--      <seat-create class="mb-4" />-->
+      <seat-create-form class="mb-4" @submit="onSeatAdd" />
       <seat-data-table :items="seats" />
     </div>
   </div>
@@ -92,11 +95,21 @@ export default {
     getSeatsByType(type) {
       return this.seats.filter((seat) => seat.type === type)
     },
-    onSubmitted(editedElection) {
+    onElectionEdited(editedElection) {
       this.$store
         .dispatch('elections/editElection')
         .then((data) => {
           alert(editedElection.year)
+        })
+        .catch((error) => alert(error.message))
+    },
+    onSeatAdd(seat) {
+      this.$store
+        .dispatch('seats/addSeat', seat)
+        .then((data) => {
+          alert(
+            seat.code + ', ' + seat.name + ', ' + seat.state + ', ' + seat.type
+          )
         })
         .catch((error) => alert(error.message))
     },
