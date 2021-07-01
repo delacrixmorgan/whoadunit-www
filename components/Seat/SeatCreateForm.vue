@@ -2,7 +2,7 @@
   <div>
     <div class="grid grid-cols-5 gap-4">
       <div class="flex flex-col">
-        <label class="form-label">Code</label>
+        <EditTextLabel label="Code" />
         <input
           v-model.trim="seat.code"
           class="
@@ -18,11 +18,11 @@
             pl-5
           "
           type="text"
-          placeholder="Name"
+          placeholder="Code"
         />
       </div>
       <div class="flex flex-col">
-        <label class="form-label"> Name</label>
+        <EditTextLabel label="Name" />
         <input
           v-model.trim="seat.name"
           class="
@@ -42,95 +42,33 @@
         />
       </div>
       <div class="relative">
-        <label class="form-label"> State </label>
+        <EditTextLabel label="State" />
         <div class="relative">
-          <select
-            v-model.trim="seat.state"
-            class="
-              block
-              appearance-none
-              w-full
-              bg-grey-lighter
-              border border-grey-lighter
-              text-grey-darker
-              py-3
-              px-4
-              pr-8
-              rounded
-            "
-          >
-            <option v-for="state in states" :key="state">
+          <select v-model.trim="seat.state" class="form-select-field">
+            <option
+              v-for="state in states"
+              :key="state"
+              class="form-select-item"
+            >
               {{ state }}
             </option>
           </select>
-          <div
-            class="
-              pointer-events-none
-              absolute
-              inset-y-0
-              right-0
-              flex
-              mr-4
-              items-center
-              text-grey-darker
-            "
-          >
-            <svg
-              class="h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-              />
-            </svg>
-          </div>
+          <select-chevron-down />
         </div>
       </div>
       <div class="relative">
-        <label class="form-label"> Seat Type </label>
+        <EditTextLabel label="Seat Type" />
         <div class="relative">
-          <select
-            class="
-              block
-              appearance-none
-              w-full
-              bg-grey-lighter
-              border border-grey-lighter
-              text-grey-darker
-              py-3
-              px-4
-              pr-8
-              rounded
-            "
-            v-model.trim="seat.type"
-          >
-            <option v-for="seatType in seatTypes" :key="seatType">
+          <select v-model.trim="seat.type" class="form-select-field">
+            <option
+              v-for="seatType in seatTypes"
+              :key="seatType"
+              class="form-select-item"
+            >
               {{ seatType }}
             </option>
           </select>
-          <div
-            class="
-              pointer-events-none
-              absolute
-              inset-y-0
-              right-0
-              flex
-              mr-4
-              items-center
-              text-grey-darker
-            "
-          >
-            <svg
-              class="h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-              />
-            </svg>
-          </div>
+          <select-chevron-down />
         </div>
       </div>
       <div class="flex items-end">
@@ -162,29 +100,14 @@
 </template>
 
 <script>
+import EditTextLabel from '@/components/UI/EditTextLabel'
+import SelectChevronDown from '@/components/UI/SelectChevronDown'
+
 export default {
+  components: { EditTextLabel, SelectChevronDown },
   emits: ['submit'],
   data() {
     return {
-      seatTypes: ['ADUN', 'MP'],
-      states: [
-        'Perlis',
-        'Kedah',
-        'Kelantan',
-        'Terrengganu',
-        'Penang',
-        'Perak',
-        'Pahang',
-        'Selangor',
-        'Kuala Lumpur',
-        'Putrajaya',
-        'Negeri Sembilan',
-        'Malacca',
-        'Johor',
-        'Labuan',
-        'Sabah',
-        'Sarawak',
-      ],
       seat: {
         code: '',
         name: '',
@@ -192,6 +115,14 @@ export default {
         type: '',
       },
     }
+  },
+  computed: {
+    seatTypes() {
+      return this.$store.getters['global/seatTypes']
+    },
+    states() {
+      return this.$store.getters['global/states']
+    },
   },
   created() {
     this.seat.state = this.states[0]
@@ -204,14 +135,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.form-label {
-  @apply block
-  uppercase
-  tracking-wide
-  text-gray-700 text-xs
-  font-bold
-  mb-2;
-}
-</style>

@@ -95,7 +95,7 @@ export default {
         .year
     },
     getEditActionLink(item) {
-      return '/admin/seats/' + item.id
+      return '/admin/seats/edit/' + item.id
     },
   },
 }
