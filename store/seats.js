@@ -33,7 +33,7 @@ const mutations = {
     state.seats.push(seat)
   },
   editSeat(state, editedSeat) {
-    const index = state.seats.findIndex((item) => item.id === item.it)
+    const index = state.seats.findIndex((item) => item.id === editedSeat.id)
     state.seats[index] = editedSeat
   },
   deleteSeat(state, deletedSeat) {
@@ -75,14 +75,16 @@ const actions = {
       )
     })
   },
-  editSeat(vueContext, payload) {
-    return this.$axios.$put('/seats', payload.editedSeat).then(() => {
-      vueContext.commit('seats/editSeat', payload.editedSeat)
-    })
+  async editSeat(vueContext, payload) {
+    const payloadSeat = { ...payload }
+    delete payloadSeat.id
+
+    await this.$axios.$put('/seats/' + payload.id, payloadSeat)
+    vueContext.commit('seats/editSeat', payload, { root: true })
   },
   deleteSeat(vueContext, payload) {
     return this.$axios.$delete('/seats', payload.id).then(() => {
-      vueContext.commit('seats/deleteSeat', payload.id)
+      vueContext.commit('seats/deleteSeat', payload.id, { root: true })
     })
   },
 }
