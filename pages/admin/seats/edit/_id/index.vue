@@ -103,8 +103,9 @@
             mt-10
             sm:mt-0
           "
+          @click="onEdit"
         >
-          <a href="#">Update</a>
+          Update
         </button>
         <button
           class="
@@ -121,8 +122,9 @@
             mt-10
             sm:mt-0
           "
+          @click="onDelete"
         >
-          <a href="#">Delete</a>
+          Delete
         </button>
       </div>
     </div>
@@ -150,6 +152,9 @@ export default {
     },
     persons() {
       return this.$store.getters['persons/persons']
+    },
+    isSeatUpdated() {
+      return JSON.stringify(this.editedSeat) !== JSON.stringify(this.seat)
     },
   },
   created() {
@@ -179,6 +184,26 @@ export default {
       return this.$store.getters['persons/getPersonById'](
         this.editedSeat.personId
       )
+    },
+    onEdit() {
+      if (this.isSeatUpdated) {
+        this.$store
+          .dispatch('seats/editSeat', this.editedSeat)
+          .then(() => {
+            this.$router.back()
+          })
+          .catch((error) => alert(error.message))
+      } else {
+        this.$router.back()
+      }
+    },
+    onDelete() {
+      this.$store
+        .dispatch('seats/deleteSeat', this.editedSeat.id)
+        .then(() => {
+          this.$router.back()
+        })
+        .catch((error) => alert(error.message))
     },
   },
 }

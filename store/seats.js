@@ -34,6 +34,14 @@ const mutations = {
   addSeat(state, seat) {
     state.seats.push(seat)
   },
+  editSeat(state, editedSeat) {
+    const index = state.seats.findIndex((item) => item.id === item.it)
+    state.seats[index] = editedSeat
+  },
+  deleteSeat(state, deletedSeat) {
+    const index = state.seats.findIndex((item) => item.uuid === deletedSeat.id)
+    state.seats.splice(index, 1)
+  },
 }
 
 const actions = {
@@ -43,24 +51,15 @@ const actions = {
       resolve()
     })
   },
+  setSeats(vuexContext, seats) {
+    vuexContext.commit('setSeats', seats)
+  },
   getSeats(vuexContext) {
     return this.$axios.$get('/seats').then((response) => {
       vuexContext.commit('seats/setSeats', response.data, {
         root: true,
       })
     })
-  },
-  addSeat(vuexContext, payload) {
-    return this.$axios.$post('/seats', payload.seat).then((response) => {
-      vuexContext.commit(
-        'seats/addSeat',
-        { id: response.id, ...payload.seat },
-        { root: true }
-      )
-    })
-  },
-  setSeats(vuexContext, seats) {
-    vuexContext.commit('setSeats', seats)
   },
   findSeatByCode(context, payload) {
     const federalSeatCode = payload.federalSeatCode
@@ -71,8 +70,26 @@ const actions = {
         seat.federalseatcode === federalSeatCode &&
         seat.stateseatcode === stateSeatCode
     )
-
     return filteredSeat[0]
+  },
+  addSeat(vuexContext, payload) {
+    return this.$axios.$post('/seats', payload.seat).then((response) => {
+      vuexContext.commit(
+        'seats/addSeat',
+        { id: response.id, ...payload.seat },
+        { root: true }
+      )
+    })
+  },
+  editSeat(vueContext, payload) {
+    return this.$axios.$put('/seats', payload.editedSeat).then(() => {
+      vueContext.commit('seats/editSeat', payload.editedSeat)
+    })
+  },
+  deleteSeat(vueContext, payload) {
+    return this.$axios.$delete('/seats', payload.id).then(() => {
+      vueContext.commit('seats/deleteSeat', payload.id)
+    })
   },
 }
 
@@ -82,70 +99,3 @@ export default {
   mutations,
   actions,
 }
-//
-// import ADUNJson from 'assets/json/adun_seats.json'
-// import MPJson from 'assets/json/mp_seats.json'
-// import seatsJson from 'assets/json/seats.json'
-//
-// const state = () => ({
-//   seats: [],
-// })
-//
-// const getters = {
-//   legacySeats(state) {
-//     return state.seats
-//   },
-//   mpSeats(state) {
-//     return state.seats.filter(
-//       (seat) =>
-//         seat.federalseatcode != null &&
-//         seat.stateseatcode == null &&
-//         seat.state === 'Selangor'
-//     )
-//   },
-//   adunSeats(state) {
-//     return state.seats.filter(
-//       (seat) => seat.federalseatcode != null && seat.stateseatcode != null
-//     )
-//   },
-// }
-//
-// const mutations = {
-//   setSeats(state, seats) {
-//     state.seats = seats
-//   },
-//   setLegacySeats(state, seats) {
-//     state.legacySeats = seats
-//   },
-// }
-//
-// const actions = {
-//   nuxtServerInit(vuexContext, context) {
-//     const seats = MPJson.concat(ADUNJson)
-//     vuexContext.commit('seats/setSeats', seatsJson)
-//
-//     return vuexContext.commit('seats/setLegacySeats', seats)
-//   },
-//   setSeats(vuexContext, seats) {
-//     vuexContext.commit('setSeats', seats)
-//   },
-//   findSeatByCode(context, payload) {
-//     const federalSeatCode = payload.federalSeatCode
-//     const stateSeatCode = payload.stateSeatCode
-//
-//     const filteredSeat = context.state.seats.filter(
-//       (seat) =>
-//         seat.federalseatcode === federalSeatCode &&
-//         seat.stateseatcode === stateSeatCode
-//     )
-//
-//     return filteredSeat[0]
-//   },
-// }
-//
-// export default {
-//   state,
-//   getters,
-//   mutations,
-//   actions,
-// }
