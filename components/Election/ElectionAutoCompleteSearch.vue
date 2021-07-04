@@ -32,7 +32,7 @@
         :class="{ 'is-active': index === arrowCounter }"
         @click="setResult(item)"
       >
-        {{ item }}
+        {{ item.year }}
       </li>
     </ul>
   </div>
@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: 'AutoCompleteSearch',
+  name: 'ElectionAutoCompleteSearch',
   props: {
     items: {
       type: Array,
@@ -48,7 +48,7 @@ export default {
       default: null,
     },
     model: {
-      type: String,
+      type: Object,
       require: false,
       default: null,
     },
@@ -62,7 +62,7 @@ export default {
   data() {
     return {
       placeholder: '',
-      searchQuery: this.model,
+      searchQuery: this.model.year.toString(),
       selectedItem: this.model,
       isOpen: false,
       results: [],
@@ -74,7 +74,7 @@ export default {
       this.isOpen = true
       const query = this.searchQuery.toString().toLowerCase()
       this.results = this.items.filter((item) =>
-        item.toString().toLowerCase().includes(query)
+        item.year.toString().toLowerCase().includes(query)
       )
     },
     onArrowDown() {
@@ -111,7 +111,7 @@ export default {
     },
     setResult(item) {
       this.selectedItem = item
-      this.searchQuery = item
+      this.searchQuery = item.year
       this.collapseSuggestionList()
       this.$emit('select-item', item)
     },

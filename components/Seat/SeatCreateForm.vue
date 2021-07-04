@@ -2,47 +2,25 @@
   <div>
     <div class="grid grid-cols-5 gap-4">
       <div class="flex flex-col">
-        <EditTextLabel label="Code" />
+        <label class="form-label">Code</label>
         <input
           v-model.trim="seat.code"
-          class="
-            w-full
-            focus:outline-none
-            focus:ring
-            focus:border-blue-300
-            text-sm text-black
-            placeholder-gray-500
-            border border-gray-200
-            rounded-md
-            py-3
-            pl-5
-          "
+          class="form-edit-text"
           type="text"
           placeholder="Code"
         />
       </div>
       <div class="flex flex-col">
-        <EditTextLabel label="Name" />
+        <label class="form-label">Name</label>
         <input
           v-model.trim="seat.name"
-          class="
-            w-full
-            focus:outline-none
-            focus:ring
-            focus:border-blue-300
-            text-sm text-black
-            placeholder-gray-500
-            border border-gray-200
-            rounded-md
-            py-3
-            pl-5
-          "
+          class="form-edit-text"
           type="text"
           placeholder="Name"
         />
       </div>
       <div class="relative">
-        <EditTextLabel label="State" />
+        <label class="form-label">State</label>
         <div class="relative">
           <select v-model.trim="seat.state" class="form-select-field">
             <option
@@ -57,7 +35,7 @@
         </div>
       </div>
       <div class="relative">
-        <EditTextLabel label="Seat Type" />
+        <label class="form-label">Seat Type</label>
         <div class="relative">
           <select v-model.trim="seat.type" class="form-select-field">
             <option
@@ -100,11 +78,7 @@
 </template>
 
 <script>
-import EditTextLabel from '@/components/UI/EditTextLabel'
-import SelectChevronDown from '@/components/UI/SelectChevronDown'
-
 export default {
-  components: { EditTextLabel, SelectChevronDown },
   emits: ['submit'],
   data() {
     return {
