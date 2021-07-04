@@ -1,5 +1,3 @@
-import electionJson from 'assets/json/elections.json'
-
 const state = () => ({
   elections: [],
 })
@@ -22,17 +20,13 @@ const mutations = {
 }
 
 const actions = {
-  nuxtServerInit(vuexContext, context) {
-    return new Promise((resolve, reject) => {
-      vuexContext.commit('elections/setElections', electionJson.data)
-      resolve()
-    })
+  async nuxtServerInit(vuexContext, context) {
+    return await this.getElections(vuexContext, context)
   },
-  getElections(vuexContext) {
-    return this.$axios.$get('/elections').then((response) => {
-      vuexContext.commit('elections/setElections', response.data, {
-        root: true,
-      })
+  async getElections(vuexContext, context) {
+    const response = await context.app.$axios.$get('/elections')
+    vuexContext.commit('elections/setElections', response.data, {
+      root: true,
     })
   },
   editElection(vuexContext, editedElection) {

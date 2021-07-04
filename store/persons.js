@@ -1,5 +1,3 @@
-import personsJson from 'assets/json/persons.json'
-
 const state = () => ({
   persons: [],
 })
@@ -22,17 +20,13 @@ const mutations = {
 }
 
 const actions = {
-  nuxtServerInit(vuexContext, context) {
-    return new Promise((resolve, reject) => {
-      vuexContext.commit('persons/setPersons', personsJson.data)
-      resolve()
-    })
+  async nuxtServerInit(vuexContext, context) {
+    return await this.getPersons(vuexContext, context)
   },
-  getPersons(vuexContext) {
-    return this.$axios.$get('/persons').then((response) => {
-      vuexContext.commit('persons/setPersons', response.data, {
-        root: true,
-      })
+  async getPersons(vuexContext, context) {
+    const response = await context.app.$axios.$get('/persons')
+    vuexContext.commit('persons/setPersons', response.data, {
+      root: true,
     })
   },
   setPersons(vuexContext, persons) {

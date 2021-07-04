@@ -37,7 +37,21 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://asia-southeast2-whoadunit-70652.cloudfunctions.net/api',
+    baseURL:
+      process.env.BASE_URL ||
+      'https://asia-southeast2-whoadunit-70652.cloudfunctions.net/api',
+  },
+
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL,
+    },
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL,
+    },
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

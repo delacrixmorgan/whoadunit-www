@@ -1,5 +1,3 @@
-import seatsJson from 'assets/json/seats.json'
-
 const state = () => ({
   seats: [],
 })
@@ -45,21 +43,17 @@ const mutations = {
 }
 
 const actions = {
-  nuxtServerInit(vuexContext, context) {
-    return new Promise((resolve, reject) => {
-      vuexContext.commit('seats/setSeats', seatsJson.data)
-      resolve()
+  async nuxtServerInit(vuexContext, context) {
+    return await this.getSeats(vuexContext, context)
+  },
+  async getSeats(vuexContext, context) {
+    const response = await context.app.$axios.$get('/seats')
+    vuexContext.commit('seats/setSeats', response.data, {
+      root: true,
     })
   },
   setSeats(vuexContext, seats) {
     vuexContext.commit('setSeats', seats)
-  },
-  getSeats(vuexContext) {
-    return this.$axios.$get('/seats').then((response) => {
-      vuexContext.commit('seats/setSeats', response.data, {
-        root: true,
-      })
-    })
   },
   findSeatByCode(context, payload) {
     const federalSeatCode = payload.federalSeatCode
