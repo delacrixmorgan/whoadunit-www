@@ -151,7 +151,7 @@ export default {
       }
     },
     getEditActionLink(item) {
-      return '/admin/person/' + item.id
+      return '/admin/person/edit/' + item.id
     },
   },
 }

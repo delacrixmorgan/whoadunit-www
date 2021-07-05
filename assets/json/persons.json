@@ -92,6 +92,15 @@
     },
     {
       "id": "rfbdIolavw0Vtu7UlSeE",
+      "name": "Charles Santiago",
+      "address": "No. 2A Jalan Bayu Tinggi 8/KS6, Batu Unjur, 41200 Klang, Selangor.",
+      "profilePictures": [
+        "https://cdn.i-scmp.com/sites/default/files/d8/images/author/pic/2019/05/09/santiago12.jpg"
+      ],
+      "status": "Incumbent",
+      "seatIds": [
+        "42u2ZxApXsRtHKc1s2RE"
+      ],
       "contactDetails": [
         {
           "value": "pubmpklang@gmail.com",
@@ -109,16 +118,7 @@
           "value": "https://twitter.com/mpklang",
           "type": "Twitter"
         }
-      ],
-      "profilePictures": [
-        "https://cdn.i-scmp.com/sites/default/files/d8/images/author/pic/2019/05/09/santiago12.jpg"
-      ],
-      "seatIds": [
-        "42u2ZxApXsRtHKc1s2RE"
-      ],
-      "status": "Incumbent",
-      "address": "No. 2A Jalan Bayu Tinggi 8/KS6, Batu Unjur, 41200 Klang, Selangor.",
-      "name": "Charles Santiago"
+      ]
     }
   ]
 }

@@ -14,8 +14,6 @@
       >
         Edit Seat
       </h1>
-      <p>{{ editedSeat }}</p>
-
       <div class="grid grid-cols-4 gap-4">
         <div class="flex flex-col">
           <label class="form-label">Code</label>
