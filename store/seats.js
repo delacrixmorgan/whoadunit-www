@@ -48,12 +48,12 @@ const actions = {
   },
   async getSeats(vuexContext, context) {
     const response = await context.app.$axios.$get('/seats')
-    vuexContext.commit('seats/setSeats', response.data, {
-      root: true,
-    })
+    this.setSeats(vuexContext, response.data)
   },
   setSeats(vuexContext, seats) {
-    vuexContext.commit('setSeats', seats)
+    vuexContext.commit('seats/setSeats', seats, {
+      root: true,
+    })
   },
   findSeatByCode(context, payload) {
     const federalSeatCode = payload.federalSeatCode

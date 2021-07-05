@@ -25,7 +25,10 @@ const actions = {
   },
   async getElections(vuexContext, context) {
     const response = await context.app.$axios.$get('/elections')
-    vuexContext.commit('elections/setElections', response.data, {
+    this.setElections(vuexContext, response.data)
+  },
+  setElections(vuexContext, elections) {
+    vuexContext.commit('elections/setElections', elections, {
       root: true,
     })
   },

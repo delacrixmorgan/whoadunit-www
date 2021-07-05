@@ -25,12 +25,12 @@ const actions = {
   },
   async getPersons(vuexContext, context) {
     const response = await context.app.$axios.$get('/persons')
-    vuexContext.commit('persons/setPersons', response.data, {
-      root: true,
-    })
+    this.setPersons(vuexContext, response.data)
   },
   setPersons(vuexContext, persons) {
-    vuexContext.commit('setPersons', persons)
+    vuexContext.commit('persons/setPersons', persons, {
+      root: true,
+    })
   },
   findPersonById(context, payload) {
     const person = getters['persons/getPersonById'](payload.id)
