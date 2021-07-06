@@ -36,6 +36,51 @@
   rounded
 }
 
-.form-select-item{
+.form-select-item {
   @apply bg-gray-200
+}
+
+.btn-action-blue {
+  @apply bg-blue-500
+  hover:bg-blue-600
+  flex-shrink-0
+  text-white
+  border-0
+  py-2
+  px-8
+  focus:outline-none
+  rounded
+  text-lg
+  mt-10
+  sm:mt-0
+}
+
+.btn-action-red {
+  @apply bg-red-500
+  hover:bg-red-600
+  flex-shrink-0
+  text-white
+  border-0
+  py-2
+  px-8
+  focus:outline-none
+  rounded
+  text-lg
+  mt-10
+  sm:mt-0
+}
+
+.btn-action-green {
+  @apply bg-green-500
+  hover:bg-green-600
+  flex-shrink-0
+  text-white
+  border-0
+  py-2
+  px-8
+  focus:outline-none
+  rounded
+  text-lg
+  mt-10
+  sm:mt-0
 }

@@ -2,18 +2,7 @@
   <div>
     <input
       v-model.trim="searchQuery"
-      class="
-        w-full
-        focus:outline-none
-        focus:ring
-        focus:border-blue-300
-        text-sm text-black
-        placeholder-gray-500
-        border border-gray-200
-        rounded-md
-        py-3
-        pl-5
-      "
+      class="form-edit-text"
       type="text"
       :placeholder="placeholder"
       @click="onChange"
@@ -62,8 +51,8 @@ export default {
   data() {
     return {
       placeholder: '',
-      searchQuery: this.model,
-      selectedItem: this.model,
+      searchQuery: this.model ? this.model : '',
+      selectedItem: this.model ? this.mode : '',
       isOpen: false,
       results: [],
       arrowCounter: -1,

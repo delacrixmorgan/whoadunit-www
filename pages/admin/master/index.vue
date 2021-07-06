@@ -3,63 +3,23 @@
     <div class="grid grid-cols-2 gap-4">
       <div class="flex flex-col">
         <label class="form-label"> First Name</label>
-        <input
-          class="
-            w-full
-            focus:outline-none
-            focus:ring
-            focus:border-blue-300
-            text-sm text-black
-            placeholder-gray-500
-            border border-gray-200
-            rounded-md
-            py-3
-            pl-5
-          "
-          type="text"
-          placeholder="Name"
-        />
+        <input class="form-edit-text" type="text" placeholder="Name" />
       </div>
       <div class="flex flex-col">
         <label class="form-label"> Last Name </label>
-        <input
-          class="
-            w-full
-            focus:outline-none
-            focus:ring
-            focus:border-blue-300
-            text-sm text-black
-            placeholder-gray-500
-            border border-gray-200
-            rounded-md
-            py-3
-            pl-5
-          "
-          type="text"
-          placeholder="Name"
-        />
+        <input class="form-edit-text" type="text" placeholder="Name" />
       </div>
     </div>
-    <div>
-      <label class="form-label"> Password </label>
-      <input
-        class="
-          w-full
-          focus:outline-none
-          focus:ring
-          focus:border-blue-300
-          text-sm text-black
-          placeholder-gray-500
-          border border-gray-200
-          rounded-md
-          py-3
-          pl-5
-        "
-        type="password"
-        placeholder="Password"
-      />
+    <div class="grid grid-cols-4 gap-4">
+      <div class="flex flex-col col-span-1">
+        <label class="form-label"> Password </label>
+        <input class="form-edit-text" type="password" placeholder="Password" />
+      </div>
+      <div class="flex flex-col col-span-3">
+        <label class="form-label">Confirm Password </label>
+        <input class="form-edit-text" type="password" placeholder="Password" />
+      </div>
     </div>
-
     <div class="grid grid-cols-3 gap-4">
       <div class="relative">
         <label class="form-label"> Seat Type </label>
@@ -155,6 +115,49 @@
     </div>
 
     <div>
+      <div>
+        <label class="form-label">Contact Details</label>
+
+        <div
+          v-for="(contactDetail, index) in contactDetails"
+          :key="contactDetail.value"
+          class="flex flex-row space-x-2 mt-4"
+        >
+          <div class="relative w-64">
+            <select v-model.lazy="contactDetail.type" class="form-select-field">
+              <option
+                v-for="item in contactTypes"
+                :key="item"
+                class="form-select-item"
+              >
+                {{ item }}
+              </option>
+            </select>
+            <select-chevron-down />
+          </div>
+          <input
+            v-model.lazy="contactDetail.value"
+            class="form-edit-text"
+            type="text"
+            placeholder="Phone Number"
+          />
+          <button
+            class="btn-action-blue"
+            @click="onContactDetailAdd(contactDetail, index)"
+          >
+            Add
+          </button>
+          <button
+            class="btn-action-red"
+            @click="onContactDetailDelete(contactDetail, index)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div>
       <label class="form-label"> Assign Person </label>
       <auto-complete-search :items="seats" @select-item="updateSelectedItem" />
     </div>
@@ -165,43 +168,8 @@
     </div>
 
     <div class="grid grid-cols-4 gap-4">
-      <button
-        class="
-          col-start-3
-          bg-blue-500
-          hover:bg-blue-600
-          flex-shrink-0
-          text-white
-          border-0
-          py-2
-          px-8
-          focus:outline-none
-          rounded
-          text-lg
-          mt-10
-          sm:mt-0
-        "
-      >
-        <a href="#">Add</a>
-      </button>
-      <button
-        class="
-          bg-red-500
-          hover:bg-red-600
-          flex-shrink-0
-          text-white
-          border-0
-          py-2
-          px-8
-          focus:outline-none
-          rounded
-          text-lg
-          mt-10
-          sm:mt-0
-        "
-      >
-        <a href="#">Delete</a>
-      </button>
+      <button class="btn-action-blue col-start-3">Add</button>
+      <button class="btn-action-red">Delete</button>
     </div>
   </div>
 </template>
@@ -215,6 +183,25 @@ export default {
   layout: 'blank',
   data() {
     return {
+      contactDetails: [
+        {
+          type: 'Email',
+          value: 'khim@selangor.gov.my',
+        },
+        {
+          type: 'Phone Number',
+          value: '+603-3341 4982',
+        },
+        {
+          type: 'Facebook',
+          value: 'https://www.facebook.com/tengchangkhimpage',
+        },
+        {
+          type: 'Twitter',
+          value: 'https://twitter.com/tengchangkhim',
+        },
+      ],
+      contactTypes: ['Email', 'Phone Number', 'Facebook', 'Twitter'],
       seatTypes: ['ADUN', 'MP'],
       states: [
         'Perlis',
@@ -251,6 +238,15 @@ export default {
   methods: {
     updateSelectedItem(item) {
       alert(item)
+    },
+    onContactDetailAdd(contact, index) {
+      this.contactDetails.splice(index + 1, 0, {
+        type: contact.type,
+        value: '',
+      })
+    },
+    onContactDetailDelete(contact, index) {
+      this.contactDetails.splice(index, 1)
     },
   },
 }

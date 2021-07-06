@@ -36,7 +36,7 @@
         <div class="relative">
           <label class="form-label">State</label>
           <div class="relative">
-            <select v-model.trim="editedSeat.state" class="form-select-field">
+            <select v-model.lazy="editedSeat.state" class="form-select-field">
               <option
                 v-for="item in states"
                 :key="item"
@@ -51,7 +51,7 @@
         <div class="relative">
           <label class="form-label">Seat Type</label>
           <div class="relative">
-            <select v-model.trim="editedSeat.type" class="form-select-field">
+            <select v-model.lazy="editedSeat.type" class="form-select-field">
               <option
                 v-for="item in seatTypes"
                 :key="item"
