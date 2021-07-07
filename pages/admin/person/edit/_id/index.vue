@@ -15,7 +15,48 @@
         Edit Person
       </h1>
       {{ editedPerson }}
-      <div class="grid grid-cols-4 gap-4">
+      <div class="mt-4">
+        <label class="form-label">Profile Picture</label>
+        <div v-if="editedPerson.profilePictures.length > 0">
+          <div
+            v-for="(picture, index) in editedPerson.profilePictures"
+            :key="index"
+            class="flex flex-row space-x-2 mt-4"
+          >
+            <input
+              v-model.lazy="editedPerson.profilePictures[index]"
+              class="form-edit-text"
+              type="text"
+              placeholder="URL"
+            />
+            <button class="btn-action-blue" @click="onProfilePictureAdd(index)">
+              Add
+            </button>
+            <button
+              class="btn-action-red"
+              @click="onProfilePictureDelete(index)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+        <div v-else>
+          <button
+            class="
+              w-full
+              border border-gray-200
+              hover:bg-gray-100
+              text-gray-400
+              py-3
+              px-4
+            "
+            @click="onProfilePictureAdd(0)"
+          >
+            Add +
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-4 gap-4 mt-4">
         <div class="flex flex-col">
           <label class="form-label">Name</label>
           <input
@@ -34,15 +75,6 @@
             placeholder="Code"
           />
         </div>
-      </div>
-      <div class="mt-4">
-        <label class="form-label">Profile Pictures</label>
-        <input
-          v-model.trim="editedPerson.address"
-          class="form-edit-text"
-          type="text"
-          placeholder="Code"
-        />
       </div>
       <div class="mt-4">
         <label class="form-label">Contact Details</label>
@@ -177,6 +209,12 @@ export default {
     this.editedPerson = JSON.parse(JSON.stringify(person))
   },
   methods: {
+    onProfilePictureAdd(index) {
+      this.editedPerson.profilePictures.splice(index + 1, 0, '')
+    },
+    onProfilePictureDelete(index) {
+      this.editedPerson.profilePictures.splice(index, 1)
+    },
     onContactDetailAdd(contactType, index) {
       this.editedPerson.contactDetails.splice(index + 1, 0, {
         type: contactType,
