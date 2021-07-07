@@ -117,7 +117,6 @@
     <div>
       <div>
         <label class="form-label">Contact Details</label>
-
         <div
           v-for="(contactDetail, index) in contactDetails"
           :key="contactDetail.value"

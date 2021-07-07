@@ -1,5 +1,6 @@
 const state = () => ({
   seatTypes: ['ADUN', 'MP'],
+  contactDetailTypes: ['Email', 'Phone Number', 'Facebook', 'Twitter'],
   states: [
     'Perlis',
     'Kedah',
@@ -23,6 +24,9 @@ const state = () => ({
 const getters = {
   seatTypes(state) {
     return state.seatTypes
+  },
+  contactDetailTypes(state) {
+    return state.contactDetailTypes
   },
   states(state) {
     return state.states

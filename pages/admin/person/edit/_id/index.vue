@@ -44,6 +44,65 @@
           placeholder="Code"
         />
       </div>
+      <div class="mt-4">
+        <label class="form-label">Contact Details</label>
+        <div v-if="editedPerson.contactDetails.length > 0">
+          <div
+            v-for="(contactDetail, index) in editedPerson.contactDetails"
+            :key="index"
+            class="flex flex-row space-x-2 mt-4"
+          >
+            <div class="relative w-72">
+              <select
+                v-model.lazy="contactDetail.type"
+                class="form-select-field"
+              >
+                <option
+                  v-for="item in contactDetailTypes"
+                  :key="item"
+                  class="form-select-item"
+                >
+                  {{ item }}
+                </option>
+              </select>
+              <select-chevron-down />
+            </div>
+            <input
+              v-model.lazy="contactDetail.value"
+              class="form-edit-text"
+              type="text"
+              placeholder="Phone Number"
+            />
+            <button
+              class="btn-action-blue"
+              @click="onContactDetailAdd(contactDetail.type, index)"
+            >
+              Add
+            </button>
+            <button
+              class="btn-action-red"
+              @click="onContactDetailDelete(contactDetail, index)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+        <div v-else>
+          <button
+            class="
+              w-full
+              border border-gray-200
+              hover:bg-gray-100
+              text-gray-400
+              py-3
+              px-4
+            "
+            @click="onContactDetailAdd(contactDetailTypes[0], 0)"
+          >
+            Create New +
+          </button>
+        </div>
+      </div>
       <div class="grid grid-cols-4 gap-4 mt-4">
         <button
           class="
@@ -98,6 +157,11 @@ export default {
       editedPerson: null,
     }
   },
+  computed: {
+    contactDetailTypes() {
+      return this.$store.getters['global/contactDetailTypes']
+    },
+  },
   created() {
     const person = this.$store.getters['persons/getPersonById'](
       this.$route.params.id
@@ -108,10 +172,20 @@ export default {
         message: 'Person not found',
       })
     }
+
     this.person = person
-    this.editedPerson = { ...person }
+    this.editedPerson = JSON.parse(JSON.stringify(person))
   },
   methods: {
+    onContactDetailAdd(contactType, index) {
+      this.editedPerson.contactDetails.splice(index + 1, 0, {
+        type: contactType,
+        value: '',
+      })
+    },
+    onContactDetailDelete(contact, index) {
+      this.editedPerson.contactDetails.splice(index, 1)
+    },
     onEdit() {
       if (this.isSeatUpdated) {
         this.$store
