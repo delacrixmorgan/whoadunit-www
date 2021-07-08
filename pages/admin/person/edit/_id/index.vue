@@ -136,7 +136,11 @@
                 <select-chevron-down />
               </div>
               <div class="relative w-72">
-                <select v-model.lazy="seat.type" class="form-select-field">
+                <select
+                  v-model.lazy="seat.type"
+                  class="form-select-field"
+                  @change="clearSeat(seat)"
+                >
                   <option
                     v-for="item in seatTypes"
                     :key="item"
@@ -148,11 +152,10 @@
                 </select>
                 <select-chevron-down />
               </div>
-              <input
-                v-model.lazy="seat.name"
-                class="form-edit-text"
-                type="text"
-                placeholder="Seat Name"
+              <seat-auto-complete-search
+                :model="seat"
+                :must-match-selection="true"
+                @select-item="updateSeatElection"
               />
               <button
                 class="btn-action-blue"
@@ -291,13 +294,9 @@ export default {
 
     this.person = person
     this.editedPerson = JSON.parse(JSON.stringify(person))
-    const seats = this.$store.getters['seats/filterSeatsByIds'](
+    this.editedSeats = this.$store.getters['seats/filterSeatsByIds'](
       this.editedPerson.seatIds
     ).map((seat) => JSON.parse(JSON.stringify(seat)))
-    this.editedSeats = seats
-    // seats
-    // id, state, type, code, name
-    // personId, electionId
   },
   methods: {
     onProfilePictureAdd(index) {
@@ -315,8 +314,16 @@ export default {
     onContactDetailDelete(contact, index) {
       this.editedPerson.contactDetails.splice(index, 1)
     },
-    formatSeatName(seat) {
-      return seat.code + ' - ' + seat.name
+    clearSeat(seat) {
+      seat.code = ''
+      seat.name = ''
+      this.$nuxt.$emit('clear-seat')
+    },
+    updateSeatElection(oldSeat, newSeat) {
+      const seat = this.editedSeats.find((item) => item.id === oldSeat.id)
+      seat.id = newSeat.id
+      seat.code = newSeat.code
+      seat.name = newSeat.name
     },
     onEdit() {
       if (this.isSeatUpdated) {

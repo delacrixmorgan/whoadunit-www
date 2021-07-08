@@ -23,6 +23,14 @@ const getters = {
       return state.seats.filter((seat) => seat.electionId === id)
     }
   },
+
+  filterSeatsByElectionIdAndSeatType(state) {
+    return (id, type) => {
+      return state.seats.filter(
+        (seat) => seat.electionId === id && seat.type === type
+      )
+    }
+  },
 }
 
 const mutations = {
