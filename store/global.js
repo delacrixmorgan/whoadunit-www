@@ -1,4 +1,5 @@
 const state = () => ({
+  personStatus: ['Incumbent', 'Inactive'],
   seatTypes: ['ADUN', 'MP'],
   contactDetailTypes: ['Email', 'Phone Number', 'Facebook', 'Twitter'],
   states: [
@@ -22,6 +23,9 @@ const state = () => ({
 })
 
 const getters = {
+  personStatus(state) {
+    return state.personStatus
+  },
   seatTypes(state) {
     return state.seatTypes
   },
