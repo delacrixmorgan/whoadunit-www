@@ -22,7 +22,11 @@
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
-        <tr v-for="person in items" :key="person.id" class="hover:bg-gray-200">
+        <tr
+          v-for="person in results"
+          :key="person.id"
+          class="hover:bg-gray-200"
+        >
           <td class="px-6 py-4">{{ person.id }}</td>
           <td class="px-6 py-4">{{ person.name }}</td>
           <td class="px-6 py-4">{{ person.status }}</td>
@@ -43,41 +47,11 @@
           </td>
           <td class="px-6 py-4">
             <div class="flex flex-row space-x-2">
-              <button
-                class="
-                  bg-green-500
-                  hover:bg-green-600
-                  flex-shrink-0
-                  text-white
-                  border-0
-                  py-2
-                  px-8
-                  focus:outline-none
-                  rounded
-                  text-lg
-                  mt-10
-                  sm:mt-0
-                "
-              >
+              <button class="btn-action-green">
                 <a :href="getEditActionLink(person)">Edit</a>
               </button>
-              <button
-                class="
-                  bg-red-500
-                  hover:bg-red-600
-                  flex-shrink-0
-                  text-white
-                  border-0
-                  py-2
-                  px-8
-                  focus:outline-none
-                  rounded
-                  text-lg
-                  mt-10
-                  sm:mt-0
-                "
-              >
-                <a href="#">Delete</a>
+              <button class="btn-action-red" @click="onDelete(person)">
+                Delete
               </button>
             </div>
           </td>
@@ -89,15 +63,10 @@
 
 <script>
 export default {
-  props: {
-    items: {
-      type: Array,
-      require: false,
-      default: null,
-    },
-  },
   data() {
     return {
+      results: [],
+      items: [],
       headers: [
         'ID',
         'Name',
@@ -111,7 +80,26 @@ export default {
       ],
     }
   },
+  created() {
+    this.items = this.$store.getters['persons/persons']
+    this.results = this.items
+
+    this.$nuxt.$on('search-query', (searchQuery) => {
+      this.results = this.items.filter((item) =>
+        item.name.toString().toLowerCase().includes(searchQuery)
+      )
+      // TODO: Filter Search Query
+    })
+  },
   methods: {
+    onDelete(person) {
+      this.this.$store
+        .dispatch('persons/deletePerson', person.id)
+        .then(() => {
+          this.$router.back()
+        })
+        .catch((error) => alert(error.message))
+    },
     getFormattedSeat(person) {
       if (person.seatIds != null) {
         const seats = this.$store.getters['seats/filterSeatsByIds'](

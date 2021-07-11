@@ -4,7 +4,8 @@
       Person
     </h1>
 
-    <person-data-table :items="persons" />
+    <person-filter-form class="mt-4" @search="onSearch" />
+    <person-data-table class="mt-4" />
   </div>
 </template>
 
@@ -13,9 +14,9 @@ import PersonDataTable from '@/components/Admin/DataTable/PersonDataTable'
 export default {
   components: { PersonDataTable },
   layout: 'admin',
-  computed: {
-    persons() {
-      return this.$store.getters['persons/persons']
+  methods: {
+    onSearch(searchQuery) {
+      this.$nuxt.$emit('search-query', searchQuery)
     },
   },
 }

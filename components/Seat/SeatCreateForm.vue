@@ -50,28 +50,7 @@
         </div>
       </div>
       <div class="flex items-end">
-        <button
-          class="
-            bg-blue-500
-            hover:bg-blue-600
-            bottom-0
-            max-h-11
-            w-full
-            flex-shrink-0
-            text-white
-            border-0
-            py-2
-            px-8
-            focus:outline-none
-            rounded
-            text-lg
-            mt-10
-            sm:mt-0
-          "
-          @click="onSubmit"
-        >
-          <a href="#">Add</a>
-        </button>
+        <button class="btn-action-blue" @click="onSubmit">Add</button>
       </div>
     </div>
   </div>
