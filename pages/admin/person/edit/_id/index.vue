@@ -35,7 +35,7 @@
         <label class="form-label">Profile Picture</label>
         <div v-if="editedPerson.profilePictures.length > 0">
           <div
-            v-for="index in editedPerson.profilePictures"
+            v-for="(_, index) in editedPerson.profilePictures"
             :key="index"
             class="flex flex-row space-x-2 mt-4"
           >
