@@ -157,16 +157,10 @@
                 :must-match-selection="true"
                 @select-item="updateSeatElection"
               />
-              <button
-                class="btn-action-blue"
-                @click="onContactDetailAdd(contactDetail.type, index)"
-              >
+              <button class="btn-action-blue" @click="onSeatAdd(index)">
                 Add
               </button>
-              <button
-                class="btn-action-red"
-                @click="onContactDetailDelete(contactDetail, index)"
-              >
+              <button class="btn-action-red" @click="onSeatDelete(index)">
                 Delete
               </button>
             </div>
@@ -314,10 +308,24 @@ export default {
     onContactDetailDelete(contact, index) {
       this.editedPerson.contactDetails.splice(index, 1)
     },
+    onSeatAdd(index) {
+      this.editedSeats.splice(index + 1, 0, {
+        id: index,
+        type: 'ADUN',
+        personId: this.editedPerson.id,
+        state: '',
+        code: '',
+        name: '',
+        electionId: this.elections[0].id,
+      })
+    },
+    onSeatDelete(index) {
+      this.editedSeats.splice(index, 1)
+    },
     clearSeat(seat) {
       seat.code = ''
       seat.name = ''
-      this.$nuxt.$emit('clear-seat')
+      this.$nuxt.$emit('clear-seat', seat.id)
     },
     updateSeatElection(oldSeat, newSeat) {
       const seat = this.editedSeats.find((item) => item.id === oldSeat.id)

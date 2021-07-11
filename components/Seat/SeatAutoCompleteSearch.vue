@@ -73,9 +73,11 @@ export default {
     },
   },
   created() {
-    this.$nuxt.$on('clear-seat', () => {
-      this.searchQuery = ''
-      this.selectedItem = null
+    this.$nuxt.$on('clear-seat', (seatId) => {
+      if (this.model.id === seatId) {
+        this.searchQuery = ''
+        this.selectedItem = null
+      }
     })
   },
   methods: {
