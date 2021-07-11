@@ -23,7 +23,6 @@
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
         <tr v-for="seat in items" :key="seat.id" class="hover:bg-gray-200">
-          <td class="px-6 py-4">{{ seat.id }}</td>
           <td class="px-6 py-4">{{ getElectionYear(seat) }}</td>
           <td class="px-6 py-4">{{ seat.code }}</td>
           <td class="px-6 py-4">{{ seat.name }}</td>
@@ -31,41 +30,11 @@
           <td class="px-6 py-4">{{ seat.type }}</td>
           <td class="px-6 py-4">
             <div class="flex flex-row space-x-2">
-              <button
-                class="
-                  bg-green-500
-                  hover:bg-green-600
-                  flex-shrink-0
-                  text-white
-                  border-0
-                  py-2
-                  px-8
-                  focus:outline-none
-                  rounded
-                  text-lg
-                  mt-10
-                  sm:mt-0
-                "
-              >
+              <button class="btn-action-green">
                 <a :href="getEditActionLink(seat)">Edit</a>
               </button>
-              <button
-                class="
-                  bg-red-500
-                  hover:bg-red-600
-                  flex-shrink-0
-                  text-white
-                  border-0
-                  py-2
-                  px-8
-                  focus:outline-none
-                  rounded
-                  text-lg
-                  mt-10
-                  sm:mt-0
-                "
-              >
-                <a href="#">Delete</a>
+              <button class="btn-action-red" @click="onDelete(seat)">
+                Delete
               </button>
             </div>
           </td>
@@ -86,7 +55,7 @@ export default {
   },
   data() {
     return {
-      headers: ['ID', 'Election', 'Code', 'Name', 'State', 'Type', 'Actions'],
+      headers: ['Election', 'Code', 'Name', 'State', 'Type', 'Actions'],
     }
   },
   methods: {
@@ -96,6 +65,14 @@ export default {
     },
     getEditActionLink(item) {
       return '/admin/seats/edit/' + item.id
+    },
+    onDelete(seat) {
+      this.this.$store
+        .dispatch('seats/deleteSeat', seat.id)
+        .then(() => {
+          this.$router.back()
+        })
+        .catch((error) => alert(error.message))
     },
   },
 }

@@ -27,7 +27,6 @@
           :key="person.id"
           class="hover:bg-gray-200"
         >
-          <td class="px-6 py-4">{{ person.id }}</td>
           <td class="px-6 py-4">{{ person.name }}</td>
           <td class="px-6 py-4">{{ person.status }}</td>
           <td class="px-6 py-4">{{ getFormattedSeat(person) }}</td>
@@ -68,12 +67,11 @@ export default {
       results: [],
       items: [],
       headers: [
-        'ID',
         'Name',
         'Status',
         'Seat',
         'Email',
-        'Phone Number',
+        'Phone',
         'Facebook',
         'Twitter',
         'Actions',

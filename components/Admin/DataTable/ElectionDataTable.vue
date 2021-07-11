@@ -27,7 +27,6 @@
           :key="election.id"
           class="hover:bg-gray-200"
         >
-          <td class="px-6 py-4">{{ election.id }}</td>
           <td class="px-6 py-4">{{ election.year }}</td>
           <td class="px-6 py-4">
             <div class="flex flex-row space-x-2">
@@ -49,24 +48,6 @@
               >
                 <a :href="getEditActionLink(election)">Edit</a>
               </button>
-              <button
-                class="
-                  bg-red-500
-                  hover:bg-red-600
-                  flex-shrink-0
-                  text-white
-                  border-0
-                  py-2
-                  px-8
-                  focus:outline-none
-                  rounded
-                  text-lg
-                  mt-10
-                  sm:mt-0
-                "
-              >
-                <a href="#">Delete</a>
-              </button>
             </div>
           </td>
         </tr>
@@ -86,7 +67,7 @@ export default {
   },
   data() {
     return {
-      headers: ['ID', 'Year', 'Actions'],
+      headers: ['Year', 'Actions'],
     }
   },
   methods: {

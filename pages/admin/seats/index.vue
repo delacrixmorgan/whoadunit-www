@@ -3,7 +3,8 @@
     <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
       Seats
     </h1>
-    <seat-data-table :items="seats" />
+    <seat-create-form class="mt-4" @submit="onSeatAdd" />
+    <seat-data-table class="mt-4" :items="seats" />
   </div>
 </template>
 
@@ -15,6 +16,18 @@ export default {
   computed: {
     seats() {
       return this.$store.getters['seats/seats']
+    },
+  },
+  methods: {
+    onSeatAdd(seat) {
+      this.$store
+        .dispatch('seats/addSeat', seat)
+        .then((data) => {
+          alert(
+            seat.code + ', ' + seat.name + ', ' + seat.state + ', ' + seat.type
+          )
+        })
+        .catch((error) => alert(error.message))
     },
   },
 }

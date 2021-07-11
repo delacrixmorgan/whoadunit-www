@@ -14,7 +14,6 @@
       >
         {{ isEditMode ? 'Edit' : 'Create' }} Person
       </h1>
-      {{ editedPerson }}
 
       <div class="mt-4">
         <label class="form-label">Profile Picture</label>
