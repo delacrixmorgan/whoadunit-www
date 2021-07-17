@@ -45,13 +45,12 @@ const actions = {
       root: true,
     })
   },
-  findPersonById(context, payload) {
-    const person = getters['persons/getPersonById'](payload.id)
+  async findPersonById(vuexContext, payload) {
+    const person = vuexContext.getters.getPersonById(payload.id)
     if (person == null) {
-      // Make API Call
-      return context.state.persons.filter(
-        (person) => person.id === payload.id
-      )[0]
+      const response = await vuexContext.$axios.$get('/persons/' + payload.id)
+      vuexContext.addPerson(response.data)
+      return response.data
     } else {
       return person
     }

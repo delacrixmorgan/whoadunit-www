@@ -12,7 +12,7 @@
       />
       <span class="flex-grow flex flex-col pl-4">
         <span class="title-font font-medium text-gray-900">{{
-          this.contact.title
+          getTitle(this.contact)
         }}</span>
         <span class="text-gray-400 text-xs tracking-widest mt-0.5">{{
           this.contact.value
@@ -51,17 +51,32 @@ export default {
       const value = contact.value
       const type = contact.type
 
-      if (type === 'phone') {
+      if (type === 'Phone Number') {
         return 'tel:' + value
       }
-      if (type === 'email') {
+      if (type === 'Email') {
         return 'mailto:' + value
       }
-      if (type === 'facebook') {
+      if (type === 'Facebook') {
         return value
       }
-      if (type === 'twitter') {
+      if (type === 'Twitter') {
         return value
+      }
+    },
+    getTitle(contact) {
+      const type = contact.type
+      if (type === 'Phone Number') {
+        return 'Phone'
+      }
+      if (type === 'Email') {
+        return 'Email'
+      }
+      if (type === 'Facebook') {
+        return 'Facebook'
+      }
+      if (type === 'Twitter') {
+        return 'Twitter'
       }
     },
   },

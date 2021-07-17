@@ -11,19 +11,16 @@ const getters = {
       return state.seats.find((item) => item.id === id)
     }
   },
-
   filterSeatsByIds(state) {
     return (seatIds) => {
       return state.seats.filter((seat) => seatIds.includes(seat.id))
     }
   },
-
   filterSeatsByElectionId(state) {
     return (id) => {
       return state.seats.filter((seat) => seat.electionId === id)
     }
   },
-
   filterSeatsByElectionIdAndSeatType(state) {
     return (id, type) => {
       return state.seats.filter(
@@ -39,6 +36,9 @@ const mutations = {
   },
   addSeat(state, seat) {
     state.seats.push(seat)
+  },
+  addSeats(state, seats) {
+    state.seats.push(seats)
   },
   editSeat(state, editedSeat) {
     const index = state.seats.findIndex((item) => item.id === editedSeat.id)
@@ -63,16 +63,15 @@ const actions = {
       root: true,
     })
   },
-  findSeatByCode(context, payload) {
-    const federalSeatCode = payload.federalSeatCode
-    const stateSeatCode = payload.stateSeatCode
 
-    const filteredSeat = context.state.seats.filter(
-      (seat) =>
-        seat.federalseatcode === federalSeatCode &&
-        seat.stateseatcode === stateSeatCode
-    )
-    return filteredSeat[0]
+  async getSeatsByIds(vuexContext, payload) {
+    const seats = vuexContext.getters.filterSeatsByIds(payload.seatIds)
+    if (seats.length !== payload.seatIds.length) {
+      const response = await vuexContext.$axios.$get('/seats', payload.seatIds)
+      vuexContext.addSeats(response.data)
+      return response.data
+    }
+    return seats
   },
   async addSeat(vuexContext, payload) {
     const response = await this.$axios.$post('/seats', payload.seat)

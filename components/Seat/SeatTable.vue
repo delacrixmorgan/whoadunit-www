@@ -20,6 +20,8 @@
       <thead class="bg-gray-50">
         <tr>
           <th
+            v-for="header in headers"
+            :key="header"
             scope="col"
             class="
               px-6
@@ -31,49 +33,7 @@
               tracking-wider
             "
           >
-            Seat
-          </th>
-          <th
-            scope="col"
-            class="
-              px-6
-              py-3
-              text-left text-xs
-              font-medium
-              text-gray-500
-              uppercase
-              tracking-wider
-            "
-          >
-            State
-          </th>
-          <th
-            scope="col"
-            class="
-              px-6
-              py-3
-              text-left text-xs
-              font-medium
-              text-gray-500
-              uppercase
-              tracking-wider
-            "
-          >
-            Incumbent Name
-          </th>
-          <th
-            scope="col"
-            class="
-              px-6
-              py-3
-              text-left text-xs
-              font-medium
-              text-gray-500
-              uppercase
-              tracking-wider
-            "
-          >
-            Action
+            {{ header }}
           </th>
         </tr>
       </thead>
@@ -107,10 +67,7 @@
             {{ seat.state }}
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            {{ seat.person.name }}
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+            {{ seat.name }}
           </td>
         </tr>
       </tbody>
@@ -124,6 +81,7 @@ export default {
   },
   data() {
     return {
+      headers: ['Election', 'State', 'Name'],
       search: '',
       seats: [],
       filters: ['mp', 'adun'],
@@ -156,7 +114,7 @@ export default {
     },
   },
   created() {
-    this.seats = this.$store.getters['seats/legacySeats']
+    this.seats = this.$store.getters['seats/seats']
     const persons = this.$store.getters['persons/persons']
 
     for (let index = 0; index < this.seats.length; index++) {
@@ -217,7 +175,8 @@ export default {
       }
     },
     gotToSeatDetails(row) {
-      this.$router.push({ path: `person/${row.person.id}`, props: true })
+      // TODO: Handle if it's empty
+      this.$router.push({ path: `person/${row.personId}`, props: true })
     },
     setQuery(query) {
       this.searchQuery = query

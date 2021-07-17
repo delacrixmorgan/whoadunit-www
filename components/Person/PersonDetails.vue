@@ -64,9 +64,9 @@
                 clip-rule="evenodd"
               />
             </svg>
-            {{ this.seat.federalseatcode }}
-            {{ this.seat.name }},
-            {{ this.seat.state }}
+            {{ currentSeat.code }}
+            {{ currentSeat.name }},
+            {{ currentSeat.state }}
           </div>
         </div>
         <div class="mb-4">
@@ -112,7 +112,7 @@
 
           <div class="flex-col mt-4 space-y-2">
             <person-contact-details
-              v-for="contact in contacts"
+              v-for="contact in person.contactDetails"
               :key="contact.value"
               :contact="contact"
             />
@@ -143,6 +143,7 @@
 
 <script>
 import PersonContactDetails from './PersonContactDetails.vue'
+
 export default {
   components: { PersonContactDetails },
   props: {
@@ -151,33 +152,13 @@ export default {
       require: false,
       default: null,
     },
-    seat: { type: Object, require: false, default: null },
+    seats: { type: Array, require: false, default: null },
   },
-  data() {
-    return {
-      contacts: [
-        {
-          type: 'phone',
-          title: 'Phone',
-          value: '+6016-626 7797',
-        },
-        {
-          type: 'email',
-          title: 'Email',
-          value: 'pubmpklang@gmail.com',
-        },
-        {
-          type: 'facebook',
-          title: 'Facebook',
-          value: 'https://www.facebook.com/charlessantiago/',
-        },
-        {
-          type: 'twitter',
-          title: 'Twitter',
-          value: 'https://twitter.com/mpklang',
-        },
-      ],
-    }
+  computed: {
+    currentSeat() {
+      const election = this.$store.getters['elections/lastElection']
+      return this.seats.find((item) => item.electionId === election.id)
+    },
   },
 }
 </script>

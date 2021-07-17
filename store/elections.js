@@ -6,6 +6,11 @@ const getters = {
   elections(state) {
     return state.elections
   },
+  lastElection(state) {
+    return state.elections.slice().sort((a, b) => {
+      return b.year - a.year
+    })[0]
+  },
   getElectionById(state) {
     return (id) => {
       return state.elections.find((item) => item.id === id)
