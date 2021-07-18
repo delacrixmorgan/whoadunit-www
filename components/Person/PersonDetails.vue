@@ -38,6 +38,8 @@
             </div>
             <div class="flex-none">
               <p
+                v-for="(seatType, index) in currentSeatTypes"
+                :key="index"
                 class="
                   w-full
                   flex
@@ -53,7 +55,7 @@
                   bg-indigo-100
                 "
               >
-                MP
+                {{ seatType }}
               </p>
             </div>
           </div>
@@ -71,9 +73,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            {{ currentSeat.code }}
-            {{ currentSeat.name }},
-            {{ currentSeat.state }}
+            {{ this.formatSeatNames() }}
           </div>
         </div>
         <div class="mb-4">
@@ -140,7 +140,7 @@
               text-lg
             "
           >
-            <a href="mailto:delacrixmorgan@pm.me">Something wrong? Tell us</a>
+            <a href="mailto:hello@whoadunit.com">Something wrong? Tell us</a>
           </button>
         </div>
       </div>
@@ -162,9 +162,26 @@ export default {
     seats: { type: Array, require: false, default: null },
   },
   computed: {
-    currentSeat() {
+    currentSeats() {
+      // TODO: There's a possibility the Person is both ADUN and MP in same election
       const election = this.$store.getters['elections/lastElection']
-      return this.seats.find((item) => item.electionId === election.id)
+      return this.seats.filter((item) => item.electionId === election.id)
+    },
+    currentSeatTypes() {
+      return this.currentSeats.flatMap((seat) => seat.type)
+    },
+  },
+  methods: {
+    formatSeatNames() {
+      if (this.currentSeats.length === 1) {
+        const seat = this.currentSeats[0]
+        return seat.code + ' ' + seat.name + ', ' + seat.state
+      }
+      if (this.currentSeats.length === 2) {
+        // TODO: If multiple Seats
+        return 'TODO: MP Seat Code, ADUN Seat Code'
+      }
+      return ''
     },
   },
 }

@@ -24,7 +24,9 @@
 </template>
 
 <script>
+import PersonSearchBar from '@/components/Person/PersonSearchBar'
 export default {
+  components: { PersonSearchBar },
   async asyncData(context) {
     const persons = await context.store.dispatch('persons/getPersons')
     return { persons }

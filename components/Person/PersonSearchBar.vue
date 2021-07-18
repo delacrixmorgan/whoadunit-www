@@ -16,12 +16,12 @@
           pl-5
         "
         type="text"
-        placeholder="Search by name or seat number"
+        placeholder="Search by name"
         @input="updateSearchQuery"
       />
     </div>
 
-    <div class="flex mt-3 space-x-2">
+    <div class="flex mt-3 space-x-2 hidden">
       <div class="flex-grow flex space-x-2">
         <button
           class="filter-item-link h-12"
@@ -34,12 +34,12 @@
           Members of Parliament
         </button>
         <button
+          class="filter-item-link h-12"
+          :class="[isAdunFilterActive ? 'active' : '']"
           @click="
             isAdunFilterActive = !isAdunFilterActive
             updateFilterType()
           "
-          :class="[isAdunFilterActive ? 'active' : '']"
-          class="filter-item-link h-12"
         >
           ADUN
         </button>
