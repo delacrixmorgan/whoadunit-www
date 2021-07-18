@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto flex px-5 md:flex-row flex-col items-center">
-    <PersonDetails :person="this.person" :seats="this.seats" />
+    <person-details :person="this.person" :seats="this.seats" />
   </div>
 </template>
 

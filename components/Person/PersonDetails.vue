@@ -7,8 +7,15 @@
       />
 
       <img
-        class="w-32 h-32 rounded-full ml-4 shadow -mt-28"
-        src="https://cdn.i-scmp.com/sites/default/files/d8/images/author/pic/2019/05/09/santiago12.jpg"
+        v-if="this.person.profilePictures[0]"
+        :src="this.person.profilePictures[0]"
+        class="object-cover w-32 h-32 rounded-full ml-4 shadow -mt-28"
+        alt=""
+      />
+      <img
+        v-else
+        src="https://lp-cms-production.imgix.net/2020-11/shutterstock_1245391942.jpg"
+        class="object-cover w-32 h-32 rounded-full ml-4 shadow -mt-28"
         alt=""
       />
 
