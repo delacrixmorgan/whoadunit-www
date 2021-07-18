@@ -3,6 +3,7 @@
     <div class="relative inline-block text-left">
       <div>
         <button
+          id="options-menu"
           type="button"
           class="
             inline-flex
@@ -24,10 +25,9 @@
             focus:ring-offset-gray-100
             focus:ring-indigo-500
           "
-          id="options-menu"
-          @click="isDropdownExpanded = !isDropdownExpanded"
           aria-expanded="true"
           aria-haspopup="true"
+          @click="isDropdownExpanded = !isDropdownExpanded"
         >
           {{ dropdown.placeholder }}
           <svg
@@ -67,7 +67,7 @@
           <a
             v-for="item in dropdown.items"
             :key="item"
-            @click="isDropdownExpanded = !isDropdownExpanded"
+            role="menuitem"
             class="
               block
               select-none
@@ -77,7 +77,7 @@
               hover:bg-gray-100
               hover:text-gray-900
             "
-            role="menuitem"
+            @click="isDropdownExpanded = !isDropdownExpanded"
             >{{ item }}</a
           >
         </div>

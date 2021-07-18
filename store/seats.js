@@ -55,19 +55,26 @@ const actions = {
     return await this.getSeats(vuexContext, context)
   },
   async getSeats(vuexContext, context) {
-    const response = await context.app.$axios.$get('/seats')
-    this.setSeats(vuexContext, response.data)
+    const seats = vuexContext.getters.seats
+    if (seats.length === 0) {
+      const response = await context.app.$axios.$get('/seats')
+      this.setSeats(vuexContext, response.data)
+      return response.data
+    } else {
+      return seats
+    }
   },
   setSeats(vuexContext, seats) {
     vuexContext.commit('seats/setSeats', seats, {
       root: true,
     })
   },
-
-  async getSeatsByIds(vuexContext, payload) {
+  async getSeatsByPersonId(vuexContext, payload) {
     const seats = vuexContext.getters.filterSeatsByIds(payload.seatIds)
     if (seats.length !== payload.seatIds.length) {
-      const response = await vuexContext.$axios.$get('/seats', payload.seatIds)
+      const response = await vuexContext.$axios.$get(
+        '/persons/' + payload.personId + '/seats'
+      )
       vuexContext.addSeats(response.data)
       return response.data
     }

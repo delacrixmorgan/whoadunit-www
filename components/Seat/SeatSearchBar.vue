@@ -2,6 +2,7 @@
   <div class="bg-white rounded-lg shadow p-4">
     <div class="bg-white">
       <input
+        v-model.trim="searchQuery"
         class="
           w-full
           focus:outline-none
@@ -15,31 +16,30 @@
           pl-5
         "
         type="text"
-        @input="updateSearchQuery"
         placeholder="Search by name or seat number"
-        v-model.trim="searchQuery"
+        @input="updateSearchQuery"
       />
     </div>
 
     <div class="flex mt-3 space-x-2">
       <div class="flex-grow flex space-x-2">
         <button
+          class="filter-item-link h-12"
+          :class="[isMpFilterActive ? 'active' : '']"
           @click="
             isMpFilterActive = !isMpFilterActive
             updateFilterType()
           "
-          :class="[isMpFilterActive ? 'active' : '']"
-          class="filter-item-link h-12"
         >
           Members of Parliament
         </button>
         <button
+          class="filter-item-link h-12"
+          :class="[isAdunFilterActive ? 'active' : '']"
           @click="
             isAdunFilterActive = !isAdunFilterActive
             updateFilterType()
           "
-          :class="[isAdunFilterActive ? 'active' : '']"
-          class="filter-item-link h-12"
         >
           ADUN
         </button>
@@ -59,6 +59,7 @@ import DropdownMenu from '@/components/Common/DropdownMenu.vue'
 
 export default {
   components: { DropdownMenu },
+  emits: ['search-query', 'filter-type'],
   data() {
     return {
       searchQuery: '',
@@ -92,7 +93,6 @@ export default {
       },
     }
   },
-  emits: ['search-query', 'filter-type'],
   methods: {
     updateSearchQuery() {
       this.$emit('search-query', this.searchQuery)

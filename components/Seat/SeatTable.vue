@@ -14,7 +14,7 @@
       class="mb-5"
       @search-query="setQuery"
       @filter-type="setFilter"
-    ></seat-search-bar>
+    />
 
     <table class="table-auto w-full">
       <thead class="bg-gray-50">
@@ -38,11 +38,12 @@
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
-        <tr
+        <router-link
           v-for="seat in filteredSeats"
           :key="seat.name"
           class="hover:bg-gray-200"
-          @click="gotToSeatDetails(seat)"
+          :to="{ path: `person/${seat.personId}`, props: true }"
+          tag="tr"
         >
           <td class="px-6 py-4">
             <div class="flex items-center">
@@ -67,9 +68,9 @@
             {{ seat.state }}
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            {{ seat.name }}
+            {{ seat.type }}
           </td>
-        </tr>
+        </router-link>
       </tbody>
     </table>
   </div>
@@ -81,9 +82,9 @@ export default {
   },
   data() {
     return {
-      headers: ['Election', 'State', 'Name'],
-      search: '',
+      headers: ['Seat', 'State', 'Type'],
       seats: [],
+      search: '',
       filters: ['mp', 'adun'],
       searchQuery: '',
     }
@@ -92,49 +93,29 @@ export default {
     filteredSeats() {
       const filteredSeats = this.filter(this.searchQuery.toLowerCase())
 
-      if (this.sortType !== '') {
-        return filteredSeats.sort((a, b) => {
-          let modifier = 1
-          if (this.sortType === 'DESC') modifier = -1
-          if (
-            this.sortColumn === 'stateseatcode' ||
-            this.sortColumn === 'federalseatcode'
-          ) {
-            if (a[this.sortColumn].localeCompare(b[this.sortColumn])) {
-              return 1 * modifier
-            }
-          } else {
-            if (a[this.sortColumn] < b[this.sortColumn]) return -1 * modifier
-            if (a[this.sortColumn] > b[this.sortColumn]) return 1 * modifier
-          }
-          return 0
-        })
-      }
+      // if (this.sortType !== '') {
+      //   return filteredSeats.sort((a, b) => {
+      //     let modifier = 1
+      //     if (this.sortType === 'DESC') modifier = -1
+      //     if (
+      //       this.sortColumn === 'stateseatcode' ||
+      //       this.sortColumn === 'federalseatcode'
+      //     ) {
+      //       if (a[this.sortColumn].localeCompare(b[this.sortColumn])) {
+      //         return 1 * modifier
+      //       }
+      //     } else {
+      //       if (a[this.sortColumn] < b[this.sortColumn]) return -1 * modifier
+      //       if (a[this.sortColumn] > b[this.sortColumn]) return 1 * modifier
+      //     }
+      //     return 0
+      //   })
+      // }
       return filteredSeats
     },
   },
-  created() {
-    this.seats = this.$store.getters['seats/seats']
-    const persons = this.$store.getters['persons/persons']
-
-    for (let index = 0; index < this.seats.length; index++) {
-      const seat = this.seats[index]
-      const federalSeatCode = seat.federalseatcode
-      const stateSeatCode = seat.stateseatcode
-      const filteredPerson = persons.filter(
-        (person) =>
-          person.federalseatcode === federalSeatCode &&
-          person.stateseatcode === stateSeatCode
-      )
-      if (filteredPerson.length > 0) {
-        seat.person = filteredPerson[0]
-      } else {
-        seat.person = null
-      }
-
-      seat.code = this.getSeatCode(seat)
-    }
-    this.seats = this.seats.filter((seat) => seat.person != null)
+  async created() {
+    this.seats = await this.$store.dispatch('seats/getSeats')
   },
   methods: {
     filter(query) {
@@ -142,8 +123,7 @@ export default {
         (seat) =>
           seat.name.toLowerCase().includes(query) ||
           seat.state.toLowerCase().includes(query) ||
-          seat.federalseatcode.toLowerCase().includes(query) ||
-          seat.person.name.toLowerCase().includes(query)
+          seat.code.toLowerCase().includes(query)
       )
 
       if (this.filters.length === 0) {
@@ -153,30 +133,18 @@ export default {
       if (this.filters.length === 1) {
         if (this.filters.includes('mp')) {
           filteredSeats = filteredSeats.filter(
-            (seat) => seat.level.toLowerCase() === 'federal'
+            (seat) => seat.type.toLowerCase() === 'mp'
           )
         }
 
         if (this.filters.includes('adun')) {
           filteredSeats = filteredSeats.filter(
-            (seat) => seat.level.toLowerCase() === 'state'
+            (seat) => seat.type.toLowerCase() === 'adun'
           )
         }
       }
 
       return filteredSeats
-    },
-    getSeatCode(seat) {
-      if (seat.level === 'Federal') {
-        return seat.federalseatcode
-      }
-      if (seat.level === 'State') {
-        return seat.stateseatcode
-      }
-    },
-    gotToSeatDetails(row) {
-      // TODO: Handle if it's empty
-      this.$router.push({ path: `person/${row.personId}`, props: true })
     },
     setQuery(query) {
       this.searchQuery = query

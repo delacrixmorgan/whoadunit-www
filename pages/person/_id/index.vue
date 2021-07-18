@@ -11,7 +11,8 @@ export default {
     const person = await context.store.dispatch('persons/findPersonById', {
       id: personId,
     })
-    const seats = await context.store.dispatch('seats/getSeatsByIds', {
+    const seats = await context.store.dispatch('seats/getSeatsByPersonId', {
+      id: personId,
       seatIds: person.seatIds,
     })
     return { person, seats }
