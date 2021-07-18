@@ -1,21 +1,5 @@
 <template>
-  <div
-    class="
-      container
-      mx-auto
-      px-5
-      py-2
-      flex-col
-      md:flex-row md:flex-nowrap
-      items-center
-    "
-  >
-    <seat-search-bar
-      class="mb-5"
-      @search-query="setQuery"
-      @filter-type="setFilter"
-    />
-
+  <div>
     <table class="table-auto w-full">
       <thead class="bg-gray-50">
         <tr>
@@ -78,20 +62,31 @@
 <script>
 export default {
   props: {
-    year: { type: String, require: true, default: '2018' },
+    loadedSeats: {
+      type: Array,
+      require: true,
+      default: null,
+    },
+    filters: {
+      type: Array,
+      require: true,
+      default: null,
+    },
+    searchQuery: {
+      type: String,
+      require: true,
+      default: '',
+    },
   },
   data() {
     return {
       headers: ['Seat', 'State', 'Type'],
       seats: [],
-      search: '',
-      filters: ['mp', 'adun'],
-      searchQuery: '',
     }
   },
   computed: {
     filteredSeats() {
-      const filteredSeats = this.filter(this.searchQuery.toLowerCase())
+      const seats = this.filter(this.searchQuery.toLowerCase())
 
       // if (this.sortType !== '') {
       //   return filteredSeats.sort((a, b) => {
@@ -111,11 +106,11 @@ export default {
       //     return 0
       //   })
       // }
-      return filteredSeats
+      return seats
     },
   },
-  async created() {
-    this.seats = await this.$store.dispatch('seats/getSeats')
+  created() {
+    this.seats = this.loadedSeats
   },
   methods: {
     filter(query) {
@@ -145,12 +140,6 @@ export default {
       }
 
       return filteredSeats
-    },
-    setQuery(query) {
-      this.searchQuery = query
-    },
-    setFilter(filters) {
-      this.filters = filters
     },
   },
 }

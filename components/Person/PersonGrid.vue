@@ -11,7 +11,7 @@
       "
     >
       <person-grid-item
-        v-for="person in persons"
+        v-for="person in this.filteredPersons"
         :key="person.id"
         :person="person"
       />
@@ -21,17 +21,65 @@
 
 <script>
 export default {
+  props: {
+    loadedPersons: {
+      type: Array,
+      require: true,
+      default: null,
+    },
+    filters: {
+      type: Array,
+      require: true,
+      default: null,
+    },
+    searchQuery: {
+      type: String,
+      require: true,
+      default: '',
+    },
+  },
   data() {
     return {
       search: '',
       persons: [],
       seats: [],
-      filters: ['mp', 'adun'],
-      searchQuery: '',
     }
   },
+  computed: {
+    filteredPersons() {
+      const persons = this.filter(this.searchQuery.toLowerCase())
+      return persons
+    },
+  },
   created() {
-    this.persons = this.$store.getters.persons
+    this.persons = this.loadedPersons
+  },
+  methods: {
+    filter(query) {
+      let filteredPersons = this.persons.filter((seat) =>
+        seat.name.toLowerCase().includes(query)
+      )
+
+      if (this.filters.length === 0) {
+        filteredPersons = []
+      }
+
+      if (this.filters.length === 1) {
+        if (this.filters.includes('mp')) {
+          filteredPersons = filteredPersons.filter(
+            (seat) => seat.type.toLowerCase() === 'mp'
+          )
+        }
+
+        if (this.filters.includes('adun')) {
+          filteredPersons = filteredPersons.filter(
+            (seat) => seat.type.toLowerCase() === 'adun'
+          )
+        }
+      }
+
+      return filteredPersons
+    },
   },
 }
 </script>

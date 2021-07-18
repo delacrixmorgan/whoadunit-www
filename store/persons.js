@@ -37,8 +37,14 @@ const actions = {
     return await this.getPersons(vuexContext, context)
   },
   async getPersons(vuexContext, context) {
-    const response = await context.app.$axios.$get('/persons')
-    this.setPersons(vuexContext, response.data)
+    const persons = vuexContext.getters.persons
+    if (persons.length === 0) {
+      const response = await context.app.$axios.$get('/persons')
+      this.setPersons(vuexContext, response.data)
+      return response.data
+    } else {
+      return persons
+    }
   },
   setPersons(vuexContext, persons) {
     vuexContext.commit('persons/setPersons', persons, {
