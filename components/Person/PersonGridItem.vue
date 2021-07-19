@@ -24,7 +24,7 @@
           :src="this.person.profilePictures[0]"
           class="
             object-cover
-            lg:h-48
+            h-48
             aspect-w-4 aspect-h-3
             w-full
             object-cover object-center
@@ -36,7 +36,7 @@
           src="https://lp-cms-production.imgix.net/2020-11/shutterstock_1245391942.jpg"
           class="
             object-cover
-            lg:h-48
+            h-48
             aspect-w-4 aspect-h-3
             w-full
             object-cover object-center

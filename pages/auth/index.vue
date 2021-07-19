@@ -112,7 +112,14 @@
           >
             Login
           </button>
-          <p class="text-xs text-gray-500 mt-3 hover:text-indigo-500">
+          <p
+            class="
+              text-xs text-gray-500
+              mt-3
+              hover:text-indigo-500
+              hover:underline
+            "
+          >
             <a href="mailto:hello@whoadunit.com">Forgot your password?</a>
           </p>
         </div>

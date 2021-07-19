@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg shadow">
+  <div class="rounded-lg shadow w-full">
     <div>
       <img
         class="mb-4 h-64 w-full object-cover rounded-t-lg"
@@ -7,8 +7,8 @@
       />
 
       <img
-        v-if="this.person.profilePictures[0]"
-        :src="this.person.profilePictures[0]"
+        v-if="person.profilePictures[0]"
+        :src="person.profilePictures[0]"
         class="object-cover w-32 h-32 rounded-full ml-4 shadow -mt-28"
         alt=""
       />
@@ -33,7 +33,7 @@
                   text-gray-900
                 "
               >
-                {{ this.person.name }}
+                {{ person.name }}
               </h1>
             </div>
             <div class="flex-none">
@@ -57,6 +57,25 @@
               >
                 {{ seatType }}
               </p>
+              <p
+                v-if="!currentSeatTypes"
+                class="
+                  w-full
+                  flex
+                  items-center
+                  justify-center
+                  py-2
+                  px-4
+                  border border-transparent
+                  text-sm
+                  font-normal
+                  rounded-full
+                  text-indigo-700
+                  bg-indigo-100
+                "
+              >
+                {{ person.status }}
+              </p>
             </div>
           </div>
 
@@ -73,7 +92,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            {{ this.formatSeatNames() }}
+            {{ formatSeatNames() }}
           </div>
         </div>
         <div class="mb-4">
@@ -87,13 +106,10 @@
               text-gray-900
             "
           >
-            Summary
+            Address
           </h1>
           <p class="leading-relaxed text-base">
-            Locavore cardigan small batch roof party blue bottle blog meggings
-            sartorial jean shorts kickstarter migas sriracha church-key synth
-            succulents. Actually taiyaki neutra, distillery gastropub pok pok
-            ugh.
+            {{ person.address }}
           </p>
         </div>
         <div class="mb-4">
@@ -111,10 +127,8 @@
           </h1>
 
           <p class="leading-relaxed text-base">
-            Locavore cardigan small batch roof party blue bottle blog meggings
-            sartorial jean shorts kickstarter migas sriracha church-key synth
-            succulents. Actually taiyaki neutra, distillery gastropub pok pok
-            ugh.
+            Follow them on their socials for nearby events and town hall
+            meetings.
           </p>
 
           <div class="flex-col mt-4 space-y-2">
@@ -178,8 +192,15 @@ export default {
         return seat.code + ' ' + seat.name + ', ' + seat.state
       }
       if (this.currentSeats.length === 2) {
-        // TODO: If multiple Seats
-        return 'TODO: MP Seat Code, ADUN Seat Code'
+        const mpSeat = this.currentSeats.find((seat) => seat.type === 'mp')
+        const adunSeat = this.currentSeats.find((seat) => seat.type === 'adun')
+
+        const formattedMpSeat =
+          mpSeat.code + ' ' + mpSeat.name + ', ' + mpSeat.state
+        const formattedAdunSeat =
+          adunSeat.code + ' ' + adunSeat.name + ', ' + adunSeat.state
+
+        return formattedMpSeat + ' | ' + formattedAdunSeat
       }
       return ''
     },

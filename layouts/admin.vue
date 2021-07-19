@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-row">
-    <AdminSideBar />
+    <admin-side-bar />
     <Nuxt class="flex-grow" />
   </div>
 </template>
