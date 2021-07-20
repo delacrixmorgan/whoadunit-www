@@ -54,17 +54,59 @@
     <hr />
     <div class="py-8">
       <h1 class="text-header-2 mb-8">FAQ</h1>
-      <h2 class="text-subtitle mb-4">Where did you get all of this data?</h2>
-      <p class="text-caption">
-        There's a lot of different sources that we got the data for each states,
-        if you're interested in a breakdown on where we get our data. Just let
-        us know, if there's enough interest on this topic we can write a blog
-        post detailing about our findings.
-      </p>
+      <div v-for="(faq, index) in faqs" :key="index" class="space-y-4 mb-8">
+        <h2 class="text-subtitle mb-4">{{ faq.question }}</h2>
+        <p
+          v-for="(answer, answerIndex) in faq.answer"
+          :key="answerIndex"
+          class="text-caption"
+        >
+          {{ answer }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      faqs: [
+        {
+          question: 'Where did you get all of this data?',
+          answer: [
+            "There's a lot of different sources that we got the data for each states, if you're interested in a breakdown on where we get our data. Just let us know, if there's enough interest on this topic we can write a blog post detailing about our findings.",
+          ],
+        },
+        {
+          question: 'Why are there missing data in Seats and Persons?',
+          answer: [
+            'Whoadunit is currently run by a small team who are working full-time jobs and only working on this during our free time, and we rely on volunteers to help us find and add missing data.',
+            "That's why we build an intuitive feature that anyone can easily suggest a change, just like how you're editing a Wikipedia article. Then, people on side can easily filter and approve the changes made.",
+          ],
+        },
+        {
+          question:
+            "It's so cool what you guys are doing here, how can I help?",
+          answer: [
+            "If you see something wrong or missing from our data on Seats and Person, you can easily just edit the entry and we will have them sorted out! It means a lot, because there's mountains of data and there's bound to be something that will slipped through our hands.",
+            "If you like what you're seeing here, share and spread the word. We built this website hoping that it will become something useful for people to use it to communicate with their representative in their community.",
+            'If you would like to support this website and its future developments, take a look at our donate page where publish details about the operation cost running this website.',
+            'It will definitely help us go a long way to keep this website running and keeping the data accessible to the Malaysian public.',
+          ],
+        },
+        {
+          question: 'What technology stack did you use?',
+          answer: [
+            'We are using NuxtJS and Tailwind CSS for the frontend and NodeJS hosted using Firebase Functions for the backend.',
+            "If you're interested in contributing to the code base, or just want to take a peek behind the curtain. It's accessible on GitHub.",
+            'Frontend - https://github.com/delacrixmorgan/whoadunit-www',
+            'Backend - https://github.com/Kurotsu5761/whoadunit-backend',
+          ],
+        },
+      ],
+    }
+  },
+}
 </script>
