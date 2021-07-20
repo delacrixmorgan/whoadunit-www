@@ -84,3 +84,23 @@
   mt-10
   sm:mt-0
 }
+
+.text-header-1 {
+  @apply sm:text-4xl text-3xl font-medium text-gray-900
+}
+
+.text-header-2 {
+  @apply sm:text-3xl text-2xl font-medium text-gray-900
+}
+
+.text-subtitle {
+  @apply text-gray-900 text-lg font-medium
+}
+
+.text-body {
+  @apply lg:w-2/3 leading-relaxed text-base
+}
+
+.text-caption {
+  @apply leading-relaxed text-base
+}
