@@ -1,20 +1,37 @@
-const state = () => ({})
+const state = () => ({
+  state: {
+    token: null,
+  },
+})
 
-const getters = {}
+const getters = {
+  isAuthenticated(state) {
+    return state.token != null
+  },
+}
 
-const mutations = {}
+const mutations = {
+  setToken(state, token) {
+    state.token = token
+  },
+}
 
 const actions = {
   async nuxtServerInit(vuexContext, context) {
     // TODO: Init with Session Token
   },
+
+  initAuth(vuexContext, req) {
+    const token = localStorage.getItem('token')
+    vuexContext.commit('auth/setToken', token)
+  },
+
   async loginUser(vuexContext, payload) {
-    const response = await vuexContext.$axios.$post('login', {
+    const response = await vuexContext.$axios.$post('auth/login', {
       email: payload.email,
       password: payload.password,
     })
-    // TODO: Save Token
-    console.log(response.token)
+    vuexContext.commit('auth/setToken', response.token)
   },
 }
 

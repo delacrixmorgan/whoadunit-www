@@ -10,5 +10,6 @@ import AdminSideBar from '@/components/UI/AdminSideBar.vue'
 
 export default {
   components: { AdminSideBar },
+  middleware: ['auth'],
 }
 </script>
