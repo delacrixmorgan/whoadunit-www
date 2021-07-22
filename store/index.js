@@ -5,7 +5,6 @@ import seatJSON from '@/assets/json/seats.json'
 import elections from './elections'
 import persons from './persons'
 import seats from './seats'
-import auth from './auth'
 
 const state = () => ({})
 
@@ -22,14 +21,12 @@ const actions = {
         elections.actions.setElections(vuexContext, electionsJSON.data),
         persons.actions.setPersons(vuexContext, personJSON.data),
         seats.actions.setSeats(vuexContext, seatJSON.data),
-        auth.actions.nuxtServerInit(vuexContext, context),
       ])
     } else {
       await Promise.all([
         elections.actions.nuxtServerInit(vuexContext, context),
         persons.actions.nuxtServerInit(vuexContext, context),
         seats.actions.nuxtServerInit(vuexContext, context),
-        auth.actions.nuxtServerInit(vuexContext, context),
       ])
     }
   },

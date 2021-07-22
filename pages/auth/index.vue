@@ -138,11 +138,14 @@ export default {
   },
   methods: {
     onSubmit() {
-      alert(this.email + ', ' + this.password)
-      // this.$store.dispatch('auth/loginUser', {
-      //   email: this.email,
-      //   password: this.password,
-      // })
+      this.$store
+        .dispatch('auth/loginUser', {
+          email: this.email,
+          password: this.password,
+        })
+        .then(() => {
+          this.$router.push('/admin')
+        })
     },
   },
 }

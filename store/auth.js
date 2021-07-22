@@ -1,3 +1,5 @@
+import Cookie from 'js-cookie'
+
 const state = () => ({
   state: {
     token: null,
@@ -14,24 +16,58 @@ const mutations = {
   setToken(state, token) {
     state.token = token
   },
+  clearToken(state) {
+    state.token = null
+  },
 }
 
 const actions = {
-  async nuxtServerInit(vuexContext, context) {
-    // TODO: Init with Session Token
-  },
-
   initAuth(vuexContext, req) {
-    const token = localStorage.getItem('token')
-    vuexContext.commit('auth/setToken', token)
+    let token
+    if (req) {
+      if (!req.headers.cookie) {
+        vuexContext.dispatch('auth/logoutUser')
+        return
+      }
+      const jwtCookie = req.headers.cookie
+        .split(';')
+        .find((c) => c.trim().startsWith('jwt='))
+      if (!jwtCookie) {
+        return
+      }
+      token = jwtCookie.split('=')[1]
+    } else if (process.client) {
+      token = localStorage.getItem('token')
+    }
+    vuexContext.commit('auth/setToken', token, {
+      root: true,
+    })
   },
 
   async loginUser(vuexContext, payload) {
-    const response = await vuexContext.$axios.$post('auth/login', {
-      email: payload.email,
+    const response = await this.$axios.$post('auth/login', {
+      username: payload.email,
       password: payload.password,
     })
-    vuexContext.commit('auth/setToken', response.token)
+    const token = response.token
+    vuexContext.commit('auth/setToken', token, {
+      root: true,
+    })
+    localStorage.setItem('token', token)
+    Cookie.set('jwt', token)
+    console.log(response.token)
+
+    return response
+  },
+
+  logoutUser(vuexContext) {
+    vuexContext.commit('auth/clearToken', {
+      root: true,
+    })
+    Cookie.remove('jwt')
+    if (process.client) {
+      localStorage.removeItem('token')
+    }
   },
 }
 
