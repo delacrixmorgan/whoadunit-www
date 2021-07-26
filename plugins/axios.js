@@ -1,5 +1,5 @@
-export default ({ $axios, env }) => {
+export default ({ $axios, env, store }) => {
   $axios.onRequest((config) => {
-    // config.headers.common.Authorization = `Bearer ${env.WP_API_KEY}`
+    config.headers.Authorization = `Bearer ${store.getters['auth/token']}`
   })
 }

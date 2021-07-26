@@ -105,11 +105,9 @@ export default {
     },
     onSeatAdd(seat) {
       this.$store
-        .dispatch('seats/addSeat', seat)
-        .then((data) => {
-          alert(
-            seat.code + ', ' + seat.name + ', ' + seat.state + ', ' + seat.type
-          )
+        .dispatch('seats/addSeat', {
+          electionId: this.loadedElection.id,
+          ...seat,
         })
         .catch((error) => alert(error.message))
     },

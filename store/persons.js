@@ -38,7 +38,7 @@ const actions = {
   },
   async getPersons(vuexContext, context) {
     const persons = vuexContext.getters.persons
-    if (persons.length === 0) {
+    if (!persons) {
       const response = await context.app.$axios.$get('/persons')
       this.setPersons(vuexContext, response.data)
       return response.data

@@ -44,8 +44,8 @@ const mutations = {
     const index = state.seats.findIndex((item) => item.id === editedSeat.id)
     state.seats[index] = editedSeat
   },
-  deleteSeat(state, deletedSeat) {
-    const index = state.seats.findIndex((item) => item.id === deletedSeat.id)
+  deleteSeat(state, seatId) {
+    const index = state.seats.findIndex((item) => item.id === seatId)
     state.seats.splice(index, 1)
   },
 }
@@ -56,7 +56,7 @@ const actions = {
   },
   async getSeats(vuexContext, context) {
     const seats = vuexContext.getters.seats
-    if (seats.length === 0) {
+    if (!seats) {
       const response = await context.app.$axios.$get('/seats')
       this.setSeats(vuexContext, response.data)
       return response.data
@@ -81,10 +81,10 @@ const actions = {
     return seats
   },
   async addSeat(vuexContext, payload) {
-    const response = await this.$axios.$post('/seats', payload.seat)
+    const response = await this.$axios.$post('/seats', payload)
     vuexContext.commit(
       'seats/addSeat',
-      { id: response.id, ...payload.seat },
+      { id: response.id, ...payload },
       { root: true }
     )
   },
@@ -96,8 +96,8 @@ const actions = {
     vueContext.commit('seats/editSeat', payload, { root: true })
   },
   async deleteSeat(vueContext, payload) {
-    await this.$axios.$delete('/seats', payload.id)
-    vueContext.commit('seats/deleteSeat', payload.id, { root: true })
+    await this.$axios.$delete('/seats/' + payload)
+    vueContext.commit('seats/deleteSeat', payload, { root: true })
   },
 }
 

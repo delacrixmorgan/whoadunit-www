@@ -67,11 +67,8 @@ export default {
       return '/admin/seats/edit/' + item.id
     },
     onDelete(seat) {
-      this.this.$store
+      this.$store
         .dispatch('seats/deleteSeat', seat.id)
-        .then(() => {
-          this.$router.back()
-        })
         .catch((error) => alert(error.message))
     },
   },

@@ -10,6 +10,9 @@ const getters = {
   isAuthenticated(state) {
     return state.token != null
   },
+  token(state) {
+    return state.token
+  },
 }
 
 const mutations = {
@@ -22,14 +25,14 @@ const mutations = {
 }
 
 const actions = {
-  initAuth(vuexContext, req) {
+  initAuth(vuexContext, context) {
     let token
-    if (req) {
-      if (!req.headers.cookie) {
+    if (context.req) {
+      if (!context.req.headers.cookie) {
         vuexContext.dispatch('auth/logoutUser')
         return
       }
-      const jwtCookie = req.headers.cookie
+      const jwtCookie = context.req.headers.cookie
         .split(';')
         .find((c) => c.trim().startsWith('jwt='))
       if (!jwtCookie) {
@@ -55,7 +58,7 @@ const actions = {
     })
     localStorage.setItem('token', token)
     Cookie.set('jwt', token)
-    console.log(response.token)
+    this.$axios.setToken(token, 'Bearer')
 
     return response
   },
