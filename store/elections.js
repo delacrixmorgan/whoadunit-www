@@ -22,6 +22,9 @@ const mutations = {
   setElections(state, elections) {
     state.elections = elections
   },
+  addElection(state, election) {
+    state.elections.push(election)
+  },
 }
 
 const actions = {
@@ -37,9 +40,9 @@ const actions = {
       root: true,
     })
   },
-  editElection(vuexContext, editedElection) {
-    // this.$axios.$put()
-    return null
+  async addElection(vuexContext, payload) {
+    const response = await this.$axios.$post('/elections', payload)
+    vuexContext.commit('elections/addElection', { id: response.id, ...payload })
   },
 }
 

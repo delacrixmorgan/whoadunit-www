@@ -14,7 +14,7 @@ const mutations = {}
 
 const actions = {
   async nuxtServerInit(vuexContext, context) {
-    const isDebug = true
+    const isDebug = false
 
     if (isDebug) {
       await Promise.all([

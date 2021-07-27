@@ -99,6 +99,17 @@ const actions = {
     await this.$axios.$delete('/seats/' + payload)
     vueContext.commit('seats/deleteSeat', payload, { root: true })
   },
+
+  async assignSeats(vuexContext, payload) {
+    const seatIds = payload.ids
+    const personId = payload.personId
+
+    await Promise.all(
+      seatIds.map(async (item) => {
+        await this.$axios.$put('/seats/' + item + '/assign', personId)
+      })
+    )
+  },
 }
 
 export default {

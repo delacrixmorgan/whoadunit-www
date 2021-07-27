@@ -55,7 +55,7 @@ const actions = {
     const person = vuexContext.getters.getPersonById(payload.id)
     if (person == null) {
       const response = await vuexContext.$axios.$get('/persons/' + payload.id)
-      vuexContext.addPerson(response.data)
+      vuexContext.commit('persons/addPerson', response.data)
       return response.data
     } else {
       return person
@@ -73,7 +73,10 @@ const actions = {
     return filteredPerson[0]
   },
   async addPerson(vuexContext, payload) {
-    const response = await this.$axios.$post('/persons', payload.seat)
+    const payloadPerson = { ...payload }
+    delete payloadPerson.seatIds
+
+    const response = await this.$axios.$post('/persons', payloadPerson)
     vuexContext.commit(
       'persons/addPerson',
       { id: response.id, ...payload.person },
@@ -88,8 +91,8 @@ const actions = {
     vueContext.commit('persons/editPerson', payload, { root: true })
   },
   async deletePerson(vueContext, payload) {
-    await this.$axios.$delete('/persons', payload.id)
-    vueContext.commit('persons/deletePerson', payload.id, { root: true })
+    await this.$axios.$delete('/persons/' + payload)
+    vueContext.commit('persons/deletePerson', payload, { root: true })
   },
 }
 

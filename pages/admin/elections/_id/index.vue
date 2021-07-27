@@ -38,25 +38,6 @@
           py-4
         "
       >
-        Edit Year
-      </h1>
-
-      <election-edit-form
-        :election="loadedElection"
-        @submit="onElectionEdited"
-      />
-
-      <h1
-        class="
-          sm:text-3xl
-          text-2xl
-          font-medium
-          title-font
-          mb-2
-          text-gray-900
-          py-4
-        "
-      >
         Seats
       </h1>
       <seat-create-form class="mb-4" @submit="onSeatAdd" />
@@ -67,10 +48,9 @@
 
 <script>
 import SeatDataTable from '@/components/Admin/DataTable/SeatDataTable'
-import ElectionEditForm from '@/components/Election/ElectionEditForm'
 
 export default {
-  components: { SeatDataTable, ElectionEditForm },
+  components: { SeatDataTable },
   layout: 'admin',
   asyncData(context) {
     const election = context.store.getters['elections/getElectionById'](
@@ -94,14 +74,6 @@ export default {
   methods: {
     getSeatsByType(type) {
       return this.seats.filter((seat) => seat.type === type)
-    },
-    onElectionEdited(editedElection) {
-      this.$store
-        .dispatch('elections/editElection')
-        .then((data) => {
-          alert(editedElection.year)
-        })
-        .catch((error) => alert(error.message))
     },
     onSeatAdd(seat) {
       this.$store

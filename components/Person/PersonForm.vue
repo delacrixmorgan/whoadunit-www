@@ -227,7 +227,7 @@
       </div>
       <div class="grid grid-cols-4 gap-4 mt-4">
         <button class="col-start-3 btn-action-green" @click="onAction">
-          {{ isEditMode === true ? 'Update' : 'Create' }}
+          {{ isEditMode ? 'Update' : 'Create' }}
         </button>
         <button class="btn-action-red" @click="onDelete">Delete</button>
       </div>
@@ -326,30 +326,50 @@ export default {
       seat.code = newSeat.code
       seat.name = newSeat.name
     },
-    onAction() {
+    async onAction() {
+      const seatIds = this.editedPerson.seatIds
       if (this.isEditMode) {
         if (this.isSeatUpdated) {
-          this.$store
+          await this.$store
             .dispatch('persons/editPerson', this.editedPerson)
             .then(() => {
-              this.$router.back()
+              if (seatIds.length === 0) {
+                this.$router.back()
+              }
             })
             .catch((error) => alert(error.message))
+
+          await this.onSeatsUpdate(seatIds)
         } else {
           this.$router.back()
         }
       } else {
-        this.$store
+        await this.$store
           .dispatch('persons/addPerson', this.editedPerson)
           .then(() => {
-            this.$router.back()
+            if (seatIds.length === 0) {
+              this.$router.back()
+            }
           })
           .catch((error) => alert(error.message))
+
+        await this.onSeatsUpdate(seatIds)
       }
+    },
+    async onSeatsUpdate(seatIds) {
+      await this.$store
+        .dispatch('seats/assignSeats', {
+          ids: seatIds,
+          personId: this.editedPerson.id,
+        })
+        .then(() => {
+          this.$router.back()
+        })
+        .catch((error) => alert(error.message))
     },
     onDelete() {
       if (this.isEditMode) {
-        this.this.$store
+        this.$store
           .dispatch('persons/deletePerson', this.editedPerson.id)
           .then(() => {
             this.$router.back()

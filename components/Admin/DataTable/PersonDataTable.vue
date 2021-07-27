@@ -91,11 +91,8 @@ export default {
   },
   methods: {
     onDelete(person) {
-      this.this.$store
+      this.$store
         .dispatch('persons/deletePerson', person.id)
-        .then(() => {
-          this.$router.back()
-        })
         .catch((error) => alert(error.message))
     },
     getFormattedSeat(person) {
