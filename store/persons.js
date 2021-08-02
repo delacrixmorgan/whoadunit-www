@@ -74,12 +74,12 @@ const actions = {
   },
   async addPerson(vuexContext, payload) {
     const payloadPerson = { ...payload }
-    delete payloadPerson.seatIds
+    delete payloadPerson.id
 
     const response = await this.$axios.$post('/persons', payloadPerson)
     vuexContext.commit(
       'persons/addPerson',
-      { id: response.id, ...payload.person },
+      { id: response.id, ...payloadPerson },
       { root: true }
     )
   },
@@ -91,7 +91,7 @@ const actions = {
     vueContext.commit('persons/editPerson', payload, { root: true })
   },
   async deletePerson(vueContext, payload) {
-    await this.$axios.$delete('/persons/' + payload)
+    await this.$axios.$delete('/persons/' + payload.id)
     vueContext.commit('persons/deletePerson', payload, { root: true })
   },
 }

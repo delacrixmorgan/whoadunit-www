@@ -92,7 +92,7 @@ export default {
   methods: {
     onDelete(person) {
       this.$store
-        .dispatch('persons/deletePerson', person.id)
+        .dispatch('persons/deletePerson', person)
         .catch((error) => alert(error.message))
     },
     getFormattedSeat(person) {
@@ -104,6 +104,9 @@ export default {
       }
     },
     isContactDetailsAvailable(person, type) {
+      if (!person.contactDetails) {
+        return
+      }
       if (type === 'Email') {
         return (
           person.contactDetails.find(

@@ -60,15 +60,21 @@ export default {
   },
   methods: {
     getElectionYear(seat) {
-      return this.$store.getters['elections/getElectionById'](seat.electionId)
-        .year
+      const election = this.$store.getters['elections/getElectionById'](
+        seat.electionId
+      )
+      if (election) {
+        return election.year
+      } else {
+        return null
+      }
     },
     getEditActionLink(item) {
       return '/admin/seats/edit/' + item.id
     },
     onDelete(seat) {
       this.$store
-        .dispatch('seats/deleteSeat', seat.id)
+        .dispatch('seats/deleteSeat', seat)
         .catch((error) => alert(error.message))
     },
   },

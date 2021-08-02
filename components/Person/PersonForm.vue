@@ -81,7 +81,7 @@
             v-model.trim="editedPerson.name"
             class="form-edit-text"
             type="text"
-            placeholder="Code"
+            placeholder="Name"
           />
         </div>
         <div class="flex flex-col col-span-4">
@@ -90,7 +90,7 @@
             v-model.trim="editedPerson.address"
             class="form-edit-text"
             type="text"
-            placeholder="Code"
+            placeholder="Address"
           />
         </div>
       </div>
@@ -193,7 +193,7 @@
               v-model.lazy="contactDetail.value"
               class="form-edit-text"
               type="text"
-              placeholder="Phone Number"
+              placeholder="Value"
             />
             <button
               class="btn-action-blue"
@@ -347,9 +347,7 @@ export default {
         await this.$store
           .dispatch('persons/addPerson', this.editedPerson)
           .then(() => {
-            if (seatIds.length === 0) {
-              this.$router.back()
-            }
+            this.$router.push('/admin/person')
           })
           .catch((error) => alert(error.message))
 
@@ -370,7 +368,7 @@ export default {
     onDelete() {
       if (this.isEditMode) {
         this.$store
-          .dispatch('persons/deletePerson', this.editedPerson.id)
+          .dispatch('persons/deletePerson', this.editedPerson)
           .then(() => {
             this.$router.back()
           })

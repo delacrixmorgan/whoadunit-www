@@ -197,7 +197,7 @@ export default {
     },
     onDelete() {
       this.$store
-        .dispatch('seats/deleteSeat', this.editedSeat.id)
+        .dispatch('seats/deleteSeat', this.editedSeat)
         .then(() => {
           this.$router.back()
         })

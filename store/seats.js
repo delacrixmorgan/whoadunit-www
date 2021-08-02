@@ -44,8 +44,8 @@ const mutations = {
     const index = state.seats.findIndex((item) => item.id === editedSeat.id)
     state.seats[index] = editedSeat
   },
-  deleteSeat(state, seatId) {
-    const index = state.seats.findIndex((item) => item.id === seatId)
+  deleteSeat(state, deletedSeat) {
+    const index = state.seats.findIndex((item) => item.id === deletedSeat.id)
     state.seats.splice(index, 1)
   },
 }
@@ -96,10 +96,9 @@ const actions = {
     vueContext.commit('seats/editSeat', payload, { root: true })
   },
   async deleteSeat(vueContext, payload) {
-    await this.$axios.$delete('/seats/' + payload)
+    await this.$axios.$delete('/seats/' + payload.id)
     vueContext.commit('seats/deleteSeat', payload, { root: true })
   },
-
   async assignSeats(vuexContext, payload) {
     const seatIds = payload.ids
     const personId = payload.personId

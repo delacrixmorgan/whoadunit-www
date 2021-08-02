@@ -10,6 +10,7 @@
 
 <script>
 import SeatDataTable from '@/components/Admin/DataTable/SeatDataTable'
+
 export default {
   components: { SeatDataTable },
   layout: 'admin',
@@ -20,12 +21,11 @@ export default {
   },
   methods: {
     onSeatAdd(seat) {
+      const election = this.$store.getters['elections/lastElection']
       this.$store
-        .dispatch('seats/addSeat', seat)
-        .then((data) => {
-          alert(
-            seat.code + ', ' + seat.name + ', ' + seat.state + ', ' + seat.type
-          )
+        .dispatch('seats/addSeat', {
+          electionId: election.id,
+          ...seat,
         })
         .catch((error) => alert(error.message))
     },
