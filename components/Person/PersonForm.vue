@@ -327,19 +327,17 @@ export default {
       seat.name = newSeat.name
     },
     async onAction() {
-      const seatIds = this.editedPerson.seatIds
+      this.editedPerson.seatIds = this.editedSeats.flatMap((seat) => seat.id)
       if (this.isEditMode) {
         if (this.isSeatUpdated) {
           await this.$store
             .dispatch('persons/editPerson', this.editedPerson)
             .then(() => {
-              if (seatIds.length === 0) {
+              if (this.editedPerson.seatIds.length === 0) {
                 this.$router.back()
               }
             })
             .catch((error) => alert(error.message))
-
-          await this.onSeatsUpdate(seatIds)
         } else {
           this.$router.back()
         }
@@ -350,20 +348,7 @@ export default {
             this.$router.push('/admin/person')
           })
           .catch((error) => alert(error.message))
-
-        await this.onSeatsUpdate(seatIds)
       }
-    },
-    async onSeatsUpdate(seatIds) {
-      await this.$store
-        .dispatch('seats/assignSeats', {
-          ids: seatIds,
-          personId: this.editedPerson.id,
-        })
-        .then(() => {
-          this.$router.back()
-        })
-        .catch((error) => alert(error.message))
     },
     onDelete() {
       if (this.isEditMode) {
