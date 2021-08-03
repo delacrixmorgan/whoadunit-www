@@ -77,7 +77,12 @@ export default {
         const seat = this.$store.getters['seats/filterSeatsByIds'](
           person.seatIds
         ).find((item) => item.electionId === election.id)
-        return seat.code + ' ' + seat.name + ', ' + seat.state
+
+        if (seat != null) {
+          return seat.code + ' ' + seat.name + ', ' + seat.state
+        } else {
+          return ''
+        }
       }
     },
   },
