@@ -4,7 +4,9 @@ const state = () => ({
 
 const getters = {
   elections(state) {
-    return state.elections
+    return state.elections.slice().sort((a, b) => {
+      return b.year - a.year
+    })
   },
   lastElection(state) {
     return state.elections.slice().sort((a, b) => {

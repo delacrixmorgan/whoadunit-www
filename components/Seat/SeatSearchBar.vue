@@ -89,8 +89,8 @@
             "
             @change="updateElectionFilter"
           >
-            <option v-for="(year, index) in years" :key="index">
-              {{ year }}
+            <option v-for="(election, index) in elections" :key="index">
+              {{ election.year }}
             </option>
           </select>
           <select-chevron-down />
@@ -129,12 +129,14 @@ export default {
         'Sabah',
         'Sarawak',
       ],
-      years: ['2021', '2018'],
+      elections: [],
     }
   },
   created() {
+    this.elections = this.$store.getters['elections/elections']
+
     this.stateFilter = this.states[0]
-    this.electionFilter = this.years[0]
+    this.electionFilter = this.elections[0].year
 
     this.$emit('search-query', this.searchQuery)
     this.$emit('seat-filter', ['mp', 'adun'])
@@ -159,7 +161,10 @@ export default {
       this.$emit('state-filter', this.stateFilter)
     },
     updateElectionFilter() {
-      this.$emit('election-filter', this.electionFilter)
+      const election = this.elections.find(
+        (item) => item.year === this.electionFilter
+      )
+      this.$emit('election-filter', election)
     },
   },
 }

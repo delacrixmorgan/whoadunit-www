@@ -98,9 +98,9 @@ export default {
       default: '',
     },
     electionFilter: {
-      type: String,
+      type: Object,
       require: true,
-      default: '',
+      default: null,
     },
   },
   data() {

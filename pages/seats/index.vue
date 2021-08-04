@@ -38,7 +38,7 @@ export default {
       searchQuery: '',
       seatFilter: [],
       stateFilter: '',
-      electionFilter: '',
+      electionFilter: null,
     }
   },
   methods: {
