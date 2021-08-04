@@ -28,7 +28,7 @@
           :class="[isMpFilterActive ? 'active' : '']"
           @click="
             isMpFilterActive = !isMpFilterActive
-            updateFilterType()
+            updateSeatFilter()
           "
         >
           Members of Parliament
@@ -38,74 +38,128 @@
           :class="[isAdunFilterActive ? 'active' : '']"
           @click="
             isAdunFilterActive = !isAdunFilterActive
-            updateFilterType()
+            updateSeatFilter()
           "
         >
           ADUN
         </button>
       </div>
-      <div class="flex-none">
-        <dropdown-menu :dropdown="stateDropdown" />
+      <div class="relative pr-2">
+        <label class="form-label"> State </label>
+        <div class="relative">
+          <select
+            v-model.lazy="stateFilter"
+            class="
+              block
+              appearance-none
+              w-full
+              bg-grey-lighter
+              border border-grey-lighter
+              text-grey-darker
+              py-3
+              px-4
+              pr-8
+              rounded
+            "
+            @change="updateStateFilter"
+          >
+            <option v-for="(state, index) in states" :key="index">
+              {{ state }}
+            </option>
+          </select>
+          <select-chevron-down />
+        </div>
       </div>
-      <div class="flex-none">
-        <dropdown-menu :dropdown="yearDropdown" />
+      <div class="relative flex-none">
+        <label class="form-label"> Election </label>
+        <div class="relative">
+          <select
+            v-model.lazy="electionFilter"
+            class="
+              block
+              appearance-none
+              w-full
+              bg-grey-lighter
+              border border-grey-lighter
+              text-grey-darker
+              py-3
+              px-4
+              pr-8
+              rounded
+            "
+            @change="updateElectionFilter"
+          >
+            <option v-for="(year, index) in years" :key="index">
+              {{ year }}
+            </option>
+          </select>
+          <select-chevron-down />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import DropdownMenu from '@/components/Common/DropdownMenu.vue'
-
 export default {
-  components: { DropdownMenu },
   emits: ['search-query', 'filter-type'],
   data() {
     return {
       searchQuery: '',
       isMpFilterActive: true,
       isAdunFilterActive: true,
-      isDropdownExpanded: false,
-      yearDropdown: {
-        placeholder: 'Year',
-        items: ['2021', '2018'],
-      },
-      stateDropdown: {
-        placeholder: 'States',
-        items: [
-          'Perlis',
-          'Kedah',
-          'Kelantan',
-          'Terrengganu',
-          'Penang',
-          'Perak',
-          'Pahang',
-          'Selangor',
-          'Kuala Lumpur',
-          'Putrajaya',
-          'Negeri Sembilan',
-          'Malacca',
-          'Johor',
-          'Labuan',
-          'Sabah',
-          'Sarawak',
-        ],
-      },
+      stateFilter: '',
+      electionFilter: '',
+      states: [
+        'All',
+        'Perlis',
+        'Kedah',
+        'Kelantan',
+        'Terrengganu',
+        'Penang',
+        'Perak',
+        'Pahang',
+        'Selangor',
+        'Kuala Lumpur',
+        'Putrajaya',
+        'Negeri Sembilan',
+        'Malacca',
+        'Johor',
+        'Labuan',
+        'Sabah',
+        'Sarawak',
+      ],
+      years: ['2021', '2018'],
     }
+  },
+  created() {
+    this.stateFilter = this.states[0]
+    this.electionFilter = this.years[0]
+
+    this.$emit('search-query', this.searchQuery)
+    this.$emit('seat-filter', ['mp', 'adun'])
+    this.$emit('state-filter', this.stateFilter)
+    this.$emit('election-filter', this.electionFilter)
   },
   methods: {
     updateSearchQuery() {
       this.$emit('search-query', this.searchQuery)
     },
-    updateFilterType() {
-      const filters = []
+    updateSeatFilter() {
+      const seatFilter = []
       if (this.isMpFilterActive) {
-        filters.push('mp')
+        seatFilter.push('mp')
       }
       if (this.isAdunFilterActive) {
-        filters.push('adun')
+        seatFilter.push('adun')
       }
-      this.$emit('filter-type', filters)
+      this.$emit('seat-filter', seatFilter)
+    },
+    updateStateFilter() {
+      this.$emit('state-filter', this.stateFilter)
+    },
+    updateElectionFilter() {
+      this.$emit('election-filter', this.electionFilter)
     },
   },
 }
@@ -115,6 +169,7 @@ export default {
 .filter-item-link {
   @apply rounded-full px-6 py-2 bg-purple-50 hover:bg-purple-500 hover:text-white text-purple-700 text-sm;
 }
+
 .active.filter-item-link {
   @apply rounded-full px-6 py-2 bg-purple-700 hover:bg-purple-700 hover:text-white text-purple-50 text-sm;
 }

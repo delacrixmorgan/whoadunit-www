@@ -82,12 +82,22 @@ export default {
       require: true,
       default: null,
     },
-    filters: {
+    searchQuery: {
+      type: String,
+      require: true,
+      default: '',
+    },
+    seatFilter: {
       type: Array,
       require: true,
       default: null,
     },
-    searchQuery: {
+    stateFilter: {
+      type: String,
+      require: true,
+      default: '',
+    },
+    electionFilter: {
       type: String,
       require: true,
       default: '',
@@ -136,18 +146,18 @@ export default {
           seat.code.toLowerCase().includes(query)
       )
 
-      if (this.filters.length === 0) {
+      if (this.seatFilter.length === 0) {
         filteredSeats = []
       }
 
-      if (this.filters.length === 1) {
-        if (this.filters.includes('mp')) {
+      if (this.seatFilter.length === 1) {
+        if (this.seatFilter.includes('mp')) {
           filteredSeats = filteredSeats.filter(
             (seat) => seat.type.toLowerCase() === 'mp'
           )
         }
 
-        if (this.filters.includes('adun')) {
+        if (this.seatFilter.includes('adun')) {
           filteredSeats = filteredSeats.filter(
             (seat) => seat.type.toLowerCase() === 'adun'
           )

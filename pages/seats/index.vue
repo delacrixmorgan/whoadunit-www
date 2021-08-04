@@ -12,13 +12,17 @@
   >
     <seat-search-bar
       class="mb-5"
-      @search-query="setQuery"
-      @filter-type="setFilter"
+      @search-query="setSearchQuery"
+      @seat-filter="setSeatFilter"
+      @state-filter="setStateFilter"
+      @election-filter="setElectionFilter"
     />
     <seat-table
       :loaded-seats="seats"
-      :filters="filters"
       :search-query="searchQuery"
+      :seat-filter="seatFilter"
+      :state-filter="stateFilter"
+      :election-filter="electionFilter"
     />
   </div>
 </template>
@@ -32,15 +36,23 @@ export default {
   data() {
     return {
       searchQuery: '',
-      filters: ['mp', 'adun'],
+      seatFilter: [],
+      stateFilter: '',
+      electionFilter: '',
     }
   },
   methods: {
-    setQuery(query) {
-      this.searchQuery = query
+    setSearchQuery(item) {
+      this.searchQuery = item
     },
-    setFilter(filters) {
-      this.filters = filters
+    setSeatFilter(item) {
+      this.seatFilter = item
+    },
+    setStateFilter(item) {
+      this.stateFilter = item
+    },
+    setElectionFilter(item) {
+      this.electionFilter = item
     },
   },
 }
