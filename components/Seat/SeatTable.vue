@@ -32,8 +32,23 @@
           <td class="px-6 py-4">
             <div class="flex items-center">
               <div class="flex-shrink-0 h-10 w-10">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  ></path>
+                </svg>
+                <!-- TODO: Show State Flags -->
                 <img
-                  class="h-10 w-10 rounded-full object-cover"
+                  class="h-10 w-10 rounded-full object-cover hidden"
                   src="https://image.shutterstock.com/image-vector/3d-button-flag-selangor-state-260nw-374502412.jpg"
                   alt=""
                 />
